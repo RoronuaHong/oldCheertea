@@ -1,0 +1,743 @@
+@import "./common/mixin.scss";
+@import "./common/swiper-3.3.1.min";
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+/*$imgurl: "../images/";*/
+
+/*地区选择页面*/
+.selectwherewrap {
+  display: none;
+  width: 100%;
+  .searchheader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    background: #efefef;
+  }
+  .delbtn {
+    float: left;
+    width: 14%;
+    line-height: 80px;
+    font-size: 50px;
+    text-align: center;
+  }
+  .areabtn {
+    float: left;
+    width: 16%;
+    line-height: 80px;
+    font-size: 26px;
+    text-align: center;
+  }
+  label {
+    float: left;
+    display: block;
+    width: 70%;
+    height: 56px;
+    margin: 12px auto 0;
+    line-height: 56px;
+    background: #fff;
+    border-radius: 10px;
+  }
+  .searchinputs {
+    float: left;
+    width: 82%;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 5%;
+    font-size: 24px;
+    outline: none;
+    border: none;
+    color: #cccccc;
+    border-radius: 20px;
+  }
+  .searchinputs::-webkit-input-placeholder {
+    font-size: 24px;
+    color: #cccccc;
+  }
+  .cancelbtn {
+    display: none;
+    float: left;
+    width: 10%;
+    height: 100%;
+    background: url($imgurl + "newchacha.png") center center no-repeat;
+    background-size: contain;
+  }
+  .areashobox {
+    width: 100%;
+    .conbox {
+      width: 100%;
+    }
+  }
+  .positionbox {
+    width: 100%;
+    height: 70px;
+    margin: 10px auto 80px;
+    line-height: 70px;
+    font-size: 26px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    li {
+      float: left;
+      width: 20%;
+      height: 70px;
+      padding: 0 1%;
+    }
+    li:first-child {
+      margin-left: 27%;
+    }
+    li:nth-child(2) {
+      color: #31b6e7;
+    }
+  }
+  .hotcitybox {
+    width: 96%;
+    margin: 0 auto 50px;
+    h3 {
+      padding: 10px 20px;
+      color: #0c0c0c;
+    }
+  }
+  .hotcitylist {
+    width: 100%;
+    li {
+      float: left;
+      width: 19%;
+      height: 50px;
+      margin: 10px 2%;
+      padding: 0 1%;
+      line-height: 50px;
+      font-size: 26px;
+      text-align: center;
+      color: #1a1a1a;
+      box-shadow: 0 0 0 1px #ccc;
+      border-radius: 15px;
+    }
+  }
+  .allcitybox {
+    width: 100%;
+    .apartcity {
+      width: 100%;
+    }
+  }
+  h4 {
+    width: 90%;
+    margin: 0 5%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #c0c0c0;
+  }
+  .allcitylist {
+    width: 100%;
+    li {
+      width: 90%;
+      height: 65px;
+      padding: 0 5%;
+      line-height: 65px;
+      font-size: 16px;
+      border-bottom: 1px solid #c0c0c0;
+    }
+  }
+  .smallsearchbox {
+    display: none;
+    width: 100%;
+    margin-top: 1.39rem;
+    li {
+      width: 900%;
+      height: 50px;
+      padding: 0 5%;
+      line-height: 50px;
+      font-size: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+}
+/*店铺首页*/
+.newshopnearwrap {
+  width: 100%;
+  .searchbox {
+    position: relative;
+    width: 100%;
+    height: 5.2625rem;
+    padding: 1.39rem 0 0;
+    background: #efefef;
+    img {
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .areashow {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 30%;
+    float: left;
+    width: 21%;
+    height: 70px;
+    margin: auto;
+    line-height: 70px;
+    font-size: 48px;
+    text-align: left;
+    z-index: 100;
+    color: #ffffff;
+  }
+  .areashow::after {
+    position: absolute;
+    top: 18px;
+    right: 5px;
+    content: " ";
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 48px;
+    background: url($imgurl + "newshoparrow.png");
+    background-size: contain;
+    text-align: center;
+    border-radius: 50%;
+  }
+  .searchlink {
+    position: fixed;
+    top: 120px;
+    float: left;
+    display: block;
+    width: 82%;
+    height: 56px;
+    line-height: 56px;
+    margin: 7px 3% 0 5%;
+    background: #fff;
+    border-radius: 15px;
+    opacity: 0.3;
+    z-index: 100;
+  }
+  .searchlinks {
+    position: fixed;
+    top: 120px;
+    float: left;
+    display: block;
+    width: 82%;
+    height: 56px;
+    line-height: 56px;
+    margin: 7px 3% 0 5%;
+    border-radius: 15px;
+    font-size: 20px;
+    color: #fff;
+    .searchbgs {
+      float: left;
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: 8px 0 0 20px;
+      background: url($imgurl + "searchbg2.png") 0 0 no-repeat;
+      background-size: contain;
+    }
+    .searchname {
+      float: left;
+      margin-left: 3%;
+      font-size: 20px;
+      color: #ffffff;
+    }
+  }
+  .mapbg {
+    position: fixed;
+    top: 120px;
+    right: 15px;
+    display: block;
+    width: 9%;
+    height: 70px;
+    line-height: 110px;
+    background: url($imgurl + "mapbg1.png") -.08rem -.15rem no-repeat;
+    background-size: 120%;
+    font-size: 18px;
+    border-radius: 15px;
+    text-align: center;
+    color: #fff;
+  }
+  .newshopneartit {
+    display: none;
+    width: 100%;
+    height: 88px;
+    border-bottom: 1px solid #e0e0e0;
+    li {
+      float: left;
+      width: 50%;
+      height: 30px;
+      padding: 29px 0;
+      line-height: 30px;
+      font-size: 26px;
+      text-align: center;
+      color: #1a1a1a;
+    }
+    li:first-child {
+      box-shadow: 1px 0 0 #e0e0e0;
+    }
+    .lisel {
+      color: #e94c1a;
+    }
+  }
+  .con {
+    display: none;
+    width: 100%;
+    padding-top: 20px;
+  }
+  .consel {
+    display: block;
+  }
+  .selectbox {
+    position: relative;
+    width: 94%;
+    height: 52px;
+    line-height: 52px;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px solid #e94c1a;
+  }
+  .selectarea {
+    position: relative;
+    float: left;
+    width: 30%;
+    height: 52px;
+    background: #e94c1a;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .selectdistance {
+    float: left;
+    width: 70%;
+    height: 52px;
+    line-height: 52px;
+    font-size: 20px;
+    text-align: center;
+    color: #e94c1a;
+  }
+  .newshopnearcontent {
+    padding-bottom: 1.39rem;
+  }
+  .arealistbox {
+    width: 92%;
+    padding: 30px 4%;
+    border-bottom: 8px solid #f0f0f0;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .areaimg {
+      float: left;
+      width: 13%;
+      height: 74px;
+      margin-right: 10%;
+      border: none;
+    }
+    .rightbox {
+      float: left;
+      width: 77%;
+      height: 74px;
+    }
+    .contexts {
+      float: left;
+      width: 100%;
+    }
+    .shopname {
+      float: left;
+      width: 71%;
+      height: 40px;
+      line-height: 40px;
+      font-size: 20px;
+      color: #000000;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+    .intershop {
+      float: left;
+      width: 23%;
+      height: 40px;
+      padding-left: 6%;
+      line-height: 40px;
+      background: url($imgurl + "shopbgs.png") 0 .1rem no-repeat;
+      background-size: 18%;
+      text-align: right;
+      color: #000000;
+    }
+    .detainandistance {
+      float: left;
+      width: 100%;
+    }
+    .detail {
+      float: left;
+      width: 65%;
+      height: 34px;
+      line-height: 34px;
+      font-size: 16px;
+      color: #1a1a1a;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+    .distance {
+      float: left;
+      width: 29%;
+      height: 34px;
+      line-height: 34px;
+      padding-left: 6%;
+      font-size: 16px;
+      color: #1a1a1a;
+    }
+  }
+  @include mz-logobanner;
+  .logobanner {
+    height: 4.3rem;
+  }
+  .shopcontent {
+    width: 100%;
+    .shop-con {
+      width: 100%;
+      margin-top: .31rem;
+      background: #f6f6f6;
+      .shoptitle {
+        width: 94%;
+        padding: .25rem 3%;
+        img {
+          display: block;
+          float: left;
+          width: .78rem;
+          height: .78rem;
+          margin-right: .23rem;
+        }
+        .names {
+          float: left;
+          width: 65%;
+          height: 100%;
+          .shopname {
+            float: left;
+            width: 100%;
+            line-height: .8rem;
+            font-size: .38rem;
+            color: #292a2a;
+          }
+          .allsort {
+            float: left;
+            width: 100%;
+            font-size: .25rem;
+            color: #757575;
+          }
+        }
+        .entershop {
+          position: relative;
+          float: right;
+          width: 15%;
+          height: 100%;
+          padding-right: .5rem;
+          line-height: .9rem;
+          font-size: .25rem;
+          color: #c1c1c1;
+        }
+        .entershop::after {
+          position: absolute;
+          top: .28rem;
+          right: .1rem;
+          content: "";
+          font-size: 0;
+          width: .3rem;
+          height: .3rem;
+          background: url("../images/moreshoparror.png") 0 0 no-repeat;
+          background-size: contain;
+        }
+      }
+      .logobanner {
+        height: 5rem;
+      }
+    }
+  }
+  .twopathcontent {
+    position: relative;
+    width: 100%;
+    #shoptwopaths {
+      width: 100%;
+      padding: .23rem 0;
+    }
+  }
+  .swiper-wrapper {
+    width: 100%;
+    @include mz-twopath;
+  }
+  .arealist {
+    position: absolute;
+    top: 52px;
+    display: none;
+    width: 180px;
+    background: #efefef;
+    li {
+      width: 100%;
+      height: 52px;
+      line-height: 52px;
+      font-size: 20px;
+      text-align: center;
+      color: #000000;
+      border-bottom: 1px solid #fff;
+    }
+  }
+  .circlelist {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 180px;
+    width: 180px;
+    background: #fff;
+    border: 1px solid #efefef;
+    li {
+      width: 100%;
+      height: 52px;
+      line-height: 52px;
+      font-size: 20px;
+      text-align: center;
+      color: #000000;
+      border-bottom: 1px solid #efefef;
+    }
+    .lisels {
+      color: #e94c1a;
+    }
+  }
+}
+.newsearchwrap {
+  display: none;
+  width: 100%;
+  .searchbox {
+    width: 100%;
+    height: 56px;
+    margin: auto;
+    padding: 12px 0;
+    line-height: 56px;
+    background: #ff5a00;
+    label {
+      display: block;
+      width: 90%;
+      height: 56px;
+      margin: 0 auto;
+      line-height: 56px;
+      background: #fff;
+      border-radius: 10px;
+    }
+  }
+  .searchbg {
+    float: right;
+    width: 10%;
+    height: 100%;
+    background: url($imgurl + "searchbg.png") 0 0 no-repeat;
+    background-size: contain;
+  }
+  .searchinput {
+    float: left;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 10%;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    color: #cccccc;
+    border-radius: 20px;
+  }
+  .searchinput::-webkit-input-placeholder {
+    font-size: 20px;
+    color: #cccccc;
+  }
+  .cancelbtn {
+    display: none;
+    float: left;
+    width: 10%;
+    height: 100%;
+    background: url($imgurl + "newchacha.png") 0 0 no-repeat;
+    background-size: contain;
+  }
+  .lastestsearchbox {
+    display: none;
+    width: 100%;
+    h3 {
+      width: 90%;
+      height: 50px;
+      line-height: 50px;
+      font-size: 20px;
+      padding: 15px 5% 0;
+      color: #a9a9a9;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .lastestcontent {
+      width: 100%;
+      padding-top: 20px;
+      li {
+        float: left;
+        margin: 10px;
+        padding: 10px 30px;
+        font-size: 20px;
+        background: #ff5a00;
+        color: #fff;
+        border-radius: 20px;
+      }
+    }
+    .clears {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      font-size: 22px;
+      text-align: center;
+      color: #000;
+    }
+  }
+}
+.shopdetailwrap {
+  display: none;
+  width: 100%;
+  .shopdetaibanner {
+    width: 100%;
+    height: 325px;
+    padding-top: 1.39rem;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .position {
+    width: 90%;
+    height: 68px;
+    line-height: 68px;
+    padding-left: 10%;
+    background: url($imgurl + "positionbg.png") 3% center no-repeat;
+    background-size: 5%;
+    font-size: 20px;
+    color: #1a1a1a;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .shopdetailbox {
+    width: 100%;
+    padding-top: 20px;
+  }
+  .shopdetailtit {
+    width: 100%;
+    li {
+      float: left;
+      width: 50%;
+      height: 50px;
+      line-height: 50px;
+      font-size: 20px;
+      text-align: center;
+      background: #f0f0f0;
+      color: #1a1a1a;
+    }
+    .lisel {
+      background: #e94c1a;
+      color: #fff;
+    }
+  }
+  .shopdetailcon {
+    width: 100%;
+    padding-bottom: 1.39rem;
+    .con {
+      display: none;
+      width: 100%;
+    }
+    .consel {
+      display: block;
+    }
+    .shopimgdetail {
+      width: 100%;
+      li {
+        width: 92%;
+        height: 96px;
+        padding: 20px 4%;
+        font-size: 18px;
+        color: #000000;
+        border-bottom: 1px solid #f0f0f0;
+      }
+    }
+    .imgs {
+      float: left;
+      width: 22%;
+      height: 96px;
+      border: 1px solid #f0f0f0;
+    }
+    .details {
+      overflow: hidden;
+      float: left;
+      width: 71%;
+      height: 0.54875rem;
+      padding: 20px 0 0 5%;
+      font-size: 18px;
+      color: #000000;
+    }
+  }
+  .otherdet {
+    width: 100%;
+    li {
+      width: 92%;
+      height: 60px;
+      padding:0 4%;
+      line-height: 60px;
+      font-size: 18px;
+      color: #000000;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .name {
+      float: left;
+      width: 30%;
+      height: 60px;
+      line-height: 60px;
+      font-size: 20px;
+      color: #000000;
+    }
+    .tail {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-break: keep-all;
+      float: right;
+      width: 70%;
+      height: 60px;
+    }
+  }
+  .gotoshop {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    font-size: 30px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    color: #1a1a1a;
+  }
+}
+.areabox {
+  width: 100%;
+  padding-top: 30px;
+  li {
+    float: left;
+    width: 27%;
+    height: 160px;
+    margin: 0 2.5%;
+    border: 1px solid #e6e6e6;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.header {
+  position: fixed;
+}

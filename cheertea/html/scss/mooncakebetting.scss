@@ -1,0 +1,155 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+//$imgurl: "../images/";
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+.mooncakebettingwrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url($imgurl + "mooncakebg.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  .detailbox {
+    position: fixed;
+    top: -240px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 325px;
+    margin: auto;
+    background: url($imgurl + "actiondetail.png") 0 0 no-repeat;
+    background-size: contain;
+    .detailbtn {
+      position: fixed;
+      top: -30px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 146px;
+      height: 32px;
+      margin: auto;
+      background: url($imgurl + "actiondetailbtn.png") 0 0 no-repeat;
+      background-size: contain;
+    }
+    .message {
+      width: 100%;
+      height: 80px;
+      line-height: 80px;
+      font-size: 36px;
+      text-align: center;
+      color: #d8df20;
+      span {
+        font-size: 48px;
+      }
+    }
+    .smallmessage {
+      width: 100%;
+      height: 80px;
+      line-height: 80px;
+      font-size: 20px;
+      text-align: center;
+      color: #d8df20;
+    }
+  }
+  .ownbox {
+    display: none;
+  }
+  .noownbox {
+    display: none;
+  }
+  #detailboxmessage {
+    top: -200px;
+    padding-top: 150px;
+    display: none;
+    background: url($imgurl + "detailboxmessage.png") 0 30px no-repeat;
+    background-size: contain;
+  }
+  .joiningbtn {
+    display: block;
+    position: fixed;
+    left: 50%;
+    bottom: 100px;
+    width: 260px;
+    height: 53px;
+    margin-left: -130px;
+    background: url($imgurl + "joining.png") 0 0 no-repeat;
+    background-size: contain;
+  }
+  #gamestartbtn {
+    display: none;
+    background: url($imgurl + "gamestartbtn.png") 0 0 no-repeat;
+    background-size: contain;
+  }
+  #sharebtn {
+    display: none;
+    width: 260px;
+    background: url($imgurl + "sharebtn.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+}
+.isDelete {
+  display: none;
+}
+.detailbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  margin: auto;
+  width: 540px;
+  height: 715px;
+  background: url($imgurl + "detailboxbg.png") 0 0 no-repeat;
+  background-size: contain;
+  .detailboxchacha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+  }
+}
+.sharemooncakewrap {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: url($imgurl + "sharemooncakebg.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  .btnbox {
+    width: 100%;
+    .btn {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 260px;
+      height: 50px;
+      margin: auto;
+    }
+    #sharefriend {
+      top: 420px;
+      background: url($imgurl + "sharefriendbtn.png") 0 0 no-repeat;
+      background-size: contain;
+    }
+    #buybuybuybtn {
+      top: 620px;
+      background: url($imgurl + "buybuybuybtn.png") 0 0 no-repeat;
+      background-size: contain;
+    }
+  }
+}
+.sharebox {
+  width: 100%;
+  height: 100%;
+  background: url($imgurl + "shareboxbg.png") 0 0 no-repeat;
+  -o-background-size: 100%;
+  background-size: 100%;
+}

@@ -1,0 +1,332 @@
+@import "./common/mixin.scss";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #f6f6f6;
+}
+h6 {
+    width: 100%;
+    font-size: .25rem;
+}
+.certificationwrapsuccess {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.certificationyesbg {
+    width: 100%;
+    height: 5.08rem;
+    background: url("../images/allconfirmbg.png") 0 0 no-repeat;
+    background-size: contain;
+}
+.certificationfail {
+    display: none;
+    width: 100%;
+    .failcon {
+        width: 100%;
+        height: 6.97rem;
+        background: url("../images/renzhengfail.png") 0 0 no-repeat;
+        background-size: contain;
+    }
+    .returnshiming {
+        display: block;
+        width: 54%;
+        height: 1.13rem;
+        margin: 0 auto;
+        line-height: 1.13rem;
+        background: #ff0000;
+        font-size: .47rem;
+        text-align: center;
+        color: #fff;
+        -webkit-border-radius: .15rem;
+        -moz-border-radius: .15rem;
+        border-radius: .15rem;
+    }
+}
+.usernamecon {
+    width: 100%;
+    li {
+        width: 88%;
+        height: 1.09rem;
+        line-height: 1.09rem;
+        padding: 0 6%;
+        border: .02rem solid #ebebeb;
+        span {
+            float: left;
+            font-size: .34rem;
+            color: #000;
+        }
+        strong {
+            float: right;
+            font-size: .34rem;
+            color: #919191;
+        }
+    }
+}
+/*实名认证页面布局*/
+.certificationwrap {
+    width: 100%;
+    /*  */
+    .isDelete {
+        position: fixed;
+        .fontimgbox {
+            position: fixed;
+            top: 5.5rem;
+            left: 1.6rem;
+            width: 69%;
+            height: 4.34rem;
+        }
+        .fonts {
+            background: url("../images/idzhengmiandemo.png") 0 0 no-repeat;
+            background-size: contain;
+        }
+        .backs {
+            background: url("../images/idbeimiandemo.png") 0 0 no-repeat;
+            background-size: contain;
+        }
+        .shouchis {
+            background: url("../images/idshouchidemo.png") 0 0 no-repeat;
+            background-size: contain;
+        }
+    }
+    .certificationcontent {
+        width: 100%;
+        h3 {
+            width: 90%;
+            height: .66rem;
+            line-height: .66rem;
+            padding: .1rem 5%;
+            font-size: .28rem;
+            background: #fff;
+            span {
+                font-size: .28rem;
+                color: #595757;
+            }
+            .trues {
+                color: #e84c1c;
+            }
+        }
+        .personalinformation {
+            width: 90%;
+            height: 1.02rem;
+            padding: 0 5%;
+            line-height: 1.02rem;
+            background: #f5f5f5;
+            border-bottom: .02rem solid #efeeee;
+            span {
+                float: left;
+                font-size: .36rem;
+                color: #5b5c5c;
+            }
+            em {
+                float: right;
+                font-size: .23rem;
+                color: #ff0000;
+            }
+        }
+        .personcontent {
+            width: 100%;
+            border-bottom: .02rem solid #efeeee;
+            li {
+                width: 86%;
+                height: .91rem;
+                padding-left: 14%;
+                em {
+                    float: left;
+                    width: 16%;
+                    height: .91rem;
+                }
+                label {
+                    float: left;
+                    display: block;
+                    width: 95%;
+                    height: 100%;
+                    border-bottom: .02rem solid #efeeee;
+                    input {
+                        float: left;
+                        width: 80%;
+                        height: 80%;
+                        margin-top: .1rem;
+                        font-size: .3rem;
+                        border: none;
+                        outline: none;
+                        background: #f6f6f6;
+                    }
+                    input::-webkit-input-placeholder {
+                        font-size: .3rem;
+                        color: #918f8f;
+                    }
+                }
+            }
+            li:nth-child(1) {
+                background: url("../images/personconbg.png") 0 0 no-repeat;
+                background-size: contain;
+            }
+            li:nth-child(2) {
+                background: url("../images/personconidbg.png") 0 0 no-repeat;
+                background-size: contain;
+            }
+        }
+        .idcardcontent {
+            width: 100%;
+            h4 {
+                width: 90%;
+                height: .55rem;
+                line-height: .55rem;
+                padding: 0 5% .31rem;
+                font-size: .27rem;
+                color: #918f8f;
+            }
+            .idcardcon {
+                width: 79%;
+                height: 4.53rem;
+                margin: 0 auto .38rem;
+                .title {
+                    width: 100%;
+                    span {
+                        float: left;
+                        font-size: .34rem;
+                        color: #e94b1a;
+                    }
+                    em {
+                        float: left;
+                        width: 6%;
+                        height: .47rem;
+                        margin: 0 0 .16rem 3%;
+                        line-height: .47rem;
+                        font-size: .31rem;
+                        text-align: center;
+                        color: #e94b1a;
+                        border: .02rem solid #e94b1a;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        border-radius: 50%;
+                    }
+                }
+                .idcontent {
+                    position: relative;
+                    width: 100%;
+                    height: 3.88rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    input {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        .idsbumit {
+            display: block;
+            width: 80%;
+            height: .94rem;
+            margin: .5rem auto 2rem;
+            background: #f5f4f4;
+            font-size: .52rem;
+            color: #5b5c5c;
+            border: none;
+            outline: none;
+            -webkit-appearance: none;
+            -webkit-border-radius: .15rem;
+            -moz-border-radius: .15rem;
+            border-radius: .15rem;
+        }
+        .allright {
+            background: #e94b1b;
+            color: #fff;
+        }
+    }
+}
+/*.addidreminds {
+    animation: idremindschange 3s linear;
+}
+@keyframes idremindschange {
+    0% {
+        opacity: 0;
+        z-index: 153;
+    }
+    25% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}*/
+/*实名认证状态页面布局*/
+.certificationstatuswrap {
+    .certificationfail {
+        width: 100%;
+        /*  */
+        .failcon {
+            width: 100%;
+            height: 6.97rem;
+            background: url("../images/renzhengfail.png") 0 0 no-repeat;
+            background-size: contain;
+        }
+        .returnshiming {
+            display: block;
+            width: 54%;
+            height: 1.13rem;
+            margin: 0 auto;
+            line-height: 1.13rem;
+            background: #ff0000;
+            font-size: .47rem;
+            text-align: center;
+            color: #fff;
+            -webkit-border-radius: .15rem;
+            -moz-border-radius: .15rem;
+            border-radius: .15rem;
+        }
+    }
+    .certificationsuccess {
+        width: 100%;
+        /*  */
+        .successcon {
+            width: 100%;
+            height: 5.47rem;
+            background: url("../images/renzhengsuccess.png") 0 0 no-repeat;
+            background-size: contain;
+        }
+    }
+    .certificationyes {
+        width: 100%;
+        
+        .certificationyesbg {
+            width: 100%;
+            height: 5.08rem;
+            background: url("../images/allconfirmbg.png") 0 0 no-repeat;
+            background-size: contain;
+        }
+        .usernamecon {
+            width: 100%;
+            li {
+                width: 88%;
+                height: 1.09rem;
+                line-height: 1.09rem;
+                padding: 0 6%;
+                border: .02rem solid #ebebeb;
+                span {
+                    float: left;
+                    font-size: .34rem;
+                    color: #000;
+                }
+                strong {
+                    float: right;
+                    font-size: .34rem;
+                    color: #919191;
+                }
+            }
+        }
+    }
+}

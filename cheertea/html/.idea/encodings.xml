@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/js/function/baiduMap.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/function/goodscarnum.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/function/isLogin.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/goodscar.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/indiana_index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/nearby.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/qiandao.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/shopnear.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/scss/jijin.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/scss/nearby.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/scss/personcenter.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../vue/config/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../vue/webpack.config.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../../MyRepositories/vue/config/index.js" charset="UTF-8" />
+  </component>
+</project>

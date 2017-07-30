@@ -1,0 +1,165 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+/* $imgurl: "../images/"; */
+.isDelete {
+  display: none;
+}
+.telbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 430px;
+  height: 330px;
+  margin: auto;
+  background: #fff;
+  border-radius: .15rem;
+  h3 {
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 1px solid #e6e6e6;
+    color: #333333;
+  }
+  .phonebox {
+    width: 100%;
+    li {
+      width: 100%;
+      height: 75px;
+      line-height: 75px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 24px;
+      text-align: center;
+      color: #000000;
+    }
+    li:first-child a {
+      background: url($imgurl + "phoneicon.png") .5rem 0 no-repeat;
+      background-size: contain;
+    }
+    li:last-child a {
+      background: url($imgurl + "phoneicon2.png") .5rem 0 no-repeat;
+      background-size: contain;
+    }
+  }
+  .cancelbtn {
+    width: 100%;
+    height: 85px;
+    line-height: 85px;
+    font-size: 30px;
+    text-align: center;
+    color: #ff0000;
+  }
+}
+.valuabletreasurewrap {
+  width: 100%;
+  .valuablebox {
+    width: 100%;
+  }
+  .tabbox {
+    width: 100%;
+    li {
+      float: left;
+      width: 50%;
+      height: 68px;
+      line-height: 68px;
+      background: #e5e5e5;
+      font-size: 30px;
+      text-align: center;
+      color: #333333;
+    }
+    .lisel {
+      background: #979ecc;
+    }
+  }
+  .datebox {
+    width: 100%;
+    li {
+      float: left;
+      width: 33.3%;
+      height: 135px;
+      padding-top: 57px;
+      line-height: 50px;
+      font-size: 24px;
+      text-align: center;
+      color: #1a1a1a;
+      span {
+        font-size: 30px;
+      }
+    }
+  }
+  .dateboxs {
+    display: none;
+    width: 100%;
+    height: 135px;
+    padding-top: 57px;
+    line-height: 50px;
+    font-size: 24px;
+    text-align: center;
+    color: #1a1a1a;
+    span {
+      font-size: 30px;
+    }
+  }
+  .vehiclebox {
+    width: 100%;
+    height: 155px;
+    padding-top: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    border-bottom: 10px solid #f5f5f5;
+    text-align: center;
+    color: #333333;
+  }
+  .slidedownbox {
+    width: 100%;
+    .slide {
+      overflow: hidden;
+      width: 90%;
+      padding: 0 5%;
+      line-height: 87px;
+      border-bottom: 1px solid #cbcbcb;
+    }
+    .nodetobuy {
+      width: 100%;
+      height: 87px;
+      line-height: 87px;
+      font-size: 24px;
+      background: url($imgurl + "downarrowbgs.png") right center no-repeat;
+      background-size: 5%;
+      color: #1a1a1a;
+    }
+    .nodetobuyup {
+      background: url($imgurl + "uparrowbgs.png") right center no-repeat;
+      background-size: 5%;
+    }
+    .content {
+      display: none;
+      width: 100%;
+      line-height: 50px;
+      font-size: 18px;
+      //text-indent: 2em;
+      color: #333333;
+    }
+  }
+  .consultquickly {
+    width: 280px;
+    height: 70px;
+    line-height: 70px;
+    margin: 107px auto 0;
+    background: #9fa7dd;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border-radius: .15rem;
+  }
+}

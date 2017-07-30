@@ -1,0 +1,185 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+/* $imgurl: "../images/"; */
+.yinpiaotreasurewrap {
+  /*display: none;*/
+  width: 100%;
+  padding-bottom: 1.39rem;
+  .yinpiaoul {
+    width: 100%;
+    li {
+      float: left;
+      width: 33.3%;
+      height: 120px;
+      padding-top: 57px;
+      line-height: 50px;
+      font-size: 24px;
+      text-align: center;
+      color: #1a1a1a;
+    }
+    .lisel {
+      color: #ff2626;
+    }
+  }
+  .moneybox {
+    width: 100%;
+    height: 340px;
+    padding-top: 85px;
+    background: #f5f5f5;
+  }
+  h3 {
+    width: 100%;
+    height: 110px;
+    line-height: 110px;
+    font-size: 28px;
+    text-align: center;
+    color: #8f97d1;
+  }
+  .moneyinput {
+    display: block;
+    width: 66%;
+    height: 75px;
+    margin: 0 auto;
+    line-height: 75px;
+    background: #fff;
+    font-size: 24px;
+    text-align: center;
+    outline: none;
+    border: 1px solid #8f97d1;
+    color: #0c0c0c;
+    border-radius: .1rem;
+  }
+  .overplus {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    text-align: center;
+    color: #999999;
+  }
+  .slidedownbox {
+    width: 100%;
+    .slide {
+      overflow: hidden;
+      width: 90%;
+      padding: 0 5%;
+      line-height: 87px;
+      border-bottom: 1px solid #cbcbcb;
+    }
+    .nodetobuy {
+      width: 100%;
+      height: 87px;
+      line-height: 87px;
+      font-size: 24px;
+      background: url($imgurl + "downarrowbgs.png") right center no-repeat;
+      background-size: 5%;
+      color: #1a1a1a;
+    }
+    .nodetobuyup {
+      background: url($imgurl + "uparrowbgs.png") right center no-repeat;
+      background-size: 5%;
+    }
+    .content {
+      display: none;
+      width: 100%;
+      line-height: 50px;
+      font-size: 18px;
+      //text-indent: 2em;
+      color: #333333;
+    }
+  }
+  .buyquickly {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 98px;
+    line-height: 98px;
+    font-size: 36px;
+    background: #8f97d1;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+.paywrap {
+  display: none;
+  width: 100%;
+  .paymentbox {
+    width: 94%;
+    height: 120px;
+    padding: 40px 3% 0;
+    border-top: 20px solid #f5f5f5;
+    border-bottom: 20px solid #f5f5f5;
+    li {
+      float: left;
+      width: 33.33%;
+      height: 50%;
+      font-size: 30px;
+      text-align: center;
+      color: #1a1a1a;
+      span {
+        font-size: 18px;
+        color: #f00;
+      }
+    }
+    li:nth-child(2) {
+      line-height: 64px;
+      color: #8793ea;
+    }
+    li:nth-child(3) {
+      line-height: 64px;
+      color: #ff0000;
+    }
+  }
+  h4 {
+    width: 94%;
+    height: 80px;
+    padding: 0 3%;
+    line-height: 80px;
+    font-size: 24px;
+    color: #1a1a1a;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .payselect {
+    width: 100%;
+    border-bottom: 10px solid #f5f5f5;
+    li {
+      width: 100%;
+      height: 85px;
+      line-height: 85px;
+      text-indent: 3em;
+      font-size: 24px;
+      color: #1a1a1a;
+      span {
+        float: left;
+        width: 85px;
+        height: 85px;
+        background: url($imgurl + "newpayunsel.png") center center no-repeat;
+      }
+      .selspan {
+        background: url($imgurl + "newpaysel.png") center center no-repeat;
+      }
+    }
+    li:nth-child(1) {
+      background: url($imgurl + "juyoupay.png") 1.3rem center no-repeat;
+      background-size: 8%;
+    }
+    li:nth-child(2) {
+      background: url($imgurl + "wxpay.png") 1.3rem center no-repeat;
+      background-size: 8%;
+    }
+  }
+  .nextStep {
+    width: 270px;
+    height: 70px;
+    line-height: 70px;
+    margin: 80px auto 0;
+    background: #a4abe0;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border-radius: .15rem;
+  }
+}
+

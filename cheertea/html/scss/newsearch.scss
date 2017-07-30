@@ -1,0 +1,92 @@
+@import "./common/swiper-3.3.1.min";
+
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+//$imgurl: "../images/";
+.newsearchwrap {
+  width: 100%;
+  .searchbox {
+    width: 100%;
+    height: 56px;
+    margin: auto;
+    padding: 12px 0;
+    line-height: 56px;
+    background: #ff5a00;
+    label {
+      display: block;
+      width: 90%;
+      height: 56px;
+      margin: 0 auto;
+      line-height: 56px;
+      background: #fff;
+      border-radius: 10px;
+    }
+  }
+  .searchbg {
+    float: right;
+    width: 10%;
+    height: 100%;
+    background: url($imgurl + "searchbg.png") 0 0 no-repeat;
+    background-size: contain;
+  }
+  .searchinput {
+    float: left;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 10%;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    color: #cccccc;
+    border-radius: 20px;
+  }
+  .searchinput::-webkit-input-placeholder {
+    font-size: 20px;
+    color: #cccccc;
+  }
+  .cancelbtn {
+    display: none;
+    float: left;
+    width: 10%;
+    height: 100%;
+    background: url($imgurl + "newchacha.png") 0 0 no-repeat;
+    background-size: contain;
+  }
+  .lastestsearchbox {
+    display: none;
+    width: 100%;
+    h3 {
+      width: 90%;
+      height: 50px;
+      line-height: 50px;
+      font-size: 20px;
+      padding: 15px 5% 0;
+      color: #a9a9a9;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .lastestcontent {
+      width: 100%;
+      padding-top: 20px;
+      li {
+        float: left;
+        margin: 10px;
+        padding: 10px 30px;
+        font-size: 20px;
+        background: #ff5a00;
+        color: #fff;
+        border-radius: 20px;
+      }
+    }
+    .clears {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      font-size: 22px;
+      text-align: center;
+      color: #000;
+    }
+  }
+}

@@ -1,0 +1,259 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+//$imgurl: "../images/";
+.returntopandpagesum {
+  display: none;
+}
+/*头部布局*/
+.header {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 90px;
+  background: #fff;
+  -webkit-box-shadow: inset 0 -3px 0 0 #e1e1e2;
+  -moz-box-shadow: inset 0 -3px 0 0 #e1e1e2;
+  -ms-box-shadow: inset 0 -3px 0 0 #e1e1e2;
+  box-shadow: inset 0 -3px 0 0 #e1e1e2;
+  z-index: 100;
+  .searchback {
+    display: block;
+    float: left;
+    width: 14.5%;
+    height: 92%;
+    background: url($imgurl + "searchback.png") center 0 no-repeat;
+    background-size: contain;
+  }
+  h2 {
+    float: left;
+    width: 70.5%;
+    height: 90%;
+    line-height: 1.39rem;
+    text-align: center;
+    font-weight: normal;
+    font-size: .5rem;
+    color: #595757;
+  }
+}
+.freedaywrap {
+  width: 100%;
+  padding-top: 1.39rem;
+  .freebannerbox {
+    width: 100%;
+    height: 320px;
+    border-bottom: 10px solid #f5f5f5;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  h2 {
+    width: 100%;
+    height: 88px;
+    line-height: 88px;
+    font-size: 30px;
+    text-align: center;
+    color: #1a1a1a;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .text {
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    background: #ff7ba4;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  .content {
+    width: 83%;
+    height: 190px;
+    padding: 45px 8.5%;
+    background: #fdebeb;
+    border-bottom: 15px solid #f5f5f5;
+    h3 {
+      width: 100%;
+      padding-bottom: 30px;
+      font-size: 24px;
+      line-height: 40px;
+      color: #ff7ba4;
+    }
+    h4 {
+      width: 100%;
+      padding-bottom: 25px;
+      font-size: 24px;
+      text-align: center;
+      color: #ff7ba4;
+    }
+    h6 {
+      width: 100%;
+      font-size: 18px;
+      text-align: center;
+      color: #999999;
+    }
+  }
+  .datebox {
+    width: 100%;
+    padding-top: 20px;
+    a{
+      text-decoration: none;
+      color:#333;
+    }
+
+    .header{
+      position: fixed;
+      width: 960px;
+      padding-top: 15px;
+      margin: 0 auto;
+      line-height: 30px;
+      text-align: right;
+    }
+    .header a{
+      margin: 0 5px;
+    }
+    .main{
+      width:960px;
+      margin: 50px auto 0;
+    }
+    .code{
+      border:1px dashed #e2e2e2;
+      padding:10px 5px;
+      margin-bottom:25px;
+    }
+    pre {
+      font-family: "Microsoft Yahei",Arial,Helvetica;
+      white-space: pre-wrap; /*css-3*/
+      white-space: -moz-pre-wrap; /*Mozilla,since1999*/
+      white-space: -pre-wrap; /*Opera4-6*/
+      white-space: -o-pre-wrap; /*Opera7*/
+      word-wrap: break-word; /*InternetExplorer5.5+*/
+    }
+    .example{
+      padding-top:40px;
+      margin-bottom:90px;
+    }
+    .example .call{
+      padding:18px 5px;
+      background:#f0f5f8;
+    }
+    .example h2{
+      padding-top:20px;
+      margin-bottom:7px;
+    }
+    .example table {
+      width:100%;
+      table-layout:fixed;
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 1px solid #cee1ee;
+      border-left: 0;
+    }
+    .example thead {
+      border-bottom: 1px solid #cee1ee;
+      background-color: #e3eef8;
+    }
+    .example tr {
+      line-height: 24px;
+      font-size: 13px;
+    }
+    .example tr:nth-child(2n) {
+      background-color: #f0f5f8;
+    }
+    .example tr th,.example tr td {
+      border-left: 1px solid #cee1ee;
+      word-break: break-all;
+      word-wrap: break-word;
+      padding:0 10px;
+      font-weight: normal;
+    }
+    .example tr th {
+      color: #555;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      text-align: left;
+    }
+  }
+  .calendar{
+    width:350px;
+    height: 260px;
+    margin:0 auto 20px;
+    color:#333;
+    overflow: hidden;
+  }
+  .calendar table{
+    float: left;
+    width: 350px;
+    table-layout:fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+  }
+  .calendar td,.calendar th{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+  }
+  .calendar td span{
+    display: block;
+    width: 30px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  .calendar .widget-title{
+    line-height: 30px;
+    text-align: center;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 5px;
+  }
+  .calendar .widget-title span{
+    margin: 0 10px;
+  }
+  .calendar .widget-title a{
+    color:#666;
+    margin:0 5px;
+    text-decoration: none;
+  }
+  .calendar .widget-back{
+    float: right;
+  }
+  .calendar .widget-today span{
+    font-weight: bold;
+  }
+  .calendar .widget-disabled span{
+    color:#999;
+  }
+  .calendar .widget-highlight span{
+    background: #f7b82e;
+    color:#fff;
+    border-radius: 30px;
+  }
+  .calendar .widget-active span{
+    background: #39c;
+    color:#fff;
+    border-radius: 30px;
+  }
+  .calendar .panel{
+    width:100%;
+  }
+  h5 {
+    width: 100%;
+    height: 60px;
+    padding-bottom: 150px;
+    line-height: 60px;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    color: #ff7ba4;
+  }
+  .calendar-block {
+    height: auto;
+  }
+}
+.able2 {
+  background: #ff7ba4 !important;
+  color: #fff !important;
+  border-radius: 50%;
+}

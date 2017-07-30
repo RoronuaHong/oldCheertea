@@ -1,0 +1,56 @@
+$imgurl: "../images/";
+// $imgurl: "http://images.cheertea.com/";
+html,body {
+    width:100%;
+    height:100%;
+}
+.paizhuanpeople {
+    width:100%;
+}
+.top {
+    width:100%;
+    height:87px;
+    border-bottom:3px solid #ffffff;
+}
+.top a {
+    float:left;
+    width:15%;
+    height:90px;
+    background:url($imgurl + "return11_01.png") 0 0 no-repeat; 
+    background-size:contain;
+}
+.top h2 {
+    float:left;
+    font-size:32px;
+    margin-left:28%;
+    color:#1a1a1a;
+    line-height:90px;
+}
+.middle {
+    width:94%;
+    height:326px;
+    padding-top:48px;
+    padding-left:3%;
+    padding-right:3%;
+    border-top:1px solid #cccccc;
+    border-bottom:12px solid #f5f5f5;
+}
+.middle p {
+    width:100%;
+    color:#4e4e4e;
+    line-height:36px;
+}
+.middle span {
+    color:#ef7c21;
+}
+.submitt {
+    width:72%;
+    height:70px;
+    line-height:70px;
+    text-align:center;
+    margin: 219px auto;
+    font-size:30px;
+    background-color:#e87419;
+    color:#ffffff;
+    border-radius:5px;
+}

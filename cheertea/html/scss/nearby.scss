@@ -1,0 +1,418 @@
+@import "./common/swiper-3.3.1.min";
+
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+//$imgurl: "../images/";
+.focusbox {
+  display: none !important;
+}
+.BMap_geolocationContainer {
+  position: fixed;
+  bottom: 200px;
+}
+.BMap_scaleCtrl {
+  position: fixed;
+  left: 200px !important;
+  bottom: 200px !important;
+}
+.BMap_stdMpCtrl {
+  bottom: 200px !important;
+}
+body, html {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.nearbyone {
+  width: 100%;
+  height: 100%;
+}
+.bigbox {
+  position: relative;
+  width: 100%;
+  height: 20%;
+  padding-top: 1.39rem;
+}
+#nearbyslim {
+  width: 100%;
+  height: 100%;
+  .BMap_geolocationContainer {
+    position: fixed;
+    top: 320px;
+    right: 40px;
+  }
+}
+.innerbox {
+  width: 100%;
+  z-index: 100;
+}
+.nearbytwo {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+#allmap {
+  width: 100%;
+  height: 100%;
+}
+.centerPoint {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: .5rem;
+  height: .7rem;
+  margin: auto;
+  z-index: 150px;
+  background: url($imgurl + "baidumap.png") 0 -9.75rem no-repeat;
+  background-size: 400%;
+}
+.returntopandpagesum {
+  display: none;
+}
+.header {
+  position: fixed;
+}
+.nearbywrap {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.historybox {
+  width: 100%;
+  li {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+    text-align: center;
+  }
+}
+.nobtn {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 22px;
+  text-align: center;
+}
+.clearbtn {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 22px;
+  text-align: center;
+}
+.chengaddressbox {
+  display: none;
+  width: 100%;
+  height: 100%;
+  .changehead {
+    position: relative;
+    width: 100%;
+    height: 1.6rem;
+    padding-top: 1.6rem;
+    .addreinput {
+      display: block;
+      width: 70%;
+      height: .8rem;
+      margin: 20px auto;
+      padding: 0 5%;
+      line-height: .8rem;
+      box-shadow: 0 0 0 2px #ccc;
+      border: none;
+      outline: none;
+      font-size: 26px;
+      border-radius: .5rem;
+    }
+  }
+  .changesearch {
+    position: absolute;
+    top: 1.9rem;
+    right: 80px;
+    width: 50px;
+    height: 50px;
+    background: url($imgurl + "othli3.png") 0 0 no-repeat;
+    background-size: cover;
+  }
+  .changecon {
+    width: 90%;
+    padding: 0 5%;
+  }
+  .positionbox {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+  }
+  .addretext {
+    float: left;
+    width: 80%;
+    height: 70px;
+    font-size: 22px;
+  }
+  .reposition {
+    float: right;
+    width: 100px;
+    height: 70px;
+    font-size: 22px;
+    text-align: center;
+  }
+  .addressul {
+    width: 100%;
+    li {
+      width: 100%;
+      line-height: 50px;
+      font-size: 28px;
+      text-align: center;
+    }
+  }
+}
+.bighisbox {
+  width: 90%;
+  padding: 0 5%;
+}
+.uparrow, .downarrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -114%;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 50px;
+  text-align: center;
+  z-index: 201;
+  transform: rotate(-180deg);
+  transform-origin: center center;
+  color: #c3c3c3;
+}
+.downarrow {
+  bottom: 92%;
+  line-height: 1.5rem;
+  transform: rotate(0);
+}
+.bigsearchbox {
+  display: none;
+  width: 100%;
+  height: 100%;
+  .headerbox {
+    position: relative;
+    width: 100%;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    padding-top: 1.39rem;
+    .btnsear {
+      position: absolute;
+      top: 1.78rem;
+      right: 1.88rem;
+      width: 50px;
+      height: 50px;
+      background: url($imgurl + "othli3.png") 0 0 no-repeat;
+      background-size: cover;
+    }
+  }
+  .cancelbtn {
+    float: right;
+    width: 100px;
+    font-size: 22px;
+    text-align: center;
+    color: #838383;
+  }
+  .resultsul {
+    display: none;
+    position: absolute;
+    top: 180px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #c3c3c3;
+    li {
+      width: 100%;
+      height: 64px;
+      line-height: 64px;
+      background: #fff;
+      font-size: 26px;
+      text-align: center;
+      border-bottom: 1px solid #c3c3c3;
+      /*a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 26px;
+        color: #030303;
+      }*/
+    }
+  }
+  .inputs {
+    width: 440px;
+    height: 50px;
+    margin-left: 50px;
+    padding: 5px 20px;
+    line-height: 40px;
+    font-size: 26px;
+    box-shadow: 0 0 0 2px #ccc;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+  }
+}
+.searchbox {
+  position: absolute;
+  top: 110px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff url($imgurl + "othli3.png") -.05rem 0 no-repeat;
+  background-size: cover;
+  z-index: 151;
+}
+.messagebox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 250px;
+  max-height: 64px;
+  border: 1px solid #909039;
+  background: #ffffff;
+  font-size: 16px;
+  z-index: 151;
+}
+.addresshisbox {
+  display: none;
+}
+.goodlistbox {
+  -webkit-overflow-scrolling: touch;
+  y-overflow: scroll;
+  overflow: scroll;
+  width: 100%;
+  height: 72%;
+  .conbox {
+    width: 90%;
+    float: left;
+    margin: 0 0;
+    padding: 10px 5%;
+    border-bottom: 1px solid #c3c3c3;
+  }
+}
+.newconbox {
+  margin:0 auto;
+  .chakanbtn {
+    width: 20%;
+    height: 50px;
+    margin:0 auto;
+    line-height: 50px;
+    font-size: 22px;
+    text-align: center;
+    color: #0c0c0c;
+    border: 1px solid #ccc;
+    border-radius: .15rem;
+  }
+}
+.texts {
+  width: 100%;
+  height: 86px;
+  line-height: 86px;
+  font-size: 24px;
+  text-align: center;
+  color: #020202;
+}
+.chakanbtn {
+
+}
+.content {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+}
+.conbox {
+  width: 96%;
+  height: 150px;
+  line-height: 150px;
+  margin: 10px 2%;
+  background: #fff;
+  opacity: .96;
+  .conimg {
+    float: left;
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0 15px;
+    border-radius: 50%;
+  }
+  .otherbox {
+    overflow: hidden;
+    float: left;
+    width: 66%;
+    height: 150px;
+    margin-top: 15px;
+    .tit {
+      width: 100%;
+      height: 35px;
+      line-height: 35px;
+      .big {
+        overflow: hidden;
+        float: left;
+        max-width: 375px;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 26px;
+        color: #5b5c5c;
+        text-overflow: ellipsis;
+        word-break: keep-all;
+        white-space: nowrap;
+      }
+      .classify {
+        float: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: keep-all;
+        white-space: nowrap;
+        width: 100px;
+        height: 40px;
+        padding: 0 10px;
+        line-height: 40px;
+        font-size: 22px;
+        text-align: center;
+        color: #595757;
+      }
+    }
+  }
+  .address {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    line-height: 30px;
+    font-size: 18px;
+    .addre {
+      overflow: hidden;
+      float: left;
+      width: 100%;
+      height: 50px;
+      padding: 0 10px;
+      line-height: 30px;
+      color: #595757;
+    }
+    .distance {
+      float: left;
+      width: 100%;
+      padding: 0 10px;
+      color: #595757;
+    }
+  }
+}
+#baiducon {
+  width: 100%;
+  height: 200px;
+}
+.swiper-wrapper {
+  width: 100%;
+}

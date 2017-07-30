@@ -1,0 +1,297 @@
+@import "./common/pccommon.scss";
+
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+//$imgurl: "../images/";
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+.isDelete {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.6;
+  z-index: 101;
+}
+.loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  background: url($imgurl + "loading.gif") 0 0 no-repeat;
+  background-size: 100% 100%;
+  z-index: 101;
+}
+.alertbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 450px;
+  height: 540px;
+  margin: auto;
+  background: url($imgurl + "cjlistboxbg.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  z-index: 101;
+  .newchacha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+  }
+  .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 72%;
+    height: 80px;
+    margin: auto;
+    line-height: 30px;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+  }
+}
+.choujianglistbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 775px;
+  height: 930px;
+  background: url($imgurl + "cjlistboxbg.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  z-index: 102;
+  .chacha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+  }
+  .cjinnerbox {
+    width: 740px;
+    height: 860px;
+    padding-top: 64px;
+  }
+  .memberbox {
+    width: 92%;
+    margin: 0 4%;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    ul {
+      width: 100%;
+    }
+    .mimg {
+      display: block;
+      width: 45px;
+      height: 45px;
+      margin: 3px auto 0;
+      border-radius: 50%;
+    }
+    .ids {
+      float: left;
+      display: inline-block;
+      width: 100%;
+      height: 13px;
+      line-height: 13px;
+      padding-top: 2px;
+      font-size: 14px;
+      color: #fefdfd;
+    }
+    li {
+      float: left;
+      height: 65px;
+      line-height: 65px;
+      font-size: 29px;
+      text-align: center;
+      color: #fff;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+    }
+    li:first-child {
+      width: 140px;
+    }
+    li:first-child + li {
+      width: 155px;
+    }
+    li:first-child + li + li {
+      width: 259.5px;
+      padding: 0 60px;
+    }
+  }
+  .title {
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    font-size: 35px;
+    text-align: center;
+    color: #fcfcfc;
+  }
+}
+.imgbox {
+  float: left;
+  width: 86.5px;
+  height: 60px;
+}
+.cjindexwrap {
+  position: relative;
+  width: 100%;
+  height: 1400px;
+  background: url($imgurl + "cjindexbg.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+}
+.jianglabbox {
+  position: absolute;
+  top: -800px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 390px;
+  height: 105px;
+  line-height: 105px;
+  margin: auto;
+  font-size: 70px;
+  color: #f62e3e;
+  background: url($imgurl + "downbg.png") right center no-repeat;
+  background-size: 15%;
+  cursor: pointer;
+  .chou {
+    font-size: 50px;
+    color: #fce9b1;
+  }
+}
+.ups {
+  background: url($imgurl + "upbg.png") right center no-repeat;
+  background-size: 15%;
+}
+.cjlistbox {
+  display: none;
+  position: absolute;
+  top: -440px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 390px;
+  height: 265px;
+  line-height: 105px;
+  margin: auto;
+  background: url($imgurl + "cjselectbg.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  li {
+    height: 42px;
+    margin:0 10%;
+    line-height: 42px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #fa5462;
+    cursor: pointer;
+    border: 3px solid transparent;
+    &:hover {
+      border: 3px dotted #e83948;
+    }
+  }
+}
+.yaoqing {
+  position: absolute;
+  top: 450px;
+  right: 300px;
+  display: block;
+  width: 170px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 22px;
+  text-align: center;
+  color: #fc7830;
+  border: 3px solid #fc7830;
+  border-radius: 15px;
+}
+.startbtn {
+  position: absolute;
+  top: 1200px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 255px;
+  height: 95px;
+  margin: auto;
+  background: url($imgurl + "startbg.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.chuizi {
+  position: absolute;
+  top: 450px;
+  left: 200px;
+  width: 145px;
+  height: 190px;
+  background: url($imgurl + "chuizi.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  transition: transform .3s linear;
+  z-index: 100;
+}
+.chuiziDo {
+  transform: rotate(-50deg) translate(-100px, 80px);
+}
+.eggbigbox {
+  overflow: hidden;
+  position: absolute;
+  top: 700px;
+  left: 0;
+  width: 1920px;
+  height: 150px;
+  z-index: 50;
+}
+.eggul {
+  width: 3840px;
+  height: 150px;
+  li {
+    float: left;
+    width: 120px;
+    height: 150px;
+    margin: 0 36px;
+    background: url($imgurl + "fulleggbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+  }
+  .choice {
+    background: url($imgurl + "pooleggbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+}
+.chuansongdaibox {
+  position: absolute;
+  top: 800px;
+  left: 0;
+  width: 1920px;
+  height: 205px;
+  background: url($imgurl + "csdbg1.png") 0 10px no-repeat;
+  background-size: 100% 100%;
+}
+.zhuangdong {
+  background: url($imgurl + "csdbg2.gif") 0 0 no-repeat;
+  background-size: 100% 100%;
+}

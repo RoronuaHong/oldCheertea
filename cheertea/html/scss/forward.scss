@@ -1,0 +1,94 @@
+$imgurl: "../images/";
+html,body {
+    width:100%;
+    height:100%;
+}
+.forwardwrap {
+    width:100%;
+    height:1674px;
+    background-color:#e6e6e6;
+}
+.top {
+    position:relative;
+    width:100%;
+    height:75px;
+    line-height:75px;
+    text-align:center;
+    font-size:29px;
+    color:#1a1a1a;
+    background-color:#ffffff;
+}
+.return {
+    position:absolute;
+    left:3%;
+    top:23px;
+    width:3%;
+    height:30px;
+    background:url($imgurl + "indiana-back.png") 0 0 no-repeat;
+    background-size:contain; 
+}
+.message {
+    width:90%;
+    height:193px;
+    margin:0 auto;
+    margin-bottom:19px;
+    background-color:#ffffff;
+}
+.up,.up1 {
+    width:100%;
+    height:39px;
+    line-height:39px;
+    margin-top:19px;
+}
+.up {
+    background-color:#ff4e00;
+}
+.up1 {
+    background-color:#cccccc;
+}
+.first {
+    color:#ffffff;
+    font-size:17px;
+    margin-left:1%;
+}
+.second {
+    color:#ffffff;
+    margin-left:12%;
+    font-size:15px;
+}
+.third {
+    color:#ffffff;
+    font-size:15px;
+}
+.pic {
+    float:left;
+    width:11%;
+    height:59px;
+    margin-top:17px;
+    margin-left:2%;
+    border-radius:80%;
+    background-size:100% 100%;
+}
+.more {
+    float:left;
+    margin-left:2%;
+    margin-top:22px;
+}
+.look {
+    float:left;
+    width:21%;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+    margin-top:90px;
+    margin-left:8%;
+    border-radius:5%;
+    color:#ffffff;
+    background-color:#ff0000;
+}
+.num {
+    color:#ff0000;
+}
+.count {
+    color:#ff550a;
+}

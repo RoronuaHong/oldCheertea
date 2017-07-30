@@ -1,0 +1,72 @@
+$imgurl: "../images/";
+// $imgurl: "http://images.cheertea.com/";
+html,body {
+    width:100%;
+    height:100%;
+}
+.commentsreplywrap {
+    width:100%;
+}
+.top {
+    width:100%;
+    height:78px;
+    line-height:78px;
+    text-align:center;
+    font-size:32px;
+    color:#333333;
+}
+.top img {
+    float:left;
+    width:4%;
+    height:43px;
+    margin-left:3%;
+    margin-top:20px;
+}
+.detailedreply {
+    width:100%;
+}
+.time {
+    width:100%;
+    padding-top:22px;
+    margin-bottom:15px;
+}
+.name {
+    width:100%;
+    height:75px;    
+    border-top:10px solid #e6e6e6;
+    border-bottom:1px solid #e0e0e0;
+}
+.name img {
+    float:left;
+    width:7%;
+    height:42px;
+    margin-left:2%;
+    border-radius:50%;
+    margin-top:17px;
+}
+.name span {
+    float:left;
+    font-size:20px;
+    color:#323232;
+    margin-left:2%;
+    margin-top:28px;
+}
+.name em {
+    float:right;
+    color:#898989;
+    font-size:18px;
+    margin-right:19px;
+    margin-top:28px;
+}
+.time p {
+    font-size:17px;
+    color:#515151; 
+    margin-left:2%;
+    margin-bottom:15px; 
+}
+.time em {
+    font-size:15px;
+    margin-top:15px;
+    margin-left:2%;
+    color:#818181;
+}

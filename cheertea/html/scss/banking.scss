@@ -1,0 +1,44 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+/* $imgurl: "../images/"; */
+body, html {
+  width: 100%;
+  height: 100%;
+  background: #f0eff4;
+}
+.bankingwrap {
+  padding-top: 50px;
+  .moneybox {
+    width: 92.5%;
+    height: 88px;
+    padding: 0 3.75%;
+    line-height: 88px;
+    background: #8f97d1;
+    font-size: 30px;
+    color: #ffffff;
+  }
+  strong {
+    float: left;
+  }
+  .price {
+    float: left;
+    font-size: 30px;
+    color: #4c4c4c;
+  }
+  .bigbox {
+    width: 100%;
+    .bigbolist {
+      width: 94%;
+      height: 222px;
+      margin: 0 3%;
+      padding-top: 18px;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 2.871875rem;
+    }
+  }
+}

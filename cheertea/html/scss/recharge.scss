@@ -1,0 +1,168 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+/*$imgurl: "../images/";*/
+
+/*充值页面布局*/
+.rechargewrap {
+  //display: none;
+  width: 100%;
+  .recharbox {
+    width: 87.5%;
+    margin: 0 auto;
+  }
+  .recharinnerbox {
+    padding-top: 20px;
+    width: 100%;
+    h2 {
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      font-size: 20px;
+      color: #000000;
+    }
+    h3 {
+      width: 100%;
+      padding-top: 20px;
+      font-size: 20px;
+      color: #e94c1a;
+    }
+  }
+  label {
+    display: block;
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    input {
+      display: block;
+      width: 90%;
+      height: 100%;
+      padding: 0 5%;
+      font-size: 18px;
+      text-align: center;
+      outline: none;
+      border: none;
+      box-shadow: 0 0 0 1px #cccccc;
+      border-radius: 10px;
+    }
+    input::-webkit-input-placeholder {
+      font-size: 18px;
+      text-align: left;
+      color: #cccccc;
+    }
+    .inputcolor {
+      box-shadow: 0 0 0 1px #e94c1a;
+      color: #e94c1a;
+    }
+  }
+  .preprice::before {
+    position: absolute;
+    content: "￥";
+    width: 30px;
+    height: 64px;
+    font-size: 20px;
+    text-align: center;
+    color: #e94b1a;
+  }
+  .recharnextbtn {
+    width: 300px;
+    height: 50px;
+    background: #cccccc;
+    margin: 165px auto 0;
+    line-height: 50px;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+  }
+  .nextcolor {
+    background: #e94c1a;
+  }
+}
+/*选择支付方式页面布局*/
+.selectpaywrap {
+  display: none;
+  width: 90%;
+  margin: 0 5%;
+  .selectpaybox {
+    width: 100%;
+    padding-top: 20px;
+    .greenrechargebox {
+      width: 100%;
+      height: 64px;
+      line-height: 64px;
+      font-size: 20px;
+      border-bottom: 1px solid #e0e0e0;
+      color: #000000;
+    }
+  }
+  .name {
+    float: left;
+  }
+  .price, .prices {
+    float: right;
+    color: #e94b1a;
+  }
+  h5 {
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    font-size: 20px;
+    color: #000000;
+  }
+  .payment {
+    width: 100%;
+    li {
+      width: 55%;
+      padding-left: 45%;
+      height: 77px;
+      line-height: 77px;
+      font-size: 20px;
+      color: #000000;
+      background: url($imgurl + "bindphonesprite.png") -0.6rem -1.8rem no-repeat;
+      background-size: 37%;
+    }
+    .lisel {
+      background: url($imgurl + "bindphonesprite.png") -0.6rem -4.5rem no-repeat;
+      background-size: 37%;
+    }
+    li::before {
+      position: absolute;
+      top: 3.725rem;
+      left: 3.4rem;
+      content: " ";
+      width: 60px;
+      height: 60px;
+    }
+    /*li:nth-child(1)::before {
+      background: url($imgurl + "bindphonesprite.png") -0.0437rem -8.8rem no-repeat;
+      background-size: 270%;
+    }*/
+    li:nth-child(1)::before {
+      background: url($imgurl + "bindphonesprite.png") 0.0237rem -10.8rem no-repeat;
+      background-size: 270%;
+    }
+    li:nth-child(2)::before {
+      top: 4.9225rem;
+      background: url($imgurl + "yucunkuan.png") .05rem 0 no-repeat;
+      background-size: 93%;
+    }
+    /*li:nth-child(3)::before {
+      top: 6.1225rem;
+      background: url($imgurl + "bindphonesprite.png") -0.0437rem -12.5rem no-repeat;
+      background-size: 270%;
+    }*/
+  }
+  .containcharge {
+    width: 300px;
+    height: 46px;
+    line-height: 46px;
+    margin: 55px auto 0;
+    background: #e94b1a;
+    font-size: 24px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10px;
+  }
+}

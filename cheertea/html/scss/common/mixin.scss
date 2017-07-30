@@ -1,0 +1,437 @@
+/*cdn*/
+$imgurl: "http://img.cheetea.com/";
+
+/*本地*/
+/* $imgurl: "../images/"; */
+
+/*下划线*/
+@mixin mz-underlines {
+	border-bottom: .03rem solid #ededed;
+}
+/*大图logobanner*/
+@mixin mz-logobanner {
+	.logobanner {
+		width: 100%;
+		height: 3.91rem;
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+/*提示按钮*/
+@mixin mz-remind {
+	.isremind {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 79%;
+		height: 1.05rem;
+		margin: auto;
+		line-height: 1.05rem;
+		background: rgba(0, 0, 0, .5);
+		font-size: .38rem;
+		text-align: center;
+		color: #fff;
+		border-radius: .5rem;
+		opacity: 1;
+	}
+}
+/*确定按钮*/
+@mixin mz-containbtn {
+	.containbtn {
+		display: block;
+		width: 7.81rem;
+		height: 1.25rem;
+		margin: 0 auto;
+		line-height: 1.25rem;
+		background: #e94c1a;
+		font-size: .44rem;
+		text-align: center;
+		color: #fff;
+		-webkit-border-radius: .15rem;
+		-moz-border-radius: .15rem;
+		-ms-border-radius: .15rem;
+		border-radius: .15rem;
+	}
+}
+
+/*头部标题链接*/
+@mixin mz-indextitle {
+	.indextitle {
+		position: relative;
+    	width: 100%;
+    	height: 1rem;
+    	line-height: 1rem;
+		border-top: .19rem solid #e9e3e3;
+		background: #fff;
+		background-size: 100%;
+    	.moresome {
+    		display: block;
+    		position: absolute;
+    		right: 0;
+    		top: 0;
+    		padding-right: .5rem;
+    		font-size: .25rem;
+    		text-align: center;
+    		color: #000;
+    	}
+    	.innertitle {
+    		height: 100%;
+    		margin: 0 auto;
+    		text-align: center;
+    		span {
+    			display: inline-block;
+    			width: .55rem;
+    			height: 100%;
+    			background: url($imgurl + "titlehengxian.png") 0 0rem no-repeat;
+    			background-size: cover;
+    		}
+    		strong {
+    			position: relative;
+    			top: -.35rem;
+				display: inline-block;
+				height: 100%;
+    			padding: 0 .19rem;
+    			font-size: .38rem;
+				font-weight: bold;
+    			color: #000;
+    		}
+    	}
+    }
+}
+/*查看更多*/
+@mixin showmores {
+	.showmore {
+		display: none;
+		position: absolute;
+		top: 15%;
+		right: -1rem;
+		float: left;
+		width: .5rem;
+		height: 2.88rem;
+		padding: 0 .25rem;
+		font-size: .35rem;
+		text-align: center;
+		color: #c1c1c1;
+		background: url($imgurl + "reaarrow.png") .8rem center no-repeat;
+		background-size: 20%;
+	}
+}
+/*一个半滑动*/
+@mixin mz-onepath {
+	.one-pathcon {
+		width: 90%;
+		height: 6.63rem;
+		margin: auto;
+		img {
+			display: block;
+			width: 100%;
+			height: 5.52rem;
+		}
+		.contents {
+			float: left;
+			width: 77.5%;
+			height: 1.11rem;
+			.one-title {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				word-break: keep-all;
+				white-space: nowrap;
+				width: 100%;
+				height: .53rem;
+				line-height: .53rem;
+				font-size: .25rem;
+				color: #000;
+			}
+			.one-price {
+				width: 100%;
+				height: .58rem;
+				line-height: .58rem;
+				span {
+					font-size: .28rem;
+				}
+				.newprice {
+					float: left;
+					height: 100%;
+					color: #ff0000;
+					strong {
+						font-size: .41rem;
+					}
+				}
+				.oldprice {
+					float: left;
+					height: 100%;
+					padding-left: .15rem;
+					color: #bdbdbd;
+					text-decoration: line-through;
+				}
+			}
+		}
+		.goodcar {
+			float: left;
+			width: 22.5%;
+			height: 1.11rem;
+			background: url($imgurl + "sprites.png") -3.35rem -2rem no-repeat;
+			background-size: 10rem 4.7rem;
+		}
+	}
+}
+/*两个半滑动*/
+@mixin mz-twopath {
+	.two-pathcon {
+		width: 90%;
+		//height: 4.69rem;
+		margin: auto;
+		img {
+			box-sizing: border-box;
+			display: block;
+			width: 100%;
+			height: 3.75rem;
+			border: 1px solid #e6e6e6;
+			margin: 10px 0;
+		}
+		.contents {
+			width: 100%;
+			height: .94rem;
+			.two-title {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				word-break: keep-all;
+				white-space: nowrap;
+				width: 100%;
+				height: .59rem;
+				line-height: .59rem;
+				font-size: .28rem;
+				color: #000000;
+			}
+			.two-price {
+				width: 100%;
+				height: 0.5rem;
+				line-height:  0.5rem;
+				span {
+					font-size: .32rem;
+				}
+				.newprice {
+					float: left;
+					height: 100%;
+					color: #ff0000;
+					strong {
+						font-size: .41rem;
+					}
+				}
+				.oldprice {
+					float: left;
+					height: 100%;
+					padding-left: .15rem;
+					color: #bdbdbd;
+					text-decoration: line-through;
+				}
+			}
+		}
+	}
+}
+/*所有商品*/
+@mixin mz-allgoodmessage {
+	.recommendgoods {
+	    width: 99%;
+	    padding: .13rem .05%;
+	    background: #fff;
+	    .borders {
+	        float: left;
+	        width: 2%;
+	        height: 5.94rem;
+	    }
+	    .recommendgoodscon {
+	    	position: relative;
+	        float: left;
+	        width: 48%;
+	        height: 6.34rem;
+	        margin-bottom: .13rem;
+	        background: white;
+	        border-left: .15rem solid #fff;
+	        img {
+	            display: block;
+	            width: 100%;
+	            height: 4.53rem;
+	        }
+	        .goodsmessage {
+	            width: 100%;
+	            height: 1.17rem;
+	            .goodscar, .goodscars {
+	                float: left;
+	                width: 20%;
+	                height: 100%;
+	                background: url($imgurl + "sprites.png") -3.35rem -2rem no-repeat;
+					background-size: 10rem 4.7rem;
+	            }
+	        }
+			.messages, .messagess {
+				float: left;
+				width: 100%;
+				height: .57rem;
+				padding-top: .2rem;
+				p {
+					font-size: .35rem;
+					color: black;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					word-break: keep-all;
+					white-space: nowrap;
+				}
+				span {
+					float: left;
+					padding-top: .2rem;
+					font-size: .28rem;
+					color: #ff0000;
+					em {
+						font-size: .41rem;
+						color: #ff0000;
+					}
+				}
+				strong {
+					display: none;
+					float: left;
+					padding: .35rem 0 0 .4rem;
+					font-size: .22rem;
+					color: #595757;
+					text-decoration: line-through;
+				}
+			}
+			.messagess {
+				padding-top: -.2rem;
+				span {
+					padding-top: 0;
+				}
+			}
+	    }
+	}
+}
+/*列表清单*/
+@mixin mz-checkoutlist {
+	.newcheckbox {
+		width: 100%;
+		border-bottom: .03rem solid #dbdada;
+		.title {
+			width: 100%;
+			height: .92rem;
+			padding-left: .95rem;
+			line-height: .92rem;
+			font-size: .29rem;
+			color: #595757;
+			background: url($imgurl + "fahuobg.png") 0 0 no-repeat;
+			background-size: contain;
+		}
+		.checkchildbox {
+			width: 86%;
+			padding: 0 7%;
+			img {
+				float: left;
+				display: block;
+				width: 1.67rem;
+				height: 1.67rem;
+				margin: 0 .31rem .31rem 0;
+			}
+		}
+		.rightcon {
+			float: left;
+			width: 6.44rem;
+			height: 1.67rem;
+			margin-bottom: .31rem;
+			.names {
+				overflow: hidden;
+				width: 100%;
+				height: .82rem;
+				font-size: .31rem;
+				color: #595757;
+			}
+			.pricebox {
+				width: 100%;
+				height: .64rem;
+				padding-top: .25rem;
+				line-height: .64rem;
+				.price {
+					float: left;
+					font-size: .41rem;
+					color: #e71f19;
+				}
+				.numbers {
+					float: right;
+					font-size: .29rem;
+					color: #5a5b5b;
+				}
+			}
+		}
+	}
+}
+/*li输入框*/
+@mixin mz-licontent {
+	li {
+		width: 100%;
+		height: 1.33rem;
+		line-height: 1.33rem;
+		@include mz-underlines;
+		.name {
+			float: left;
+			width: 30%;
+			height: 1.33rem;
+			font-size: .38rem;
+			color: #313232;
+			em {
+				float: left;
+				padding-right: 5%;
+				color: #e94c1a;
+			}
+		}
+		.liinputs {
+			float: left;
+			width: 40%;
+			height: .8rem;
+			margin-top: .28rem;
+			font-size: .34rem;
+			border: none;
+			outline: none;
+		}
+		.liinput::-webkit-input-placeholde {
+			color: #bdbcbd;
+		}
+		.veris {
+			float: right;
+			padding: 0 4%;
+			line-height: 1.31rem;
+			font-size: .34rem;
+			text-align: center;
+			box-shadow: -.03rem 0 0 #d7d7d7;
+			color: #e94c1a;
+		}
+		.others {
+			float: right;
+			width: 70%;
+			height: 100%;
+			font-size: .31rem;
+			text-align: right;
+			color: #737373;
+		}
+	}
+}
+
+/*.img-md($x:100%,$y:100%){
+	display:block;
+	position:relative;
+	width:$x;
+	height:$y;
+	img{
+		max-width: 100%;
+		max-height: 100%;
+		margin:auto;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right:0;
+	}
+}*/

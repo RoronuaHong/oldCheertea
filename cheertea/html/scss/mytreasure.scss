@@ -1,0 +1,422 @@
+
+/*cdn*/
+// $imgurl: "http://images.cheertea.com/";
+/*本地*/
+$imgurl: "../images/";
+html,body {
+    width:100%;
+    height:100%;
+}
+.mytreasurewrap {
+    width:100%;
+}
+.top {
+    width:100%;
+    height:88px;
+    border-bottom:1px solid #e6e6e6;
+    img {
+        float:left;
+        width:3%;
+        height:34px;
+        margin-top:27px;
+        margin-left:3%;
+    }
+    em {
+        float:left;
+        font-size:36px;
+        color:#000000;
+        line-height:88px;
+        margin-left:35%;
+    }
+}
+
+.middle {
+    width:100%;
+    height:166px; 
+}
+.news {
+    width:100%;
+    height:100px;
+    background-color:#f5f5f5;
+    border-bottom:3px solid #ff4e00;
+    img {
+        float:left;
+        width:12%;
+        line-height:166px;
+        margin-left:6%;
+        margin-top:16px;
+    }
+}
+
+.more {
+    float:left;
+    height:52px;
+    margin-left:2%;
+    margin-top:23px;
+    font-size:18px;
+    color:#000000;
+}
+.num {
+    margin-top:16px;
+}
+.tab {
+    float:left;
+    width:100%;
+    span {
+        height:50px;
+    }
+}
+ 
+.tab1 {
+    float:left;
+    width:31%;
+    height:55px;
+    line-height:55px;
+    text-align:center;
+    margin-left:39px;
+    color:#fff3f0;
+    background:url($imgurl + "orange.gif") 0 0 no-repeat;
+    background-size:100% 100%;
+}
+
+.tab2,.tab3 {
+    float:left;
+    width:31%;
+    height:55px;
+    line-height:55px;
+    text-align:center;
+    color:#060606;
+    background:url($imgurl + "gray.gif") 0 0 no-repeat;
+    background-size:100% 100%;
+}
+.session {
+    float:left;
+    width:100%;
+}
+.first {
+    position:relative;
+    width:100%;
+    height:200px;
+    border-bottom:1px solid gray;
+    img {
+        float:left;
+        width:22%;
+        height:88px;
+        margin-top:46px;
+        margin-left:4%;
+    }
+}
+.second {
+    width:100%;
+    height:243px;
+    padding-top:24px;
+    border-bottom:1px solid gray;
+    img {
+        float:left;
+        width:22%;
+        height:88px;
+        margin-top:46px;
+        margin-left:4%;
+    }
+}
+.mid {
+    float:left;
+    width:69%;
+    height:74px;
+    margin-left:2%;
+}
+.mid 
+.one {
+    font-size:18px;
+    color:#030303;
+}
+.two {
+    float:left;
+    width:61%;
+    height:25px;
+    line-height:25px;
+    color:#f7f7f7;
+    margin-top:6px;
+    padding-left:3%;
+    font-size:16px;
+    background-color:#b3b3b3;
+}
+.two1 {
+    font-size:20px;
+    color:#151515;
+    margin-left:5%;
+}
+.three {
+    float:left;
+    width:64%;
+    height:6px;
+    background-color:#ebebeb;
+    border-radius:20px;
+    margin-top:18px;
+}
+.three1 {
+    display:block;
+    width:60%;
+    height:6px;
+    border-radius:20px;
+    background-color:#ff4e00;
+}
+.three2 {
+    font-size:8px;
+    color:#b6b6b6;
+    margin-left:2%;
+}
+.sale {
+    float:left;
+    margin-top:20px;
+    margin-left:15px;
+}
+.sale2 {
+    margin-left:33px;
+}
+.sale em {
+    font-size:16px;
+    color:#757575;
+}
+.last {
+    float:left;
+    margin-left:15px;
+    margin-top:15px;
+}
+.last a {
+    color:#ff6531;
+    margin-left:20px;
+}
+.second {
+    position:relative;
+    width:100%;
+    height:310px;
+}
+.luck {
+    float:left;
+    width:62%;
+    height:74px;
+    margin-left:28%;
+    margin-top:18px;
+}
+.luckynum {
+    margin-top:10px;
+}
+.time {
+    margin-top:10px;
+    font-size:14px;
+}
+.red {
+    color:#ff0000;
+}
+.code {
+    position:absolute;
+    top:164px;
+    right:2%;
+    width:19%;
+    height:28px;
+    line-height:31px;
+    background-color:#ff0000;
+    text-align:center;
+    border-radius:5px;
+    color:#ffffff;
+}
+.setluck,.setwin {
+    position:absolute;
+    top:273px;
+    right:2%;
+    width:19%;
+    height:28px;
+    line-height:31px;
+    text-align:center;
+    border-radius:5px;
+    color:#ffffff;
+}
+.setluck {
+    background-color:#ff4e00;
+}
+.setwin {
+    background-color:#ff0000;
+}
+.win {
+    position:absolute;
+    top:130px;
+    right:6%;
+    display:block;
+    width:10%;
+    height:82px;
+    background:url($imgurl + "win_03.gif") 0 0 no-repeat;
+    background-size:100% 100%;
+}
+.session1 {
+    display:none;
+    float:left;
+    width:100%;
+}
+.session2 {
+    display:none;
+    float:left;
+    width:100%;
+}
+.sunnycomment {
+    width:100%;
+}
+.daytop,.daytop1 {
+    width:100%;
+    height:38px;
+    line-height:38px;  
+}
+.daytop {
+    background-color:#ff4e00;
+}
+.daytop1 {
+    background-color:#cccccc;
+}
+.periods {
+    font-size:16px;
+    color:#ffffff;
+    margin-left:5%;
+}
+.periods1 {
+    margin-left:5%;
+}
+.shai,.date,.shai1,.date1 {
+    font-size:14px;  
+}
+.shai,.date {
+    color:#f5ebe9;
+}
+.shai1,.date1 {
+    color:#333333;
+}
+.shai,.shai1 {
+    margin-left:110px;
+}
+.date,.date1 {
+    margin-left:1%;
+}
+.comment {
+    width:100%;
+}
+.comment p {
+    overflow:hidden;
+    font-size:16px;
+    margin-left:34px;
+    margin-top:18px;
+    color:#636363;
+}
+.name {
+    font-size:14px;
+    color:#b6b6b6;
+    margin-left:59%;
+}
+.picture {
+    width:100%;
+    height:232px;
+    background-color:#ebebeb;
+}
+.picture .pic2 {
+    float:left;
+    width:22%;
+    height:143px;
+    margin-top:17px;
+    margin-right:1%;
+    background-size:100% 100%;
+}
+.pic1 {
+    margin-left:4%;
+}
+.good,.talk {
+    float:left;
+    margin-left:11%;
+}
+.good {
+    margin-left:9%;
+    margin-top:16px;
+}
+.talk {
+    margin-left:50px;
+    margin-top:16px;
+}
+.picture p {
+    float:right;
+    margin-top:27px;
+    margin-right:4%;
+    color:#a2a2a2;
+    font-size:12px;
+}
+.smal {
+    float:left;
+    width:33px;
+    height:30px;
+}
+.treasurenumber {
+    display:none;
+    position:absolute;
+    left:7%;
+    width:85%;
+    height:975px;
+    background-color:#ffffff;
+    z-index:2;
+    border:1px solid #e6e6e6;
+    border-radius:5px;
+}
+.alertop {
+    position:relative;
+    width:100%;
+    height:47px;
+    padding-top:18px;
+    border-bottom:1px solid #cccccc;
+}
+.alertop span {
+    margin-left:30%;
+    font-size:10px;
+}
+.alertop em {
+    position:absolute;
+    top:40px;
+    right:10px;
+    color:#ff2626;
+}
+.numnum {
+    width:100%;
+    height:857px;
+    padding-top:15px;
+}
+.numnum span {
+    float:left;
+    margin-left:34px;
+    margin-bottom:18px;
+}
+.alertfoot {
+    width:100%;
+    height:60px;
+}
+.sure {
+    width:21%;
+    height:33px;
+    text-align:center;
+    color:#ffffff;
+    line-height:33px;
+    margin:0 auto;
+    background-color:#ff0000;
+    border-radius:5px;
+}
+.dis {
+    position:absolute;
+    right:1%;
+    top:5px;
+    width:4%;
+    height:23px;
+    background-size:100% 100%;
+}
+.lef {
+    margin-left:4px;
+}
+
+
+
+
+
+
+

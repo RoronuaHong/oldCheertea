@@ -1,0 +1,91 @@
+@import "./common/mixin.scss";
+
+/*申请门店页面布局*/
+.applyforshopwrap {
+    margin-bottom: 2rem;
+    .banner {
+        width: 100%;
+        height: 4.5rem;
+        border-bottom: .03rem solid #dbdada;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    h3 {
+        width: 86%;
+        height: .86rem;
+        padding: 0 7%;
+        line-height: .86rem;
+        background: #fff;
+        font-size: .36rem;
+        text-align: center;
+        border-bottom: .03rem solid #dbdada;
+        color: #d4241d;
+    }
+    h6 {
+        width: 100%;
+        height: .5rem;
+        line-height: .5rem;
+        margin: .2rem 0 .31rem 0;
+        font-size: .35rem;
+        color: #3b3c3c;
+    }
+    .mustnew {
+        width: 100%;
+        border-bottom: .03rem solid #dbdadb;
+        li {
+            width: 100%;
+            height: .66rem;
+            line-height: .66rem;
+            padding-bottom: .2rem;
+            .mst {
+                float: left;
+                font-size: .32rem;
+                color: #5a5b5b;
+            }
+            .upgrate {
+                margin-left: 3.6rem;
+                padding: .12rem .4rem;
+                background: #d53e44;
+                font-size: .38rem;
+                color: #fff;
+                -webkit-border-radius: .05rem;
+                -moz-border-radius: .05rem;
+                -ms-border-radius: .05rem;
+                border-radius: .05rem;
+            }
+        }
+    }
+    .openflag {
+        display: block;
+        width: 64%;
+        height: 1.25rem;
+        margin: .3rem auto 0;
+        line-height: 1.25rem;
+        background: #dbdbdb;
+        font-size: .51rem;
+        text-align: center;
+        color: #e71f19;
+        -webkit-border-radius: .25rem;
+        -moz-border-radius: .25rem;
+        -ms-border-radius: .25rem;
+        border-radius: .25rem;
+    }
+    .flagshipbox {
+        width: 86%;
+        padding: .33rem 7%;
+        .mustnew:nth-child(4) {
+            border-bottom: .03rem solid transparent;
+        }
+    }
+    .jewelbox {
+        width: 86%;
+        padding: .33rem 7%;
+        border-top: .03rem solid #dbdadb;
+        .mustnew:nth-child(4) {
+            border-bottom: .03rem solid transparent;
+        }
+    }
+}

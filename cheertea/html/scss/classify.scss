@@ -1,0 +1,156 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+//$imgurl: "../images/";
+
+body {
+  display: block;
+}
+/*商品分类*/
+.headerss label {
+  width: 66.5%;
+}
+.customservice {
+  float: right;
+  width: 15%;
+  height: .47rem;
+  padding-top: .74rem;
+  background: url($imgurl + "sprites.png") no-repeat .1rem -2.08rem;
+  background-size: 10rem 4.7rem;
+  font-size: .28rem;
+  text-align: center;
+  color: #292a2a;
+}
+.classificationofgoodswrap {
+  width: 100%;
+  padding-bottom: 1.39rem;
+  background: white;
+  .contentbox {
+    width: 100%;
+    background: #f7f7f7;
+    .leftmenu {
+      overflow: auto;
+      float: left;
+      width: 20%;
+      -webkit-box-shadow: inset -2px 0 0 0 #efefef;
+      -moz-box-shadow: inset -2px 0 0 0 #efefef;
+      -ms-box-shadow: inset -2px 0 0 0 #efefef;
+      box-shadow: inset -2px 0 0 0 #efefef;
+      li {
+        width: 96.5%;
+        padding: 0.1rem 0;
+        line-height: 0.85rem;
+        font-size: .36rem;
+        text-align: center;
+        border-left: 0.05rem solid white;
+        -webkit-box-shadow: inset 0 -2px 0 0 #efefef;
+        -moz-box-shadow: inset 0 -2px 0 0 #efefef;
+        -ms-box-shadow: inset 0 -2px 0 0 #efefef;
+        box-shadow: inset 0 -2px 0 0 #efefef;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          font-size: .36rem;
+          text-align: center;
+          color: #333334;
+          -webkit-tap-highlight-color: transparent;
+        }
+      }
+      .liselected {
+        width: 96.5%;
+        padding: 0.1rem 0;
+        line-height: 0.85rem;
+        font-size: .36rem;
+        text-align: center;
+        background: white;
+        border-left: 0.05rem solid #e94c1a;
+        -webkit-box-shadow: inset 0 -2px 0 0 #efefef;
+        -moz-box-shadow: inset 0 -2px 0 0 #efefef;
+        -ms-box-shadow: inset 0 -2px 0 0 #efefef;
+        box-shadow: inset 0 -2px 0 0 #efefef;
+      }
+    }
+    .rightcon {
+      overflow-y: scroll;
+      width: 80%;
+      background: white;
+      -webkit-overflow-scrolling: touch;
+      z-index: 200;
+      .goodscontent {
+        width: 100%;
+        .title {
+          width: 90%;
+          height: 1rem;
+          padding: 0 5%;
+          line-height: 1rem;
+          background: #f7f7f7;
+          -webkit-box-shadow: inset -1px 0 .02rem 0 #d5d5d6;
+          -moz-box-shadow: inset 0 -1px 0 .02rem #d5d5d6;
+          -ms-box-shadow: inset 0 -1px 0 .02rem #d5d5d6;
+          box-shadow: inset 0 -1px .02rem 0 #d5d5d6;
+          strong {
+            display: block;
+            float: left;
+            width: .19rem;
+            height: .19rem;
+            margin: .4rem 0 0 1%;
+            background: #ea5925;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 50%;
+          }
+          span {
+            float: left;
+            height: 100%;
+            padding-left: 3%;
+            font-size: .38rem;
+            color: #ea5925;
+          }
+          a {
+            display: block;
+            float: right;
+            width: 8%;
+            height: 90%;
+            background: url("../images/goodsmore.png") 0 0.05rem no-repeat;
+            background-size: contain;
+            -webkit-tap-highlight-color: transparent;
+          }
+        }
+        .goodscon {
+          width: 90%;
+          min-height: 2rem;
+          padding: 5%;
+          a {
+            overflow: hidden;
+            display: block;
+            float: left;
+            width: 27%;
+            margin: 2% 3%;
+            font-size: .34rem;
+            text-align: center;
+            color: #565757;
+            box-shadow: 0 0 0 .03rem #e0e0e0;
+            -webkit-tap-highlight-color: transparent;
+            img {
+              display: block;
+              width: 100%;
+              height: 1.82rem;
+            }
+            span {
+              display: inline-block;
+              height: .52rem;
+              line-height: .52rem;
+              color: #565757;
+            }
+          }
+        }
+      }
+      .goodscontent:last-child {
+        padding-bottom: 1.39rem;
+      }
+    }
+  }
+}

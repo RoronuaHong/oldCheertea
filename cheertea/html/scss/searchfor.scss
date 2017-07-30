@@ -1,0 +1,88 @@
+$imgurl: "../images/";
+html,body {
+    width:100%;
+    height:100%;
+}
+.searchforwrap {
+    width:100%;
+}
+.top {
+    width:100%;
+    height:90px;
+    line-height:90px;
+    text-align:center;
+}
+.top a {
+    float:left;
+    width:15%;
+    height:90px;
+    background:url($imgurl + "searchback.png") 0 0 no-repeat; 
+    background-size:contain;
+}
+.top h2 {
+    float:left;
+    font-size:32px;
+    margin-left:28%;
+    color:#1a1a1a;
+    line-height:90px;
+}
+.search {
+    position:relative;
+    width:100%;
+    height:80px;
+    background-color:#ff5a00;
+    em{
+        display: block;
+        position: absolute;
+        top: 17px;
+        left: 35px;
+        width: 50px;
+        height: 50px;
+    }
+}
+.find {
+    width:81%;
+    height:58px;
+    line-height:58px;
+    margin-left:5%;
+    margin-top:12px;
+    padding-left:11%;
+    font-size:20px;
+    background:url($imgurl + "search-ico.png") 15px 6px no-repeat;
+    background-color:#ffffff; 
+    border-radius:10px;
+}
+.del {
+    position:absolute;   
+    left:89%;
+    top:25px;
+    width:5%;
+    height:31px;
+    background:url($imgurl + "delete1.png") 0 0 no-repeat;
+    background-size:100% 100%;
+}
+.recent {
+    width:96%;
+    height:37px;
+    color:#999999;
+    font-size:18px;
+    padding-left:4%;
+    padding-top:20px;
+    border-bottom:1px solid #dedede;
+}
+.span-box{
+     margin-left:5%;
+     span{
+        float: left;
+        width: 19%;
+        height:45px;
+        line-height:45px;
+        text-align:center;
+        font-size:24px;
+        color:#fff6f4;
+        margin-right:6%;
+        margin-top:10px;
+        border-radius:10px;
+        background-color:#ff5a00;
+     }
+}

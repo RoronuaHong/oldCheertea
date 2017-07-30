@@ -1,0 +1,6 @@
+;(function() {
+
+	var applyShop = function() {
+		
+	}
+})();

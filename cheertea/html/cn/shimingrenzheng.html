@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<title>实名认证</title>
+	<link rel="stylesheet" href="http://css.cheertea.com/commons.css">
+	<!--<link rel="stylesheet" href="../css/certification.css">-->
+</head>
+<body>
+	<div class="header">
+		<a class="searchback" href="javascript:history.go(-1)"></a>
+		<h2>实名认证</h2>
+		<a href="../index.html" class="headerhome"></a>
+	</div>
+	<div class="certificationwrapsuccess">
+		<div class="certificationyesbg"></div>
+		<ul class="usernamecon">
+			<li>
+				<span>真实姓名</span>
+				<strong></strong>
+			</li>
+			<li>
+				<span>身份证号</span>
+				<strong class="idcardcon"></strong>
+			</li>
+		</ul>
+	</div>
+	<div class="certificationfail">
+		<div class="failcon"></div>
+		<a class="returnshiming">重新实名认证</a>
+	</div>
+	<div class="certificationwrap">
+		<!-- <div class="isDelete">
+			<div class="fontimgbox"></div>
+		</div> -->
+		<div class="idreminds"></div>
+		<div class="certificationcontent">
+			<form action="">
+				<h3>
+					<span>成为铂钻会员</span>——
+					<span class="trues">提交个人资料</span>——
+					<span>提交商家资料</span>——
+					<span>提交店铺资料</span>
+				</h3>
+				<div class="personalinformation clearfix">
+					<span>填写个人信息</span>
+					<em>请输入您的真实姓名</em>
+				</div>
+				<ul class="personcontent">
+					<li>
+						<label for="">
+							<input type="text" placeholder="真实姓名" class="truename">
+						</label>
+					</li>
+					<li>
+						<label for="">
+							<input type="text" placeholder="身份证号码" class="idcards">
+						</label>
+					</li>
+				</ul>
+				<div class="personalinformation clearfix">
+					<span>上传身份证照片</span>
+				</div>
+				<div class="idcardcontent">
+					<h4>请确保姓名、身份证号码清晰可见，支持JPG、PNG等格式文件</h4>
+					<div class="idcardcon">
+						<div class="title clearfix">
+							<span>示例</span>
+							<em>?</em>
+						</div>
+						<div class="idcontent" id="imglist">
+							<img src="../idzhengmian.png" alt="" class="frontimg">
+							<input type="file" capture="camera" accept="image/*" name="logo1" id="file">
+							<input type="hidden" class="logos1" name="basess3">
+						</div>
+					</div>
+					<div class="idcardcon">
+						<div class="title clearfix">
+							<span>示例</span>
+							<em>?</em>
+						</div>
+						<div class="idcontent upload" id="imglist">
+							<img src="../idbeimian.png" alt="" class="backimg">
+							<input type="file" capture="camera" accept="image/*" name="logo2" id="files">
+							<input type="hidden" class="logos1" name="basess3">
+						</div>
+					</div>
+					<div class="idcardcon">
+						<div class="title clearfix">
+							<span>示例</span>
+							<em>?</em>
+						</div>
+						<div class="idcontent" id="imglist">
+							<img src="../idshouchi.png" alt="" class="shouchiimg">
+							<input type="file" capture="camera" accept="image/*" name="logo3" id="filess">
+							<input type="hidden" class="logos1" name="basess3">
+						</div>
+					</div>
+					<input type="submit" value="提 交" class="idsbumit" disabled="disabled">
+				</div>
+			</form>
+		</div>
+	</div>
+	<!--<script src="http://js.cheertea.com/newcommon.js"></script>-->
+	<!--<script type="text/javascript" src="http://js.cheertea.com/certification.js" charset="UTF-8"></script>-->
+	<script src="../js/newcommon.js"></script>
+	<script type="text/javascript" src="../js/certification.js" charset="UTF-8"></script>
+</body>
+</html>

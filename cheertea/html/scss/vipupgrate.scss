@@ -1,0 +1,130 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+//$imgurl: "../images/";
+
+/*会员升级页面布局*/
+.vipupgratewrap {
+    width: 100%;
+    .vipupgratecontent {
+        width: 100%;
+        .banner {
+            width: 100%;
+            height: 2.98rem;
+            border-bottom: .23rem solid #efeeed;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .vipupgratebox {
+            width: 100%;
+            margin-bottom: .2rem;
+            .vipbigbox {
+                .vipchild {
+                    overflow: hidden;
+                    width: 87%;
+                    padding: 0 6.5%;
+                    border-bottom: .03rem solid #dadada;
+                    .leftimgbox {
+                        float: left;
+                        width: 31%;
+                        height: 3.75rem;
+                        img {
+                            display: block;
+                            width: 100%;
+                            height: 2.16rem;
+                        }
+                        span {
+                            float: left;
+                            display: inline-block;
+                            width: 100%;
+                            height: 1.2rem;
+                            line-height: 1.2rem;
+                            font-size: .32rem;
+                            text-align: center;
+                            color: #5a5b5b;
+                        }
+                    }
+                    .centerbox {
+                        float: left;
+                        width: 35%;
+                        height: 2.75rem;
+                        .price {
+                            display: inline-block;
+                            width: 100%;
+                            height: 1.97rem;
+                            line-height: 2.5rem;
+                            font-size: .75rem;
+                            text-align: center;
+                            color: #e8392e;
+                        }
+                        .details {
+                            display: inline-block;
+                            width: 100%;
+                            height: .78rem;
+                            margin-top: .4rem;
+                            line-height: .78rem;
+                            font-size: .28rem;
+                            text-align: center;
+                            color: #e08221;
+                        }
+                    }
+                    .graterightly {
+                        float: left;
+                        display: block;
+                        /* margin-top:  */
+                        width: 29%;
+                        height: .9rem;
+                        margin-top: .9rem;
+                        line-height: .9rem;
+                        background: #e08221;
+                        font-size: .45rem;
+                        text-align: center;
+                        color: #ffffff;
+                        -webkit-border-radius: .1rem;
+                        -moz-border-radius: .1rem;
+                        -ms-border-radius: .1rem;
+                        border-radius: .1rem;
+                    }
+                }
+                .showmessage {
+                    display: none;
+                    width: 100%;
+                    padding: .25rem 0 0;
+                    border: .03rem solid #dbdbdb;
+                    span {
+                        display: inline-block;
+                        width: 67%;
+                        padding: 0 0 .25rem 15%;
+                        font-size: .35rem;
+                        text-align: left;
+                        color: #5a5b5b;
+                    }
+                }
+            }
+            .vipbigbox:nth-child(2) {
+                .vipchild {
+                    border-bottom: .03rem solid transparent;
+                    .centerbox {
+                        .details {
+                            color: #d53e44;
+                        }
+                    }
+                    .graterightly {
+                        background: #d53e44;
+                    }
+                }
+            }
+        }
+        .viplogbanner {
+            width: 100%;
+            height: 27.28rem;
+            padding-bottom: 1.5rem;
+            background: url($imgurl + "zheye.jpg") 0 0 no-repeat;
+            background-size: cover;
+        }
+    }
+}

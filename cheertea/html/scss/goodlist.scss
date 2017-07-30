@@ -1,0 +1,31 @@
+@import "./common/mixin.scss";
+
+/*cdn*/
+/*$imgurl: "http://images.cheertea.com/";*/
+
+/*本地*/
+$imgurl: "../images/";
+
+html, body {
+  background: #f2f3f3;
+}
+.goodlistwrap {
+  width: 100%;
+  padding-bottom: 2rem;
+  .countrybox {
+    width: 100%;
+    .countrytit {
+      width: 100%;
+      height: 5rem;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .recommendgoods {
+      background: #f2f3f3;
+      border-left: .1rem solid #f2f3f3;
+    }
+  }
+}

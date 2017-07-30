@@ -1,0 +1,48 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+/* $imgurl: "../images/"; */
+.payresultwrapsuccess {
+  width: 100%;
+  .bg {
+    background: url($imgurl + "paysuccessbgs.png") 0 0 no-repeat;
+    background-size: cover;
+  }
+  .myasset {
+    display: block;
+    width: 280px;
+    height: 70px;
+    margin: 0 auto;
+    line-height: 70px;
+    background: #9da4db;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border-radius: .15rem;
+  }
+}
+.payresultwrapfail {
+  display: none;
+  width: 100%;
+  .bg {
+    background: url($imgurl + "payfailbgs.png") 0 0 no-repeat;
+    background-size: cover;
+  }
+  .repay {
+    display: block;
+    width: 280px;
+    height: 70px;
+    margin: 0 auto;
+    line-height: 70px;
+    background: #ff6c13;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border-radius: .15rem;
+  }
+}
+.bg {
+  width: 100%;
+  height: 500px;
+}

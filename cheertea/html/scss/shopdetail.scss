@@ -1,0 +1,116 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+/*$imgurl: "../images/";*/
+
+.shopdetailwrap {
+  width: 100%;
+  .shopdetaibanner {
+    width: 100%;
+    height: 325px;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .position {
+    width: 90%;
+    height: 68px;
+    line-height: 68px;
+    padding-left: 10%;
+    background: url($imgurl + "positionbg.png") 3% center no-repeat;
+    background-size: 5%;
+    font-size: 20px;
+    color: #1a1a1a;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .shopdetailbox {
+    width: 100%;
+    padding-top: 20px;
+  }
+  .shopdetailtit {
+    width: 100%;
+    li {
+      float: left;
+      width: 50%;
+      height: 50px;
+      line-height: 50px;
+      font-size: 20px;
+      text-align: center;
+      background: #f0f0f0;
+      color: #1a1a1a;
+    }
+    .lisel {
+      background: #e94c1a;
+      color: #fff;
+    }
+  }
+  .shopdetailcon {
+    width: 100%;
+    padding-bottom: 1.39rem;
+    .con {
+      display: none;
+      width: 100%;
+    }
+    .consel {
+      display: block;
+    }
+    .shopimgdetail {
+      width: 100%;
+      li {
+        width: 92%;
+        height: 96px;
+        padding: 20px 4%;
+        font-size: 18px;
+        color: #000000;
+        border-bottom: 1px solid #f0f0f0;
+      }
+    }
+    .imgs {
+      float: left;
+      width: 22%;
+      height: 96px;
+      border: 1px solid #f0f0f0;
+    }
+    .details {
+      overflow: hidden;
+      float: left;
+      width: 71%;
+      height: 76px;
+      padding: 20px 0 0 5%;
+      font-size: 18px;
+      color: #000000;
+    }
+  }
+  .otherdet {
+    width: 100%;
+    li {
+      width: 92%;
+      height: 60px;
+      padding:0 4%;
+      line-height: 60px;
+      font-size: 18px;
+      color: #000000;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .name {
+      float: left;
+      width: 30%;
+      height: 60px;
+      line-height: 60px;
+      font-size: 20px;
+      color: #000000;
+    }
+    .tail {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-break: keep-all;
+      float: right;
+      width: 70%;
+      height: 60px;
+    }
+  }
+}

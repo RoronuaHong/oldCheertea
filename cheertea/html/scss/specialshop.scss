@@ -1,0 +1,65 @@
+@import "./common/mixin.scss";
+@import "./common/swiper-3.3.1.min";
+
+.specialbanner {
+  width: 100%;
+  height: 640px;
+  background-size: 100%;
+  .speimg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+.speciallist {
+  width: 100%;
+  .speciallist {
+    width: 100%;
+    height: 230px;
+  }
+  .speli {
+    width: 84%;
+    height: 150px;
+    padding: 40px 8%;
+    border-bottom: 8px solid #e6e6e6;
+  }
+  .speimg {
+    float: left;
+    width: 30%;
+    height: 160px;
+  }
+  .rightcon {
+    float: left;
+    width: 62%;
+    padding: 10px 0 0 8%;
+    h3 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: keep-all;
+      white-space: nowrap;
+      width: 80%;
+      height: 55px;
+      line-height: 55px;
+      font-size: 30px;
+      color: #1a1a1a;
+    }
+    .price {
+      width: 100%;
+      height: 45px;
+      line-height: 55px;
+      font-size: 26px;
+      text-decoration: line-through;
+      color: #4d4d4d;
+    }
+    .nowprice {
+      width: 100%;
+      height: 45px;
+      line-height: 45px;
+      font-size: 20px;
+      color: #e61717;
+      span {
+        font-size: 28px;
+      }
+    }
+  }
+}

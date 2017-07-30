@@ -1,0 +1,112 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+// $imgurl: "../images/";
+.header {
+  position: fixed;
+}
+.newshoplistwrap {
+  width: 100%;
+  padding-top: 1.39rem;
+  .newshopbanner {
+    width: 100%;
+    height: 320px;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .orderlist {
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+    li {
+      position: relative;
+      float: left;
+      width: 33%;
+      height: 70px;
+      line-height: 70px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    span {
+      display: inline-block;
+      font-size: 24px;
+      text-align: center;
+      color: #1a1a1a;
+    }
+    .sel {
+      border-bottom: 1px solid #ff5a00;
+    }
+    em {
+      position: absolute;
+      top: .35rem;
+      right: .8rem;
+      display: block;
+      width: 17px;
+      height: 24px;
+      background: url($imgurl + "shoplistping.png") 0 0 no-repeat;
+      background-size: contain;
+    }
+    .emselup {
+      background: url($imgurl + "shoplistup.png") 0 0 no-repeat;
+      background-size: contain;
+    }
+    .emseldown {
+      background: url($imgurl + "shoplistdown.png") 0 0 no-repeat;
+      background-size: contain;
+    }
+  }
+  .newshoplistbox {
+    width: 96%;
+    margin: 10px auto 0;
+  }
+  .goodsdl {
+    float: left;
+    width: 38%;
+    margin: 10px 2%;
+    padding: 28px 4%;
+    box-shadow: 0 0 0 1px #e0e0e0;
+  }
+  dt {
+    width: 100%;
+    height: 180px;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  dd {
+    width: 100%;
+    .names {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: keep-all;
+      white-space: nowrap;
+      width: 100%;
+      height: 53px;
+      line-height: 53px;
+      font-size: 18px;
+      color: #1a1a1a;
+    }
+    .price {
+      width: 100%;
+      height: 37px;
+      line-height: 37px;
+      font-size: 24px;
+      color: #e51717;
+    }
+    .prices {
+      font-size: 30px;
+    }
+  }
+  .more {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    font-size: 30px;
+    text-align: center;
+    color: #1a1a1a;
+  }
+}

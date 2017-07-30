@@ -1,0 +1,209 @@
+/*@import "./common/mixin.scss";*/
+@import "./common/swiper-3.3.1.min";
+@import "./common/common.scss";
+
+/*cdn*/
+/*$imgurl: "http://images.cheertea.com/";*/
+
+ $imgurl: "../images/"; 
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+html ,.w100{
+  width: 100%;
+}
+i,em{
+  font-style: normal;
+}
+.c3{color: #333;}
+.c6{color: #666;}
+.c9{color: #999;}
+.fl{ float: left; }
+.fr{ float: right; }
+.mt10{margin-top: 10px;}
+.mt20{margin-top: 20px;}
+.mt30{margin-top: 30px;}
+.mt40{margin-top: 40px;}
+.fz18{font-size: 18px;}
+.fz20{font-size: 20px;}
+.fz22{font-size: 22px;}
+.fz24{font-size: 24px;}
+.fz26{font-size: 26px;}
+.li40{line-height: 40px;}
+.tac{text-align: center;}
+.main{ 
+  position: relative; 
+  width: 100%;
+  float: left;
+  padding: 0 20px; 
+}
+.clear{clear:both;font-size:1px;width:1px;height:0;visibility:hidden; overflow:hidden;}
+.isDelete,.isDeletes{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.6;
+  z-index: 200;
+}
+.isDeletes{
+  opacity: 0.9;
+}
+.loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  background: url($imgurl + "loading.gif") no-repeat;
+  background-size: 100% 100%;
+  z-index: 200;
+}
+.sharebox {
+    width: 100%;
+    height: 100%;
+    background: url($imgurl + "shareboxbg.png") 0 0 no-repeat;
+    -o-background-size: 100%;
+    background-size: 100%;
+}
+.sharebox .iknowbtn {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 3.98rem;
+    height: 1.64rem;
+    background: url($imgurl + "iknowbg.png") no-repeat;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.product-head{
+    height: 80px;
+    border-bottom: #e0e0e0 solid 1px;
+    background: #fff;
+    width: 100%;
+    float: left;
+    position: relative;
+    .go-back{
+      width: 12%;
+      position: absolute;
+      left:0;
+      top:0;
+      height: 100%;
+      a{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        img{
+          position: absolute;
+          left: 0;
+          top:0;
+          bottom: 0;
+          right:0;
+          margin: auto;
+          width: 21px;
+          height: 37px;
+        }
+      }
+    }
+    .center{
+      width: 100%;
+      float: left;
+      text-align: center; 
+      span{
+        padding: 0 25px;
+        display: inline-block;
+        color: #000;
+        line-height: 80px;
+        margin: 0 15px;
+        font-size: 24px;
+        &.active{
+          border-bottom: #ff5a00 solid 1px;
+          color: #fe5a00;
+        }
+      }
+    }
+    .head-right{
+      width: 12%;
+      position: absolute;
+      right:0;
+      top:0;
+      height: 100%;
+      a{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        img{
+          position: absolute;
+          left: 0;
+          top:0;
+          bottom: 0;
+          right:0;
+          margin: auto;
+          width: 21px;
+          height: 37px;
+        }
+      }
+    }
+}
+
+
+.card{
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+}
+.card-t{
+  width: 100%;
+  float: left;
+  font-size: 26px;
+  color: #000;
+  padding-left: 20px;
+}
+
+.card-list{
+  width: 100%;
+  float: left;
+  padding: 0 20px;
+  margin-top: 10px;
+  li{
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+    text-align: center;
+    img{
+       border-radius: 12px;
+       width: 80%;
+    }
+    &.active img{border:#f00 solid 3px;} 
+  }
+}
+.chongzhibtn.hasbtn{
+  width: 82%;
+  height: 1.33rem;
+  margin: 1rem auto;
+  background: #e7211a;
+  line-height: 1.33rem;
+  font-size: .53rem;
+  text-align: center;
+  color: #fff;
+}
+
+
+
+
+
+
+
+

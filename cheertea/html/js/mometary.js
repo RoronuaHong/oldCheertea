@@ -1,0 +1,5 @@
+;(function() {
+    var Mometary = {
+
+    }
+})();

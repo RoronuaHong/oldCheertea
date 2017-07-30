@@ -1,0 +1,190 @@
+@import "./common/mixin.scss";
+
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+/* $imgurl: "../images/"; */
+
+.userloginswrap {
+    width: 100%;
+    .register {
+        display: none;
+        float: right;
+        width: 15%;
+        height: 100%;
+        line-height: 1.39rem;
+        font-size: .41rem;
+        text-align: center;
+        color: #e94b1a;
+    }
+    .logincontent {
+        width: 96%;
+        padding: 0 2%;
+        margin-bottom: .4rem;
+        background: white;
+        label {
+            display: block;
+            width: 90%;
+            height: 1.45rem;
+            line-height: 1.45rem;
+            padding: 0 5%;
+        }
+        em {
+            float: left;
+            width: 9%;
+            height: 100%;
+            margin-right: 3%;
+        }
+        label:nth-child(1) em {
+            background: url($imgurl + "userbg.png") center 0 no-repeat;
+            background-size: contain;
+        }
+        label:nth-child(2) em {
+            background: url($imgurl + "loginpasswordbg.png") center 0 no-repeat;
+            background-size: contain;
+        }
+        input {
+            float: left;
+            width: 50%;
+            height: .9rem;
+            margin-top: .3rem;
+            padding: 0 3%;
+            font-size: .38rem;
+            border: none;
+            outline: none;
+        }
+        input::-webkit-input-placeholder {
+            font-size: .38rem;
+            color: #d0d0d0;
+        }
+        strong {
+            display: none;
+            float: right;
+            width: 8%;
+            height: .7rem;
+            margin-top: .35rem;
+            line-height: .7rem;
+            text-align: center;
+            background: url($imgurl + "logincancelbg.png") 0 0 no-repeat;
+            background-size: contain;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+        .forgetpwd {
+            display: none;
+            float: right;
+            width: 16%;
+            height: .59rem;
+            margin: .45rem 0 0 3%;
+            background: url($imgurl + "passwordpwdbg.png") 0 0 no-repeat;
+            background-size: contain;
+        }
+    }
+    form {
+        position: relative;
+    }
+    p {
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        line-height: .4rem;
+        padding: 0 0 .2rem 8%;
+        font-size: .31rem;
+        color: #f00;
+        em {
+            float: left;
+            width: 3.8%;
+            height: 100%;
+            margin-right: 3%;
+            background: #f00;
+            text-align: center;
+            color: #fff;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 50%;
+        }
+    }
+    .userremind {
+        top: 3rem;
+    }
+    .pwdremind {
+        top: 3.5rem;
+    }
+    .errormind {
+        top: 4rem;
+    }
+    .loginquickly {
+        display: block;
+        width: 84%;
+        height: 1.09rem;
+        line-height: 1.09rem;
+        margin: 1.81rem auto .81rem;
+        background: #dc4c1f;
+        font-size: .48rem;
+        text-align: center;
+        border: none;
+        outline: none;
+        resize: none;
+        color: rgba(255, 255, 255, .5);
+        -webkit-border-radius: .25rem;
+        -moz-border-radius: .25rem;
+        -ms-border-radius: .25rem;
+        border-radius: .25rem;
+        -webkit-appearance: none;
+    }
+    .allright {
+        color: #fff;
+    }
+    .newuser {
+        display: none;
+        width: 39%;
+        height: 1rem;
+        line-height: 1rem;
+        margin: 0 auto 2.59rem;
+        font-size: .41rem;
+        text-align: center;
+        color: #e94b1a;
+        -webkit-box-shadow: 0 0 0 2px #e60613;
+        -moz-box-shadow: 0 0 0 2px #e60613;
+        box-shadow: 0 0 0 2px #e60613;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        border-radius: 1rem;
+    }
+    .thirdpartylogin {
+        width: 100%;
+        height: .8rem;
+        line-height: .8rem;
+        text-align: center;
+        .logintitle {
+            width: 51%;
+            height: 100%;
+            margin: 0 auto;
+            span {
+                float: left;
+                width: 15%;
+                height: 100%;
+                background: url($imgurl + "userloginbg.png") 0 center no-repeat;
+                background-size: contain;
+            }
+            strong {
+                float: left;
+                padding: 0 .33rem;
+                font-size: .41rem;
+                color: #7f8080;
+            }
+        }
+        .wechatlogin {
+            display: block;
+            width: 29%;
+            height: 2.97rem;
+            margin: 0 auto;
+            background: url($imgurl + "wechatloginbg.png") 0 0 no-repeat;
+            background-size: contain;
+        }
+    }
+}

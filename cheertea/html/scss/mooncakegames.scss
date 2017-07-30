@@ -1,0 +1,189 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+//$imgurl: "../images/";
+
+html, body {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#showDelete {
+  display: none;
+  .showMessagebox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 500px;
+    height: 750px;
+    margin: auto;
+    background: url($imgurl + "notwinningbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+  .winningbg {
+    background: url($imgurl + "winningbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+  .changemessage {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    color: #333333;
+    span {
+      color: #f83f44;
+    }
+  }
+  .iswinmessage {
+    display: none;
+    position: fixed;
+    top: -7.09374rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 330px;
+    height: 110px;
+    margin: auto;
+    font-weight: bold;
+    font-size: 0.6175rem;
+    color: #ffc600;
+    text-shadow: 2px 2px 0 #f83f44,
+                -2px -2px 0 #f83f44,
+                2px -2px 0 #f83f44,
+                -2px 2px 0 #f83f44;
+  }
+  .btn {
+    position: fixed;
+    top: 400px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 396px;
+    height: 65px;
+    margin: auto;
+  }
+  #earnchance {
+    background: url($imgurl + "earnchancebg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+  #continue {
+    background: url($imgurl + "continuebg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+  #goshop {
+    display: block;
+    top: 600px;
+    background: url($imgurl + "goshopbg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+}
+#isDeletes {
+  display: none;
+  opacity: 1;
+  background: transparent;
+}
+.returntopandpagesum {
+  display: none;
+}
+.mooncakegameswrap {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url($imgurl + "mooncakebettingbg.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  .gamestartbetting {
+    position:fixed;
+    left: 50%;
+    bottom: 250px;
+    width: 400px;
+    height: 70px;
+    margin-left: -200px;
+    background: url($imgurl + "gamestartbettingbtn.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+  .gesturebox {
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 260px;
+    background: url($imgurl + "gesturebg1.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+  .gestureclose {
+    background: url($imgurl + "gesturebg2.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+  .gestureshow {
+    background: url($imgurl + "gesturebg3.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+  .dicebox {
+    position: fixed;
+    left: 50%;
+    width: 350px;
+    height: 240px;
+    margin-left: -175px;
+    li {
+      position: absolute;
+      width: 63px;
+      height: 70px;
+
+    }
+    li:nth-child(1) {
+      top: 80px;
+      left: 50px;
+      background: url($imgurl + "1.png") 0 0 no-repeat;
+      background-size: 100% 100%;
+    }
+    li:nth-child(2) {
+      top: 160px;
+      left: 70px;
+      background: url($imgurl + "2.png") 0 0 no-repeat;
+      background-size: 100% 100%;
+    }
+    li:nth-child(3) {
+      top: 90px;
+      left: 130px;
+      background: url($imgurl + "3.png") 0 0 no-repeat;
+      background-size: 100% 100%;
+    }
+    li:nth-child(4) {
+      top: 170px;
+      left: 155px;
+      background: url($imgurl + "4.png") 0 0 no-repeat;
+      background-size: 100% 100%;
+    }
+    li:nth-child(5) {
+      top: 70px;
+      left: 210px;
+      background: url($imgurl + "5.png") 0 0 no-repeat;
+      background-size: 100% 100%;
+    }
+    li:nth-child(6) {
+      position: absolute;
+      top: 150px;
+      left: 235px;
+      background: url($imgurl + "6.png") 0 0 no-repeat;
+      background-size: 100% 100%;
+      animation: addli 1s linear infinite;
+    }
+    .addli {
+      top: 100px !important;
+      left: 210px !important;
+    }
+  }
+  .diceboxopacity {
+    opacity: 0;
+  }
+}

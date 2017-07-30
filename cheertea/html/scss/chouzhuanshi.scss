@@ -1,0 +1,182 @@
+
+/*抽钻石页面布局*/
+$imgurl: "../images/";
+.chouzhuanshiwrap {
+    .banner {
+        width: 100%;
+        //height: 4.5rem;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .zhuanshi-time{
+        width: 100%;
+        height: 88px;
+        line-height: 88px;
+        font-size: 24px;
+        text-align: center;
+        color: #1a1a1a;
+        span{
+            display: inline-block;
+            color: #ff0000;
+        }
+    }
+    .zhuan-activity-list{
+        width: 100%;
+        height: 120px;
+        border-top: 10px solid #f5f5f5;
+        border-bottom: 10px solid #f5f5f5;
+        ul{
+            height: 120px;
+            font-size: 0;
+            display: -webkit-flex;
+            display: flex;
+            justify-content:space-around;
+            align-items:center;
+            li{
+                display: inline-block;
+                color: #333;
+                font-size: 20px;
+                text-align: center;
+                img{
+                    height:55px;
+                }
+                span{
+                    display:block;
+                    font-size: 20px;
+                    color: #333;
+                }
+            }
+        }
+    }
+    .zhuan-gift{
+        width: 100%;
+        border-bottom: 10px solid #f5f5f5;
+    }
+    .zhuan-gift-t{
+        width: 100%;
+        height: 88px;
+        line-height: 88px;
+        font-size: 28px;
+        text-align: center;
+        color: #333;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .zhuan-gift-pic{
+        margin: 25px 21px 15px;
+        //height: 361px;
+        img{width: 100%;}
+    }
+}
+.zhuan-people{
+    border-top: 10px solid #f5f5f5;
+    .zhuan-people-t{
+
+        height: 88px;
+        line-height: 88px;
+        padding-left: 21px;
+        font-size: 24px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    ul{
+        margin-bottom: 165px;
+    }
+    li{
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 0;
+        img{
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        p{
+            width: 30%;
+            display: inline-block;
+            margin-left: 26px;
+            font-size: 24px;
+            vertical-align: middle;
+        }
+        strong{
+            display:inline-block;
+            width: 38%;
+            margin-left: 26px;
+            font-weight: normal;
+            font-size: 24px;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            vertical-align:middle ;
+        }
+    }
+    .zhuan-people-left{
+        width: 60%;
+        margin-left: 40px;
+        float: left;
+    }
+    .zhuan-people-right{
+        font-size: 18px;
+        margin-right: 24px;
+        float: right;
+    }
+}
+.chouzhuanshi-activity-msg{
+    p{
+        margin: 112px 106px 74px;
+        line-height: 42px;
+        font-size: 24px;
+        color: #4d4d4d;
+    }
+    div{
+        font-size:36px;
+        color:#06ccaa;
+        text-align: center;
+    }
+}
+.zhuan-open{
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    height: 88px;
+    line-height:88px;
+    font-size:36px;
+    color: #fff;
+    background: #50dd60;
+    a{
+        display: block;
+        font-size:36px;
+        color: #fff;
+        text-align: center;
+    }
+}
+.zhuan-luck{
+    li{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 26px;
+        text-align: center;
+        align-items:center;
+        color:#1a1a1a;
+        justify-content: space-around;
+    }
+    span{
+        display: inline-block;
+    }
+    img{
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        vertical-align: middle;
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>附近的店</title>
+    <link rel="stylesheet" href="http://css.cheertea.com/commons-a1b64fcc52.css">
+    <link rel="stylesheet" href="http://css.cheertea.com/shopmap-4d5fe31636.css">
+    <!--<link rel="stylesheet" href="../css/commons-a1b64fcc52.css">-->
+    <!--<link rel="stylesheet" href="../css/shopmap-4d5fe31636.css">-->
+</head>
+<body>
+<div class="header">
+    <a class="searchback" href="javascript:history.go(-1)"></a>
+    <h2>附近的店</h2>
+</div>
+<div class="shopmapwrap">
+    <div class="searchbox clearfix">
+        <a href="/cn/newshopnear.html?search=1">
+            <label for="" class="clearfix">
+                <span class="searchbg"></span>
+                <input type="text" class="searchinput" placeholder="请输入店铺名字">
+                <span class="deletes"></span>
+            </label>
+            <!--<a href="/cn/newshopnear.html?getList=1" class="listlink">列表</a>-->
+            <a href="/cn/newshopnear.html" class="listlink">列表</a>
+        </a>
+    </div>
+    <!--<div class="selectboxs">-->
+        <!--<div class="selectbox clearfix">-->
+            <!--<span class="selectarea">-->
+                <!--全部-->
+                <!--<span class="downarrow">∨</span>-->
+            <!--</span>-->
+            <!--<span class="selectdistance">距离优先</span>-->
+            <!--<ul class="arealist">-->
+
+            <!--</ul>-->
+            <!--<ul class="circlelist">-->
+
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="content">
+        <div class="swiper-container" id="shoplist">
+            <div class="swiper-wrapper swiper-container-horizontal">
+
+            </div>
+        </div>
+    </div>
+    <div class="mapbox" id="allmap">
+
+    </div>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DgFIGbf5Byx1PRxGSZ7SukIBEovGoAeB"></script>
+<script src="http://js.cheertea.com/newcommon-03ea414a42.js"></script>
+<script src="http://js.cheertea.com/shopmap-a4b3d0dfd7.js"></script>
+<!--<script src="../js/newcommon-03ea414a42.js"></script>-->
+<!--<script src="../js/shopmap-a4b3d0dfd7.js"></script>-->
+</body>
+</html>
