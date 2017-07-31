@@ -65,6 +65,26 @@ h2 {
   color: #1a1a1a;
   z-index: 2;
 }
+.needfindbox {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: -100px;
+  width: 200px;
+  height: 100px;
+  .needfindimg {
+    float: left;
+    width: 100px;
+    height: 100px;
+  }
+  .needfindnum {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 30px;
+    text-align: center;
+  }
+}
 .needbox {
   position: fixed;
   top: 0;

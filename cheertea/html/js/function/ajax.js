@@ -7,7 +7,7 @@ if(window.location.host == "wx.cheertea.com") {
 } else if(window.location.host == "test.cheertea.com") {
     publics = "http://test.cheertea.com/";
 } else {
-    publics = "http://192.168.2.21:8080/zxxt_qyy/";
+    publics = "http://192.168.2.29:8888/zxxt_qyy/";
 }
 
 console.log(publics);

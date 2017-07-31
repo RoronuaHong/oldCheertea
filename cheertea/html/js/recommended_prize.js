@@ -11,7 +11,9 @@
         publics = "http://192.168.2.17:8080/zxxt_qyy/";
     }
     var recommened = {
-        shareWx: function(ids) {
+         onOff: false,
+         shareWx: function(ids) {
+             var _this=this;
             var url = location.href;
             var member_id = ids;
             var image_url = "http://images.cheertea.com/logonews.png";
@@ -43,7 +45,7 @@
                                 success: function () {
                                     // 用户确认分享后执行的回调函数
                                     $(".isDelete").hide();
-
+                                    _this.onOff=false;
                                 },
                                 cancel: function () {
                                     // 用户取消分享后执行的回调函数
@@ -59,6 +61,7 @@
                                 success: function () {
                                     // 用户确认分享后执行的回调函数
                                     $(".isDelete").hide();
+                                    _this.onOff=false;
                                 },
                                 cancel: function () {
                                     // 用户取消分享后执行的回调函数
@@ -73,7 +76,7 @@
                                 success: function () {
                                     // 用户确认分享后执行的回调函数
                                     $(".isDelete").hide();
-
+                                    _this.onOff=false;
                                 },
                                 cancel: function () {
                                     // 用户取消分享后执行的回调函数
@@ -88,6 +91,7 @@
                                 success: function () {
                                     // 用户确认分享后执行的回调函数
                                     $(".isDelete").hide();
+                                    _this.onOff=false;
                                 },
                                 cancel: function () {
                                     // 用户取消分享后执行的回调函数
@@ -119,6 +123,7 @@
             var _this = this;
             $("#recom-btn").on("tap", function() {
                 $("#shares").show();
+                _this.onOff=true;
             });
         },
         recomContent:function () {
@@ -183,7 +188,7 @@
                     })
                 },
                 error: function (data) {
-                    alert("请求失败，请重试")
+                    console.log('网络出错')
                 }
             });
         },
@@ -217,15 +222,17 @@
                     }
                 },
                 error:function () {
-                    alert('网络出错')
+                    console.log('网络出错')
                 }
             });
             this.recomBtn();
             this.recomContent();
             //阻止默认事件
-            // $(document).on("touchmove", function(event) {
-            //     event.preventDefault();
-            // });
+            $(document).on("touchmove", function(event) {
+                if(_this.onOff){　　　　　　　　　　　　　　　　　　　　　　　　　　　　//判断是遮罩显示时执行，禁止滚屏
+                    event.preventDefault();　　　　　　　　　　　　　　　　　　　//最关键的一句，禁止浏览器默认行为
+                }
+            });
         }
     }
 

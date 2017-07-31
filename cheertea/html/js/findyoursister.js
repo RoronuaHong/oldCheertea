@@ -52,7 +52,8 @@
                             width: h,
                             height: w / 5 * 4 + "px",
                             marginTop: w / 5 + "px",
-                            background: "url(http://images.cheertea.com/findsomething.png)",
+                            background: "url(http://images.cheertea.com/findsomething1.png)",
+                            "-webkit-overflow-scrolling": "touch"
                         });
 
                         //设置物品的位置
@@ -74,40 +75,61 @@
         setGoodPos: function(h, w) {
             var _this = this;
 
-            //设置物品的宽度和高度
-            this.goodWidth = [];
-            this.goodHeight = [];
-            this.goodTop = [];
-            this.goodLeft = [];
+            Ajax({
+                urls: "widget?type=find_someting&action=game_begin&member_id=1036",
+                types: "POST",
+                dataTypes: "json",
+                successes: function(data) {
+                    var datas = JSON.parse(data);
+                    console.log(datas);
 
-            $(".innerbox").empty();
-            for(var i = 0; i < 180; i++) {
-                $(".innerbox").append(
-                    "<li>" + i + "</li>"
-                );
+                    //打乱顺序
+                    datas.materials = datas.materials.sort(function() {
+                        return 0.5 - Math.random();
+                    });
 
-                //设置随机宽高
-                this.goodWidth[i] = Math.random() * 80 + 50;
-                this.goodHeight[i] = w * 4 / 5 / 4;
+                    //添加需要找的物品
+                    $(".needfindimg").attr("src", datas.find[0].material.material_url);
+                    $(".needfindimg").attr("ids", datas.find[0].material.material_id);
 
-                //设置位置,如果有重叠则重新设置
-                this.goodTop[i] = Math.abs(Math.random() * w / 5 * 4 - this.goodHeight[i]);
-                this.goodLeft[i] = Math.random() * h * 5 - this.goodWidth[i];
+                    //设置物品的宽度和高度
+                    _this.goodWidth = [];
+                    _this.goodHeight = [];
+                    _this.goodTop = [];
+                    _this.goodLeft = [];
 
-                //设置css
-                $(".innerbox li").eq(i).css({
-                    float: "left",
-                    width: _this.goodWidth[i] / 64 + "rem",
-                    height: _this.goodHeight[i] + "px",
-                    lineHeight: _this.goodHeight[i] + "px",
-                    background: "rgb(" + ~~(Math.random() * 255) + ", " + ~~(Math.random() * 255) + ", " + ~~(Math.random() * 255) + ")",
-                    // background: "rgb(11, 111, 11)",
-                    backgroundSize: "cover",
-                    fontSize: "24px",
-                    textAlign: "center",
-                    color: "#00f"
-                });
-            }
+                    $(".innerbox").empty();
+                    for(var i = 0; i < datas.materials.length; i++) {
+                        $(".innerbox").append(
+                            "<li></li>"
+                        );
+
+                        //设置随机宽高
+                        _this.goodWidth[i] = Math.random() * 80 + 50;
+                        _this.goodHeight[i] = w * 4 / 5 / 4;
+
+                        //设置位置,如果有重叠则重新设置
+                        _this.goodTop[i] = Math.abs(Math.random() * w / 5 * 4 - _this.goodHeight[i]);
+                        _this.goodLeft[i] = Math.random() * h * 5 - _this.goodWidth[i];
+
+                        //添加id
+                        $(".innerbox li").eq(i).attr("ids", datas.materials[i].material_id);
+
+                        //设置css
+                        $(".innerbox li").eq(i).css({
+                            float: "left",
+                            width: _this.goodWidth[i] / 64 + "rem",
+                            height: _this.goodHeight[i] + "px",
+                            lineHeight: _this.goodHeight[i] + "px",
+                            background: "url(" + datas.materials[i].material_url + ") 0 0 no-repeat",
+                            backgroundSize: "contain",
+                            fontSize: "24px",
+                            textAlign: "center",
+                            color: "#00f"
+                        });
+                    }
+                }
+            });
         },
         init: function() {
 
