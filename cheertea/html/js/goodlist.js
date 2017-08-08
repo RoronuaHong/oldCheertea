@@ -24,18 +24,21 @@
             //实现购物车功能
             goodcar.goodAjax(".goodlistwrap", ".goodscar");
 
-            function tagFun(urls, boxs, indexs) {
+            function tagFun(urls, boxs, indexs,order) {
+                if(!order){
+                    order=5
+                }
                 Ajax({
                     urls: urls,
                     types: "get",
                     dataTypes: "json",
                     datas: {
-                        tag_id: indexs
+                        tag_id: indexs,
+                        orderBy:order
                     },
                     successes: function (data) {
                         var datas = JSON.parse(data);
                         console.log(datas);
-
                         //绿积分
                         if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "ljfgoodlist.html") {
                             swiperfun.showLjfbox(boxs, datas.res_data.goodsList);
@@ -62,6 +65,11 @@
                 tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 73);
             }
 
+            //服装鞋帽
+            if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "clothes-goodlist.html") {
+                tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 74);
+            }
+
             //爆款推荐
             if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "bktjgoodlist.html") {
                 tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 48);
@@ -72,6 +80,45 @@
                 tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 52);
             }
 
+            //点击排序
+            var defaultFlag=5;
+            function sortCount() {
+                $('.countsortbtn').find('li').on('tap',function () {
+                    $('.countsortbtn').find('li').removeClass('active');
+                    $(this).addClass('active');
+                    var  order=parseInt($(this).attr('order'));
+                    if(order==defaultFlag){
+                        return false;
+                    }else{
+                        defaultFlag=order;
+                    }
+                    $('.ljfbox').html('');
+                    //美肤优选
+                    if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "cosmetics-goodlist.html") {
+                        tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 73,order);
+                    }
+                    //服装鞋帽
+                    if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "clothes-goodlist.html") {
+                        tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 74,order);
+                    }
+
+                    if(order==1){
+                            $('.prize_up').removeClass('triangle_up_light');
+                            $('.prize_down').addClass('triangle_down_light');
+                             $(this).attr({order:2});
+                    }else if(order==2){
+                            $('.prize_down').removeClass('triangle_down_light');
+                            $('.prize_up').addClass('triangle_up_light');
+                            $(this).attr({order:1});
+                    }else{
+                            $('.prize_up').removeClass('triangle_up_light');
+                            $('.prize_down').removeClass('triangle_down_light');
+                    }
+
+
+                })
+            }
+            sortCount();
             //获取的ajax
             Ajax({
                 urls: "index/index!getIndexData.do",
@@ -151,7 +198,8 @@
             }
 
             return this;
-        }
+        },
+
     }
 
     var goodlist = new goodList();

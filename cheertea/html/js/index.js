@@ -76,8 +76,6 @@ indexFun.prototype = {
 					//爆款推荐
 					_this.swiperfun.showTwopath(".bktj-twopatherbox", datas.res_data.bktjgoodsList);
 
-
-
 					//滑动效果
 					_this.newimgchange.loadPath('.twopaths', false, 2.5);
 
@@ -160,7 +158,7 @@ indexFun.prototype = {
             /*//520专题
             SpecialFun("goods!getGoodsListByActivityId.do", ".zty-twopatherbox", 24);*/
 
-            function tagFun(urls, boxs, indexs, showbox) {
+            function tagFun(urls, boxs, indexs, showbox,url) {
                 Ajax({
                     urls: urls,
                     types: "get",
@@ -171,7 +169,7 @@ indexFun.prototype = {
                     successes: function (data) {
                         var datas = JSON.parse(data);
                         console.log(datas);
-                        _this.swiperfun[showbox](boxs, datas.res_data.goodsList);
+                        _this.swiperfun[showbox](boxs, datas.res_data.goodsList,url);
                         _this.swiperfun.appendGoods();
                     }
                 });
@@ -181,7 +179,10 @@ indexFun.prototype = {
             tagFun("goods!getGoodsListByTagId.do", ".xpss-goodbox", 52, "showGoodbox");
 
             //美肤优选
-            tagFun("goods!getGoodsListByTagId.do",".cosmetics-twopatherbox", 73, "showTwopathLimit");
+            tagFun("goods!getGoodsListByTagId.do",".cosmetics-twopatherbox", 73, "showTwopathLimit","/cn/cosmetics-goodlist.html");
+
+            //服装鞋帽
+            tagFun("goods!getGoodsListByTagId.do",".clothes-twopatherbox", 74, "showTwopathLimit","/cn/clothes-goodlist.html");
 
             //620兑奖
             tagFun("goods!getGoodsListByTagId.do", ".zty-twopatherbox", 68, "showPrizebox");
@@ -308,5 +309,5 @@ indexFun.prototype = {
 	}
 }
 
-var indexfun = new indexFun()
+var indexfun = new indexFun();
 indexfun.init().showTowpaher().wheelfun().addPoints();

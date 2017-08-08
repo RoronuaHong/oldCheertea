@@ -92,7 +92,7 @@ swiperFun.prototype = {
             throttle: 0
         });
 	},
-    showTwopathLimit: function(names, datas) {
+    showTwopathLimit: function(names, datas,url) {
 	    var index=0;
         $(names).append(
             "<div class='swiper-container twopaths'>" +
@@ -124,7 +124,7 @@ swiperFun.prototype = {
         $(names).find(".swiper-wrapper").append(
             "<div class='swiper-slide'>" +
             "<div class='two-pathcon'>" +
-            "<a href='/cn/cosmetics-goodlist.html'>" +
+            "<a href='" + url + "'>" +
             "<img src='" + imgurl + "/cosmetics-more.png' alt=''>" +
             "</a>" +
             "</div>" +
@@ -141,7 +141,7 @@ swiperFun.prototype = {
 		);
 		$.each(datas, function(i) {
 			var imgs = datas[i].image || datas[i].original;
-			$(names).find(".recommendgoods").append(
+            $(names).find(".recommendgoods").append(
 				"<div class='recommendgoodscon' ids=" + datas[i].goods_id + ">" +
                 	"<a href='/cn/product_info.html?goods_id=" + datas[i].goods_id + "'>" +
 						"<img src='" + imgurl + "logobgs.png' data-src='" + imgchange.show(imgs) + "' alt=''>" +
@@ -156,6 +156,7 @@ swiperFun.prototype = {
 				"</div>"
 			);
 		});
+
         Echo.init({
             offset: 200,
             throttle: 0

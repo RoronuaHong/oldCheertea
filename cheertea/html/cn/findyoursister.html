@@ -4,39 +4,58 @@
     <meta charset="UTF-8">
     <title>大家来找茬</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-    <!--<link rel="stylesheet" href="http://css.cheertea.com/commons.css">-->
-    <!--<link rel="stylesheet" href="http://css.cheertea.com/findyoursister.css">-->
-    <link rel="stylesheet" href="../css/commons.css">
-    <link rel="stylesheet" href="../css/findyoursister.css">
+    <link rel="stylesheet" href="http://css.cheertea.com/commons.css">
+    <link rel="stylesheet" href="http://css.cheertea.com/findyoursister.css">
+    <!--<link rel="stylesheet" href="../css/commons.css">-->
+    <!--<link rel="stylesheet" href="../css/findyoursister.css">-->
 </head>
 <body>
     <div class="wrapbox" id="wrapbox">
         <div class="wrap" id="wrap">
             <div class="startbox">
-                <h4 class="needfind">你需要找到: </h4>
+                <h4 class="needfind"></h4>
                 <ul class="needbox">
-                    <li>绿色 x 2</li>
-                    <li>红色 x 2</li>
-                    <li>蓝色 x 2</li>
+                    <li>
+                        <span class="name"></span> x
+                        <span class="num">3</span>
+                    </li>
                 </ul>
-                <h3 id="startbtn">游戏开始</h3>
+                <!--<h3 id="startbtn"></h3>-->
+                <div class="clockbox">
+                    <img src="http://images.cheertea.com/clocknum3.png" alt="" class="clocknum">
+                </div>
+            </div>
+            <div class="gameoverbox">
+                <p class="yourfindbox"></p>
+                <div class="continue">继续游戏</div>
             </div>
             <div class="gamebox">
-                <a href="javascript: history.go(-1)" class="back" style="background: url('http://images.cheertea.com/fysback.png') center center no-repeat; background-size: 70%;"></a>
-                <div class="needfindbox clearfix">
-                    <img src="" alt="" class="needfindimg">
-                    <span class="needfindnum">X<strong>3</strong></span>
-                </div>
                 <!--<h2>大家来找茬</h2>-->
                 <ul class="innerbox">
 
                 </ul>
             </div>
+            <div class="titlebox">
+                <a href="javascript: history.go(-1)" class="back" style="background: url('http://images.cheertea.com/fysback.png') center center no-repeat; background-size: 70%;"></a>
+                <div class="needfindbox clearfix">
+                    <span class="needfindimg"></span>
+                    <span class="needfindnum">X<strong>3</strong></span>
+                </div>
+                <div class="countdown clearfix">
+                    <span class="name">剩余时间: </span>
+                    <span class="timer"></span>
+                </div>
+                <div class="selectNum">
+                    <span class="name">已选中: </span>
+                    <span class="num">0</span>
+                </div>
+                <div class="chacha">X</div>
+            </div>
         </div>
     </div>
-    <!--<script src="http://js.cheertea.com/newcommon.js"></script>-->
-    <!--<script src="http://js.cheertea.com/findyoursister.js"></script>-->
-    <script src="../js/newcommon.js"></script>
-    <script src="../js/findyoursister.js"></script>
+    <script src="http://js.cheertea.com/newcommon.js"></script>
+    <script src="http://js.cheertea.com/findyoursister.js"></script>
+    <!--<script src="../js/newcommon.js"></script>-->
+    <!--<script src="../js/findyoursister.js"></script>-->
 </body>
 </html>
