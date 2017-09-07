@@ -19,14 +19,14 @@
             var image_url = "http://images.cheertea.com/logonews.png";
             if(member_id != "" && member_id != undefined && member_id != null){
                 var shareUrl = 'http://wx.cheertea.com/cn/mooncakebetting.html?memberid=' + member_id;
-                $.ajax({
+                    $.ajax({
                     type:'POST',
                     url:'http://wx.cheertea.com/widget?type=group_activity&action=ajaxsign&ajax=yes',
                     data:{url:url, member_id:member_id},
                     dataType:"json",
                     success: function(data) {
                         wx.config({
-                            debug : false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                            debug : true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                             appId : data.appid, // 必填，公众号的唯一标识
                             timestamp : data.timestamp, // 必填，生成签名的时间戳
                             nonceStr :  data.nonceStr, // 必填，生成签名的随机串
@@ -225,14 +225,13 @@
                 urls: "member/login!isLogin.do",
                 types: "get",
                 asyncs: false,
-                timeouts: 1000 * 10,
+                // timeouts: 1000 * 10,
                 dataTypes: "json",
                 successes: function (data) {
                     var datas = JSON.parse(data);
 
                     if(datas.res_code == 0) {
                         var parentId = _this.isEarn("memberid");
-
                         if(!!parentId) {
                             var url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb4868f50223328db&redirect_uri=http%3A%2F%2Fwx.cheertea.com%2Fmember_index.html"
                                 +"&response_type=code"
@@ -241,12 +240,10 @@
 
                             window.location.href = url;
                         } else {
-                            window.location.href = "login.html?forward=" + window.location.pathname;
+                            window.location.href = "cn/login.html?forward=" + window.location.pathname;
                         }
                     }
-
                     if(datas.res_code == 1) {
-
                         //微信分享
                         _this.shareWx(datas.res_data.member.member_id);
                     }

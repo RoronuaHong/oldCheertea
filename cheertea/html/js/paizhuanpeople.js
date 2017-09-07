@@ -1,4 +1,5 @@
 var $ = require("./common/zepto");
+var newimgChange = require('./function/newimgchange');
 var swiperFun = require("./function/swiperFun");
 var swiperfun = new swiperFun();
 var imgChange = require("./function/imgchange");

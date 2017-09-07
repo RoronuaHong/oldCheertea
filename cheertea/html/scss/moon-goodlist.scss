@@ -1,0 +1,57 @@
+
+.countrytit{
+  width: 100%;
+  img{
+    width: 100%;
+  }
+}
+
+  .ljfbox{
+    width: 100%;
+    height: auto;
+    background: url("http://images.cheertea.com/moon-bg.jpg") repeat-y;
+    background-size: contain;
+    padding-bottom: 100px;
+  .box-inner{
+    padding: 0 50px;
+    .wrap-list{
+      width:100%;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap:wrap;
+      li{
+        width: 258px;
+        margin-top: 28px;
+        img{
+          width: 100%;
+        }
+        h2{
+          font-size: 24px;
+          color: #1a1a1a;
+          margin: 14px 0 10px 0;
+        }
+        div{
+          display: -webkit-flex;
+          display: flex;
+          justify-content: space-between;
+          p{
+            font-size: 22px;
+            color: #fe0000;
+            span{
+              font-size: 28px;
+            }
+            strong{
+              font-size: 22px;
+              padding:0 8px;
+              color: #1a1a1a;
+              text-decoration:line-through;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  }
+

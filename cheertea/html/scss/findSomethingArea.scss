@@ -1,0 +1,238 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+//$imgurl: "../images/";
+
+.findsomethingareawrap {
+  width: 100%;
+  height: 2915px;
+  background: url($imgurl + "findsomethingbg.png") 0 0 no-repeat;
+  background-size: contain;
+  .buttonsbox {
+    width: 420px;
+    height: 64px;
+    margin: 0 auto 72px;
+    padding-top: 380px;
+    line-height: 64px;
+  }
+  .leftBtn {
+    float: left;
+    width: 160px;
+    height: 64px;
+    line-height: 64px;
+    font-size: 30px;
+    text-align: center;
+    color: #333333;
+    background: #fff4d5;
+    border-radius: 10px;
+    box-shadow: inset 0 -5px 0 0 #bbbaa6;
+  }
+  .rightBtn {
+    float: right;
+    width: 160px;
+    height: 64px;
+    line-height: 64px;
+    font-size: 30px;
+    text-align: center;
+    color: #333333;
+    background: #fff4d5;
+    border-radius: 10px;
+    box-shadow: inset 0 -5px 0 0 #bbbaa6;
+  }
+  h1 {
+    width: 100%;
+    height: 108px;
+    font-size: 36px;
+    text-align: center;
+    color: #fcf4ed;
+  }
+  .prizebox {
+    width: 590px;
+    height: 403px;
+    margin: 0 auto 35px;
+    background: url($imgurl + "findprize.png") 0 0 no-repeat;
+    background-size: contain;
+  }
+  h3 {
+    width: 100%;
+    height: 170px;
+    line-height: 170px;
+    font-size: 36px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .bigRingkbox {
+    width: 100%;
+    .topThreebox {
+      display: flex;
+      width: 100%;
+      li {
+        position: relative;
+        width: 33.33%;
+        height: 177px;
+      }
+      li:nth-child(1) {
+        background: url($imgurl + "findtop2.png") 0 0 no-repeat;
+        background-size: contain;
+        img {
+          position: absolute;
+          top: -.4rem;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          display: block;
+          width: 60px;
+          height: 56px;
+          border-radius: 50%;
+        }
+      }
+      li:nth-child(2) {
+        background: url($imgurl + "findtop1.png") 0 0 no-repeat;
+        background-size: contain;
+        img {
+          position: absolute;
+          top: -.35rem;
+          left: -.25rem;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          display: block;
+          width: 71px;
+          height: 67px;
+          border-radius: 50%;
+        }
+      }
+      li:nth-child(3) {
+        background: url($imgurl + "findtop3.png") 0 0 no-repeat;
+        background-size: contain;
+        img {
+          position: absolute;
+          top: -.25rem;
+          left: -.3rem;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          display: block;
+          width: 60px;
+          height: 56px;
+          border-radius: 50%;
+          border-radius: 50%;
+        }
+      }
+      .name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: keep-all;
+        white-space: nowrap;
+        float: left;
+        width: 100%;
+        height: 35px;
+        padding-top: 1.8rem;
+        line-height: 35px;
+        font-size: 20px;
+        text-align: center;
+        color: #1a1a1a;
+      }
+      .tel {
+        float: left;
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        font-size: 20px;
+        text-align: center;
+        color: #1a1a1a;
+      }
+    }
+  }
+  .rinktitle {
+    display: flex;
+    width: 100%;
+    li {
+      flex: 1;
+      height: 70px;
+      line-height: 70px;
+      font-size: 24px;
+      text-align: center;
+      color: #1a1a1a;
+    }
+    li:nth-child(1) {
+      text-indent: -.3rem;
+    }
+    li:nth-child(2) {
+      text-indent: -1.5rem;
+    }
+    li:nth-child(3) {
+      text-indent: -1.8rem;
+    }
+    li:nth-child(4) {
+      text-indent: -1rem;
+    }
+  }
+  .rinkbox {
+    width: 94%;
+    height: 540px;
+    margin:0 auto;
+  }
+  .rinkul {
+    width: 100%;
+    box-shadow: -2px -2px 0 #ef7c21;
+    li {
+      position: relative;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: keep-all;
+      white-space: nowrap;
+      float: left;
+      height: 60px;
+      line-height: 60px;
+      font-size: 24px;
+      text-align: center;
+      color: #1a1a1a;
+      box-shadow: inset -2px -2px 0 #ef7c21;
+    }
+    li:nth-child(1) {
+      width: 18%;
+    }
+    li:nth-child(2) {
+      width: 20%;
+    }
+    li:nth-child(3) {
+      width: 32%;
+    }
+    li:nth-child(4) {
+      width: 30%;
+    }
+    .liimgs {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+  .timebg {
+    position: relative;
+    width: 100%;
+    height: 935px;
+    background: url($imgurl + "timebg1.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    .btn {
+      position: fixed;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 86px;
+      background: #ef7c21;
+      line-height: 86px;
+      font-size: 36px;
+      text-align: center;
+      color: #fff;
+    }
+  }
+}

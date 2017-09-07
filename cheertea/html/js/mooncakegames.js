@@ -214,61 +214,10 @@
                                             animation: "alls" + i + " 0.8s linear infinite"
                                         });
                                     });
-                                    $(".dicebox").removeClass("diceboxopac.ity");
+                                    $(".dicebox").removeClass("diceboxopacity");
 
                                     //骰子结束
-                                    clearTimeout(dicestimer);
-                                    dicestimer = setTimeout(function() {
-
-                                        /*//骰子运动停止
-                                        $.each($(".dicebox li"), function() {
-                                            dicesArr.push(~~(Math.random() * 6 + 1));
-                                        });*/
-                                        datas.res_data.touzi_value.shift();
-                                        dicesArr = datas.res_data.touzi_value;
-
-                                        $(".dicebox").children().hide();
-                                        $.each(dicesArr, function(i) {
-
-                                            //变换图片
-                                            $(".dicebox li").eq(i).css({
-                                                background: "url(" + publicss + dicesArr[i] + ".png) 0 0 no-repeat !important",
-                                                backgroundSize: "100% 100% !important",
-                                                animation: "none"
-                                            });
-                                        });
-                                        $(".dicebox").children().show();
-                                        console.log(dicesArr);
-
-                                        //显示开始游戏
-                                        $(".gamestartbetting").show();
-                                        /*$("#isDeletes").hide();*/
-
-                                        clearTimeout(timerbox);
-                                        timerbox = setTimeout(function() {
-                                            //显示弹窗
-                                            $("#isDeletes").hide();
-                                            $(".changemessage span").html(datas.res_data.all_count);
-                                            if(datas.res_data.all_count > 0) {
-                                                $("#showDelete").show();
-                                                $("#continue").show();
-                                                $("#earnchance").hide();
-                                            } else {
-                                                $("#showDelete").show();
-                                                $("#continue").hide();
-                                                $("#earnchance").show();
-                                            }
-
-                                            if(datas.res_data.iswin == 1) {
-                                                $(".showMessagebox").addClass("winningbg");
-                                                $(".iswinmessage").find("span").html(datas.res_data.reward_result);
-                                                $(".iswinmessage").show();
-                                            } else {
-                                                $(".showMessagebox").removeClass("winningbg");
-                                                $(".iswinmessage").hide();
-                                            }
-                                        }, 1000);
-                                    }, 1500);
+                                 c
                                 }
 
                                 if (datas.res_code == -1) {

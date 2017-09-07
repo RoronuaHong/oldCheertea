@@ -8,13 +8,37 @@
 	<!--<link rel="stylesheet" href="../css/commons.css">-->
 	<!--<link rel="stylesheet" href="../css/index.css">-->
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'/>
+	<style type="text/css">
+		/*.ttop {
+			    position: fixed;
+    			top: 0;
+    			left: 0;
+    			width: 100%;
+    			height: 1.27rem;
+    			z-index: 100;
+		}
+		.homeheader {
+			    position: fixed;
+				top: 1.25rem;
+				left: 0;
+				width: 100%;
+				height: 1.25rem;
+				z-index: 100;
+				background: #fff;
+		}
+		.newimgchangebox {
+				margin-top:50px;
+		}*/
+
+	</style>
 </head>
 <body>
-	<div class="pkbox" style="z-index: 10000; position: fixed; bottom: 3rem; right: 0rem; display: block; width: 2.8rem; height: 2.7rem; background: url('http://images.cheertea.com/pk01.png?v=100') 0 0 no-repeat; background-size: contain;">
+	<div class="pkbox" style="z-index: 10000; position: fixed; bottom: 3rem; right: 0rem; display: block; width: 2.8rem; height: 2.7rem; background: url('http://images.cheertea.com/findsister.png') 0 0 no-repeat; background-size: contain;">
 		<div class="pkcha" style="position: absolute; top: 0; right: 0; width: .8rem; height: .8rem;"></div>
-		<a href="./cn/inviter.html" style="display: block; width: 100%; height: 100%;"></a>
+		<a href="./cn/findSomethingArea.html" style="display: block; width: 100%; height: 100%;"></a>
 	</div>
 	<div class="indexwrap">
+<!-- 		<img class="ttop" style="width:100%" src="http://images.cheertea.com/toptop.png"/> -->
 		<div class="homeheader">
 			<a href="category.html" class="homesearch">导购</a>
 			<label for="">
@@ -37,53 +61,53 @@
 					<!--</a>-->
 				<!--</li>-->
 				<li>
-					<a href="../cn/freeday.html">
-						<img src="http://images.cheertea.com/img720_1.png" alt="">
-						<span>月月抽免单</span>
-					</a>
+                    <a class="addPoint">
+                        <img src="http://images.cheertea.com/qd.png" alt="">
+                        <span>签到领积分</span>
+                    </a>
 				</li>
 				<li>
 					<a href="../cn/newshopnear.html">
-						<img src="http://images.cheertea.com/img720_2.png" alt="">
+						<img src="http://images.cheertea.com/sq.png" alt="">
 						<span>商圈</span>
 					</a>
 				</li>
 				<li>
 					<a href="../cn/oversea-purchase.html">
-						<img src="http://images.cheertea.com/img720_9.png" alt="">
+						<img src="http://images.cheertea.com/hyg.png" alt="">
 						<span>海外购</span>
 					</a>
 				</li>
 				<!--<li>-->
 					<!--<a href="http://wx.cheertea.com/member_index.html">-->
 						<!--<img src="http://images.cheertea.com/contengimg4.png" alt="">-->
-						<!--<span>账户管理</span>-->
+						<!--<span>账户管理</span>--> 
 					<!--</a>-->
 				<!--</li>-->
 				<li>
-					<a href="../cn/chouzhuanshi.html">
-						<img src="http://images.cheertea.com/img720_4.png" alt="">
-						<span>开店赢钻石</span>
+					<a href="../cn/feedback.html">
+						<img src="http://images.cheertea.com/pz.png" alt="">
+						<span>拍砖赢礼品</span>
 					</a>
 				</li>
 				<li>
 					<!-- onermb_buy.html -->
-					<a class="addPoint">
-						<img src="http://images.cheertea.com/img720_5.png" alt="">
-						<span>签到领积分</span>
+                    <a href="../cn/recommended_prize.html">
+						<img src="http://images.cheertea.com/tj.png" alt="">
+						<span>推荐有奖</span>
 					</a>
 				</li>
 				<li>
 					<!-- ninenine.html -->
 					<a href="http://live.chanyou.net/app/index.php?i=2&c=entry&do=index&m=meepo_online">
-						<img src="http://images.cheertea.com/img720_6.png" alt="">
+						<img src="http://images.cheertea.com/sp.png" alt="">
 						<span>视频直播</span>
 					</a>
 				</li>
 				<li>
 					<!-- fight_groups.html -->
-					<a href="./cn/healthmuseum.html">
-						<img src="http://images.cheertea.com/img720_7.png" alt="">
+					<a href="../cn/healthmuseum.html">
+						<img src="http://images.cheertea.com/ysg1.png" alt="">
 						<span>养生馆</span>
 					</a>
 				</li>
@@ -94,10 +118,10 @@
 					<!--</a>-->
 				<!--</li>-->
 				<li>
-					<a href="../cn/zajindan.html">
-						<img src="http://images.cheertea.com/img720_8.png" alt="">
-						<span>720砸金蛋</span>
-					</a>
+                    <a href="../cn/freeday.html">
+                        <img src="http://images.cheertea.com/md.png" alt="">
+                        <span>月月抽免单</span>
+                    </a>
 				</li>
 			</ul>
 			<div class="hotspot">
@@ -115,7 +139,7 @@
 						<img src="http://images.cheertea.com/cosmetics-banner.jpg" alt="">
 					</a>
 				</div>
-				<div class="cosmetics-twopatherbox">
+				<div class="cosmetics-twopatherbox" style="width: 100%; overflow-y: auto;">
 
 				</div>
 			</div>
@@ -126,7 +150,19 @@
 						<img src="http://images.cheertea.com/clothes-banner.jpg" alt="">
 					</a>
 				</div>
-				<div class="clothes-twopatherbox">
+				<div class="clothes-twopatherbox" style="width: 100%; overflow-y: auto;">
+
+				</div>
+			</div>
+
+			<!--日化洗护专区-->
+			<div class="clothes-zone  newwrap-zone">
+				<div class=" newwrap-zone-banner">
+					<a href="../cn/daywash-goodlist.html">
+						<img src="http://images.cheertea.com/daywash-banner.jpg" alt="">
+					</a>
+				</div>
+				<div class="daywash-twopatherbox" style="width: 100%; overflow-y: auto;">
 
 				</div>
 			</div>

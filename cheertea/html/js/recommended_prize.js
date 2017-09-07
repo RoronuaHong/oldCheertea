@@ -109,7 +109,7 @@
                 })
             }
         },
-        isEarn: function(name) {
+         isEarn: function(name) {
 
             //正则判断URL是否存在当前
             var veg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -119,7 +119,7 @@
             }
             return null;
         },
-        recomBtn: function() {
+         recomBtn: function() {
             var _this = this;
             $("#recom-btn").on("tap", function() {
                 $("#shares").show();
@@ -128,7 +128,7 @@
         },
         recomContent:function () {
             $.ajax({
-                url: publics+"shop/activityZhaoCha!initTuijian.do",
+                url: publics+"shop/inviterReward!initTuijian.do",
                 type:'post',
                 dataType:"json",
                 xhrFields: {
@@ -206,14 +206,10 @@
                     if(datas.res_code == 0) {
                         var parentId = _this.isEarn("memberid");
                         if(!!parentId) {
-                            // var url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb4868f50223328db&redirect_uri=http%3A%2F%2Fwx.cheertea.com%2Fcn%2Frecommended_prize.html"
-                            //     +"&response_type=code"
-                            //     +"&scope=snsapi_userinfo"
-                            //     +"&state="+parentId+"#wechat_redirect";
-                            var url="login.html?state="+parentId+"&forward=" + window.location.pathname;
+                            var url="/cn/login.html?state="+parentId+"&forward=" + window.location.pathname;
                             window.location.href = url;
                         } else {
-                            window.location.href = "login.html?forward=" + window.location.pathname;
+                            window.location.href = "/cn/login.html?forward=" + window.location.pathname;
                         }
                     }
                     if(datas.res_code == 1) {

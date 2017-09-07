@@ -7,7 +7,6 @@
 
     var bindPhone = {
         full: function() {
-
             //判断是否填满且密码输入正确
             if($(".phoneinput").val() && $(".veriinput").val()) {
                 Ajax({

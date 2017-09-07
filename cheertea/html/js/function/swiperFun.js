@@ -11,7 +11,7 @@ if(window.location.host == "wx.cheertea.com") {
 } else {
     imgurl = "../images/";
 }
-console.log(imgurl)
+console.log(imgurl);
 
 var swiperFun = module.exports = function() {
 	if(this instanceof swiperFun) {
@@ -92,6 +92,37 @@ swiperFun.prototype = {
             throttle: 0
         });
 	},
+    showTwopaths: function(names, datas, url) {
+        var index = 0;
+        $(names).append(
+            "<div class='box' style='min-width: 310%;'></div>"
+        );
+        $.each(datas, function(i) {
+            if (index < 6) {
+                $(names).find(".box").append(
+                    "<div class='two-pathcon clearfix' ids='" + datas[i].goods_id + "' style='float: left;width: 2.333333rem;height: 77%;margin: .7%;padding: .5% 0.133333rem;-webkit-box-shadow: 0 0 0 0.04rem #e6e6e6;box-shadow: 0 0 0 0.04rem #e6e6e6;'>" +
+                    "<a href='/cn/product_info.html?goods_id=" + datas[i].goods_id + "'>" +
+                    "<img src='" + imgurl + "/logobgs.png' data-src='" + imgchange.show(datas[i].image) + "' alt='' style='display: block; width: 100%; height: 2.2rem;'>" +
+                    "<span class='contents'>" +
+                    "<p class='two-title' style='overflow: hidden;text-overflow: ellipsis;word-break: keep-all;white-space: nowrap;width: 100%;height: .59rem;line-height: .59rem;font-size: 0.293333rem;color: #000;'>" + datas[i].name + "</p>" +
+                    "<div class='two-price clearfix' style='width: 100%; height: .5rem; line-height: .5rem;'>" +
+                    "<span class='newprice' style='float: left; height: 100%; color: red;'>￥<strong style='font-size: 0.346667rem;'>" + datas[i].price + "</strong>.00</span>" +
+                    "</div>" +
+                    "</span>" +
+                    "</a>" +
+                    "</div>"
+                );
+                index++;
+            }
+        });
+        $(names).find(".box").append(
+            "<div class='two-pathcon clearfix' style='float: left;width: 2.333333rem;height: 77%;margin: .7%;padding: .5% 0.133333rem;-webkit-box-shadow: 0 0 0 0.04rem #e6e6e6;box-shadow: 0 0 0 0.04rem #e6e6e6;'>" +
+            "<a href='" + url + "'>" +
+            "<img src='" + imgurl + "/cosmetics-more.png' alt='' style='display: block; width: 100%; height: 2.2rem;'>" +
+            "</a>" +
+            "</div>"
+        );
+    },
     showTwopathLimit: function(names, datas,url) {
 	    var index=0;
         $(names).append(
@@ -119,7 +150,6 @@ swiperFun.prototype = {
                 );
                 index++;
             }
-
         });
         $(names).find(".swiper-wrapper").append(
             "<div class='swiper-slide'>" +

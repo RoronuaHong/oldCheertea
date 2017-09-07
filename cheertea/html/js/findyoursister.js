@@ -1,6 +1,7 @@
 ;(function() {
     var $ = require("./common/jquery.min");
     var Ajax = require("./function/ajax");
+    var Popup = require("./function/Popup");
 
     var FindSomething = {
         changeOriention: function() {
@@ -56,7 +57,7 @@
 
                         //设置内容区域的宽高
                         $(".gamebox").css({
-                            overflowX: "auto",
+                            overflowx: "auto",
                             overflowY: "hidden",
                             width: h,
                             height: w / 5 * 4 + "px",
@@ -68,7 +69,7 @@
 
                         //设置滑动块
                         $(".innerbox").css({
-                            overflowX: "auto",
+                            overflowx: "auto",
                             overflowY: "hidden",
                             width: "500%",
                             height: "100%",
@@ -88,7 +89,7 @@
         gameStart: function() {
             var _this = this;
 
-            var i = 4;
+            var i = 3;
             //倒计时进入游戏画面
             _this.timers = setInterval(function() {
                 if(i > 0) {
@@ -129,7 +130,8 @@
 
                                     //判断是否还有游戏机会
                                     $(".continue").on("click", function() {
-                                        !!(datas.gameTimes > 0) ? window.location.reload() : (window.location.href = "http://test.cheertea.com/member_index.html");
+                                        (window.location.href = (window.location.pathname + window.location.search + "?v=" + Math.random() * 10000));
+                                        // (window.location.href = (window.location.pathname + window.location.search + "?v=" + Math.random() * 10000));
                                     });
                                 }
                             });
@@ -175,7 +177,8 @@
 
                                 //判断是否还有游戏机会
                                 $(".continue").on("click", function() {
-                                    (datas.gameTimes > 0) ? window.location.reload() : window.location.href = "http://test.cheertea.com/member_index.html";
+                                    (window.location.href = (window.location.pathname + window.location.search + "?v=" + Math.random() * 10000));
+                                    // (datas.gameTimes > 0) ? (window.location.href = (window.location.pathname + window.location.search + "?v=" + Math.random() * 10000)) : (window.location.href = "http://wx.cheertea.com/member_index.html");
                                 });
                             }
                         });
@@ -260,7 +263,6 @@
                                 $(".selectNum .num").html(Math.ceil($(".selectNum .num").html()) + 1);
 
                                 $(".needfindnum strong").html($(".needfindnum strong").html() - 1);
-
                                 //清除当前的li
                                 $(this).remove();
                                 if($(".needfindnum strong").html() == 0) {
@@ -268,8 +270,7 @@
                                     //奖励10秒
                                     _this.times = _this.times + 10;
                                     $(".countdown .timer").html(_this.times);
-
-                                    //发送ajax请求，更新新的数据，并打乱顺序
+                                    //发送ajax请求，更新新的数据
                                     Ajax({
                                         // widget?type=find_someting&action=game_begin&member_id=1036
                                         urls: "widget?type=find_someting&action=next",
@@ -279,7 +280,6 @@
                                             material_id: $(".needfindimg").attr("ids")
                                         },
                                         successes: function(data) {
-                                            console.log(1234)
                                             var datas = JSON.parse(data);
                                             console.log(datas);
 
@@ -339,15 +339,121 @@
                                 }, 300);
                             }
                         });
+
+                        //点击开始游戏
+                        _this.gameStart();
                     }
                     if(datas.result == -1) {
                         window.location.href = "login.html?forward=" + window.location.pathname + window.location.search;
                     }
                     if(datas.result == 0) {
-                        window.location.href = "http://test.cheertea.com/member_index.html";
+                        Popup("jumper", datas.message, "/cn/findSomethingArea.html").show();
+
+                        $(".Popupbox").css({
+                            "transform": "rotate(90deg)"
+                        });
                     }
                 }
             });
+        },
+        wxShare: function(ids) {
+            var url = location.href;
+            var member_id = ids;
+            var image_url = "http://images.cheertea.com/findsomethingicon.png";
+            if(member_id != "" && member_id != undefined && member_id != null){
+                var shareUrl = 'http://wx.cheertea.com/cn/findSomethingArea.html?memberid=' + member_id;
+                $.ajax({
+                    type:'POST',
+                    url:'http://wx.cheertea.com/widget?type=group_activity&action=ajaxsign&ajax=yes',
+                    data:{url:url, member_id:member_id},
+                    dataType:"json",
+                    success: function(data) {
+                        wx.config({
+                            debug : false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                            appId : data.appid, // 必填，公众号的唯一标识
+                            timestamp : data.timestamp, // 必填，生成签名的时间戳
+                            nonceStr :  data.nonceStr, // 必填，生成签名的随机串
+                            signature : data.signature,// 必填，签名，见附录1
+                            jsApiList : [ 'checkJsApi', 'onMenuShareTimeline',
+                                'onMenuShareAppMessage', 'onMenuShareQQ',
+                                'onMenuShareQZone' ]
+                            // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                        });
+                        wx.ready(function(){
+                            // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+                            wx.onMenuShareTimeline({
+                                title: "我找" + $(".selectNum .num").html() + "个！", // 分享标题
+                                desc: "你怎么样？快点来试试？", // 分享描述
+                                link: shareUrl,
+                                imgUrl: image_url , // 分享图标
+                                success: function () {
+                                    // 用户确认分享后执行的回调函数
+                                    $(".isDelete").hide();
+
+                                },
+                                cancel: function () {
+                                    // 用户取消分享后执行的回调函数
+                                }
+                            });
+                            // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+                            wx.onMenuShareAppMessage({
+                                title: "我找" + $(".selectNum .num").html() + "个！", // 分享标题
+                                desc: "你怎么样？快点来试试？", // 分享描述
+                                link: shareUrl ,
+                                imgUrl: image_url, // 分享图标
+                                type: data.type, // 分享类型,music、video或link，不填默认为link
+                                success: function () {
+                                    // 用户确认分享后执行的回调函数
+                                    $(".isDelete").hide();
+
+                                },
+                                cancel: function () {
+                                    // 用户取消分享后执行的回调函数
+                                }
+                            });
+
+                            //获取“分享到QQ”按钮点击状态及自定义分享内容接口
+                            wx.onMenuShareQQ({
+                                title: "我找" + $(".selectNum .num").html() + "个！", // 分享标题
+                                title: "你怎么样？快点来试试？", // 分享描述
+                                link: shareUrl, // 分享链接
+                                imgUrl: image_url, // 分享图标
+                                success: function () {
+                                    // 用户确认分享后执行的回调函数
+                                    $(".isDelete").hide();
+
+                                },
+                                cancel: function () {
+                                    // 用户取消分享后执行的回调函数
+                                }
+                            });
+
+                            //获取“分享到QQ空间”按钮点击状态及自定义分享内容接口
+                            wx.onMenuShareQZone({
+                                title: "我找" + $(".selectNum .num").html() + "个！", // 分享标题
+                                title: "你怎么样？快点来试试？", // 分享描述
+                                link: shareUrl, // 分享链接
+                                imgUrl: image_url, // 分享图标
+                                success: function () {
+                                    // 用户确认分享后执行的回调函数
+                                    $(".isDelete").hide();
+
+                                },
+                                cancel: function () {
+                                    // 用户取消分享后执行的回调函数
+                                }
+                            });
+                        });
+                        wx.error(function(res){
+                            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+                            alert("error");
+                        });
+                    },
+                    error: function(){
+                        alert("出现错误，连接未成功");
+                    }
+                });
+            }
         },
         init: function() {
 
@@ -359,9 +465,6 @@
 
             //设置横屏
             this.changeOriention();
-
-            //点击开始游戏
-            this.gameStart();
         }
     }
     FindSomething.init();

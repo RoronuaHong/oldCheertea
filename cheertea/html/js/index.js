@@ -77,7 +77,7 @@ indexFun.prototype = {
 					_this.swiperfun.showTwopath(".bktj-twopatherbox", datas.res_data.bktjgoodsList);
 
 					//滑动效果
-					_this.newimgchange.loadPath('.twopaths', false, 2.5);
+					_this.newimgchange.loadPath('.twopaths', false, 2.6);
 
 					//茶具
 					_this.swiperfun.showGoodbox(".cj-goodbox", datas.res_data.teaToolsGoodsList);
@@ -158,7 +158,7 @@ indexFun.prototype = {
             /*//520专题
             SpecialFun("goods!getGoodsListByActivityId.do", ".zty-twopatherbox", 24);*/
 
-            function tagFun(urls, boxs, indexs, showbox,url) {
+            function tagFun(urls, boxs, indexs, showbox, url) {
                 Ajax({
                     urls: urls,
                     types: "get",
@@ -169,8 +169,9 @@ indexFun.prototype = {
                     successes: function (data) {
                         var datas = JSON.parse(data);
                         console.log(datas);
-                        _this.swiperfun[showbox](boxs, datas.res_data.goodsList,url);
-                        _this.swiperfun.appendGoods();
+
+						(!!datas.res_data) && _this.swiperfun[showbox](boxs, datas.res_data.goodsList,url);
+                        // _this.swiperfun.appendGoods();
                     }
                 });
             }
@@ -179,17 +180,20 @@ indexFun.prototype = {
             tagFun("goods!getGoodsListByTagId.do", ".xpss-goodbox", 52, "showGoodbox");
 
             //美肤优选
-            tagFun("goods!getGoodsListByTagId.do",".cosmetics-twopatherbox", 73, "showTwopathLimit","/cn/cosmetics-goodlist.html");
+            tagFun("goods!getGoodsListByTagId.do",".cosmetics-twopatherbox", 73, "showTwopaths","/cn/cosmetics-goodlist.html");
 
             //服装鞋帽
-            tagFun("goods!getGoodsListByTagId.do",".clothes-twopatherbox", 74, "showTwopathLimit","/cn/clothes-goodlist.html");
+            tagFun("goods!getGoodsListByTagId.do",".clothes-twopatherbox", 74, "showTwopaths","/cn/clothes-goodlist.html");
+
+            //日化洗护
+            tagFun("goods!getGoodsListByTagId.do",".daywash-twopatherbox", 87, "showTwopaths","/cn/daywash-goodlist.html");
 
             //620兑奖
             tagFun("goods!getGoodsListByTagId.do", ".zty-twopatherbox", 68, "showPrizebox");
 
             $(".pkcha").on("touchend", function(event) {
                 event.preventDefault();
-                $(".pkbox").hide();
+                $(".pkbox").hide()
             });
 		});
 
@@ -213,7 +217,7 @@ indexFun.prototype = {
 
                     var islogin = islogins.showFocus();
 
-                    !islogin && Popup("jumper", "请登录！", publics + "login.html?forward=member_index.html").show();
+                    !islogin && Popup("jumper", "请登录！", publics + "/cn/login.html?forward=member_index.html").show();
                 }
             }
         });
@@ -306,8 +310,28 @@ indexFun.prototype = {
 				}
 			})
 		});
+	},
+	bindPhone: function() {
+		console.log(islogins.showFocus());
+        if(!!islogins.showFocus()) {
+
+            //判断是否存在手机号
+            Ajax({
+                urls: "member/isBindMobile.action",
+                types: "get",
+                asyncs: false,
+                timeouts: 1000 * 10,
+                dataTypes: "json",
+                successes: function (datas) {
+                    if (datas.res_code == -1) {
+                        window.location.href = "/cn/bindphones.html?" + window.location.pathname + window.location.search;
+                    }
+                }
+            });
+        }
+        return this;
 	}
 }
 
 var indexfun = new indexFun();
-indexfun.init().showTowpaher().wheelfun().addPoints();
+indexfun.init().bindPhone().showTowpaher().wheelfun().addPoints();

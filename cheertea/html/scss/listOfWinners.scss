@@ -1,0 +1,114 @@
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+//$imgurl: "../images/";
+body, html {
+  touch-action: manipulation;
+}
+.listofwinnerswrap {
+  width: 100%;
+}
+.listtabbox {
+  width: 100%;
+  li {
+    float: left;
+    width: 50%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 28px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    color: #1a1a1a;
+  }
+  .lisel {
+    border-bottom: 1px solid #ef7c21;
+    color: #ef7c21;
+  }
+}
+.conbox {
+  width: 100%;
+  .con {
+    display: none;
+    width: 100%;
+  }
+  .con:nth-child(1) {
+    display: block;
+  }
+  .contitle {
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+    li {
+      float: left;
+      width: 25%;
+      height: 88px;
+      line-height: 88px;
+      font-size: 24px;
+      text-align: center;
+      color: #1a1a1a;
+    }
+  }
+  .content {
+    width: 100%;
+    li {
+      overflow: hidden;
+      position: relative;
+      float: left;
+      width: 25%;
+      height: 88px;
+      line-height: 88px;
+      font-size: 24px;
+      text-align: center;
+      color: #1a1a1a;
+      border-bottom: 1px solid #cccccc;
+      .imgs {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 60px;
+        height: 60px;
+        margin: auto;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+.rankbox {
+  width: 100%;
+  h3 {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 30px;
+    text-align: center;
+    background: #ef7c21;
+    color: #fff;
+    border-bottom: 1px solid #cccccc;
+  }
+  li {
+    overflow: hidden;
+    position: relative;
+    float: left;
+    width: 25%;
+    height: 88px;
+    line-height: 88px;
+    font-size: 24px;
+    text-align: center;
+    color: #1a1a1a;
+    border-bottom: 1px solid #cccccc;
+    .imgs {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 60px;
+      height: 60px;
+      margin: auto;
+      border-radius: 50%;
+    }
+  }
+}

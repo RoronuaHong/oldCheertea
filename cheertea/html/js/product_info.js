@@ -20,7 +20,7 @@ if(window.location.host == "wx.cheertea.com") {
     imgurl = "http://images.cheertea.com/"
 } else {
     imgurl = "../images/";
-}
+}   
 // 修改图片路径
 function change(imgurls) {
             if(imgurls) {
@@ -36,6 +36,9 @@ function GetQueryString(name)
      var r = window.location.search.substr(1).match(reg);
      if(r!=null)return  unescape(r[2]); return null;
 }
+// 获取兑奖资格参数
+var state = GetQueryString("state");
+console.log(state);
 var goodsid = GetQueryString("goods_id");
 // 截取用户id后两位
 var goodsid2 = goodsid.slice(-2);
@@ -364,6 +367,29 @@ product_infos.init();
                 if(showprize==2){
                   $(".buyingquick").html("立即兑奖");
                 }
+                // 判断博饼中奖奖品
+                if(goodsid==1836||goodsid==1837||goodsid==1838||goodsid==1840||goodsid==1841){
+                  $(".buyingquick").html("立即兑奖");
+                  $(".buyingquick").css("background","#7e7d7a");
+                  $(".addcar").css("background","#949292");
+                  $(".buyingquick").unbind();
+                  $(".addcar").unbind();
+                }
+                // 判断有没有资格参与奖品兑奖
+                if(state==0){
+                  $(".buyingquick").html("立即兑奖");
+                  $(".buyingquick").css("background","#7e7d7a");
+                  $(".addcar").css("background","#949292");
+                  $(".buyingquick").unbind();
+                  $(".addcar").unbind();
+                }
+                if(state==1){
+                  $(".buyingquick").html("已兑奖");
+                  $(".buyingquick").css("background","#7e7d7a");
+                  $(".addcar").css("background","#949292");
+                  $(".buyingquick").unbind();
+                  $(".addcar").unbind();
+                }
                 var buypeople = 100 + parseInt(str.buy_count) + parseInt(goodsid2);
                 $(".pass-price strong").html(str.mktprice);
                 $(".people").html(buypeople);
@@ -415,7 +441,7 @@ product_infos.init();
                                   console.log("changdu "+ $(".newnow i").length);
                                   $(".newpass span").eq(i).html(str[i].mktprice);
                                   if(str[i].activity_id){
-                                    $(".jump1").eq(i).attr('href','http://wx.cheertea.com/cn/product_info.html?goods_id='+str[i].goods_id+"activity_id="+str[i].activity_id);
+                                    $(".jump1").eq(i).attr('href','http://wx.cheertea.com/cn/product_info.html?goods_id='+str[i].goods_id+"&"+"activity_id="+str[i].activity_id);
                                   }else{
                                      $(".jump1").eq(i).attr('href','http://wx.cheertea.com/cn/product_info.html?goods_id='+str[i].goods_id);
                                   }

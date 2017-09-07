@@ -28,7 +28,7 @@
 
             console.log(islogin)
             //判断用户是否登录
-            islogin.res_code == 0 && (window.location.href = "http://wx.cheertea.com/login.html?forward=http://wx.cheertea.com/cn/recharge.html");
+            islogin.res_code == 0 && (window.location.href = "http://wx.cheertea.com/cn/login.html?forward=http://wx.cheertea.com/cn/recharge.html");
 
             //判断是否有手机号
             console.log(islogin.res_data.member.mobile);
@@ -119,7 +119,7 @@
                         console.log(datas)
 
                         if(datas.res_code == 0) {
-                            window.location.href = urlss + "login.html?forward=" + urlss + "cn/recharge.html";
+                            window.location.href = urlss + "cn/login.html?forward=" + urlss + "cn/recharge.html";
                         }
 
                         if(datas.res_code == 1) {

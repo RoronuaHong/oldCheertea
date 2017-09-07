@@ -183,7 +183,7 @@ gulp.task("js", ["es5"], function() {
 
 //返回其他js
 gulp.task("otherjs", ["es5"], function() {
-	return gulp.src("html/js/common/**/*")
+	gulp.src("html/js/common/**/*")
 		//.pipe(plugins.changed("dist/js/common/", {extension: ".js"}))
 		.pipe(gulp.dest("dist/js/common/"));
 

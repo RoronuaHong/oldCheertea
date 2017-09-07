@@ -70,6 +70,16 @@
                 tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 74);
             }
 
+            //日化洗护
+           if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "daywash-goodlist.html") {
+                tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 87);
+            }
+
+            //中秋套装
+            if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "moon-goodlist.html") {
+                tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 85);
+            }
+
             //爆款推荐
             if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "bktjgoodlist.html") {
                 tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 48);
@@ -83,7 +93,7 @@
             //点击排序
             var defaultFlag=5;
             function sortCount() {
-                $('.countsortbtn').find('li').on('tap',function () {
+                $('.countsortbtn').find('li').on('click',function () {
                     $('.countsortbtn').find('li').removeClass('active');
                     $(this).addClass('active');
                     var  order=parseInt($(this).attr('order'));
@@ -93,13 +103,20 @@
                         defaultFlag=order;
                     }
                     $('.ljfbox').html('');
+
                     //美肤优选
                     if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "cosmetics-goodlist.html") {
                         tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 73,order);
                     }
+
                     //服装鞋帽
                     if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "clothes-goodlist.html") {
                         tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 74,order);
+                    }
+
+                    //日化洗护
+                    if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "daywash-goodlist.html") {
+                        tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 87,order);
                     }
 
                     if(order==1){

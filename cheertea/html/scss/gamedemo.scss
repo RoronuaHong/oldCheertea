@@ -1,0 +1,75 @@
+.returntopandpagesum {
+  display: none;
+}
+body, html {
+  width: 100%;
+  height: 100%;
+}
+.gamedemowrap {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.libox {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  .leftli {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    li {
+      position: absolute;
+      left: 150px;
+      bottom: 0;
+      width: 150px;
+      height: 150px;
+      margin-left: -70px;
+      background: #ccc;
+    }
+  }
+  .rightli {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    li {
+      position: absolute;
+      right: 150px;
+      bottom: 0;
+      width: 150px;
+      height: 150px;
+      margin-right: -70px;
+      background: #ccc;
+    }
+  }
+}
+.showbox {
+  width: 100%;
+  height: 10%;
+}
+.scorebox {
+  float: left;
+  width: 200px;
+  height: 100%;
+  text-align: center;
+  line-height: 600%;
+}
+.timebox {
+  float: right;
+  width: 200px;
+  height: 100%;
+  text-align: center;
+  line-height: 600%;
+}
+.terminalPoint {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: #ccc;
+}

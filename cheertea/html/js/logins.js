@@ -172,7 +172,6 @@
         })
 
         //点击删除清空输入框内容功能
-
         function ClearInput(mainEle, otherEle) {
             $(mainEle).tap(function() {
                 $(this).hide();
@@ -197,25 +196,31 @@
 
         //点击跳转
         $(".wechatlogin").on("touchend", function() {
-            var string = getQueryString.init("forward") || "login.html";
-
-            if(navigator.userAgent.indexOf("MicroMessager")) {
-                //appid wxf3c95148add7878f
-
-                window.location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appId + '&redirect_uri=http%3A%2F%2F' + window.location.host + '%2Fcn%2Fwxlogin.html&response_type=code&scope=snsapi_base&state=' + states + '#wechat_redirect';
-                window.sessionStorage.setItem("oldurl", getQueryString.init("forward"));
-
-                // alert(window.sessionStorage.getItem("oldurl"));
+            var string = getQueryString.newInit("forward") || "member_index.html";
+            if(isWeiXin()) {
+                // appid wxf3c95148add7878f
+                window.sessionStorage.setItem("oldurl", getQueryString.newInit("forward"));
+                window.location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appId + '&redirect_uri=http%3A%2F%2F' + window.location.host + '%2Fcn%2Fwxlogin.html&response_type=code&scope=snsapi_userinfo&state=' + states + '#wechat_redirect';
             } else {
-                window.location.href = string + '?islogin=no';
+                // window.location.href = string + '?islogin=no';
+                window.location.href = "http://wx.cheertea.com/weixin_login.html?forward=index.html";
             }
         });
 
-        //自动登录
-        if(!!states) {
-            $(".wechatlogin").trigger("touchend");
-            $("body").hide();
+        function isWeiXin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return true;
+            }else{
+                return false;
+            }
         }
+
+        // //自动登录
+        // if(!!states) {
+        //     $(".wechatlogin").trigger("touchend");
+        //     $("body").hide();
+        // }
     }
     new Login();
 })();

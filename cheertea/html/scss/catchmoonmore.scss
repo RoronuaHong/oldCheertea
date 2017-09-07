@@ -1,0 +1,183 @@
+
+//$imgurl: "../images/";
+$imgurl:"http://images.cheertea.com/";
+
+body{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#moonmorelist{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url($imgurl + "catchmoonmorelist.jpg") no-repeat;
+  background-size: 100% 100%;
+  .moonmorelist-title{
+    font-size: 28px;
+    text-align: center;
+    position: relative;
+    top:6%;
+  }
+  .select-li{
+    width:564px;
+    height:50px;
+    margin:0 auto ;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top:12%;
+    li{
+      width:138px;
+      height:50px;
+      text-align:center;
+      line-height:50px;
+      color:#fff;
+      font-size: 26px;
+      background:#ccc;
+    }
+    .active{
+      background:#ea4e27;
+    }
+  }
+  .catch-list-time{
+    position: relative;
+    top:16%;
+    text-align: center;
+    .catch-list-time-ct{
+      font-size: 22px;
+      color: #ed711a;
+      height: 200px;
+
+    }
+    .selection-component {
+      position: relative;
+      display: inline-block;
+    }
+    .selection-show {
+      border: 1px solid #e47922;
+      border-radius: 5px;
+      padding: 0 26px 0 12px;
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      height: 38px;
+      line-height: 38px;
+      input{
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-touch-callout: none;
+        border: none;
+        background: none;
+        outline:none;
+        width: 150px;
+        height: 100%;
+      }
+      span{
+        display:inline-block;
+        width:130px;
+        font-size: 22px;
+        color:#e47922;
+      }
+
+    }
+    .selection-show .arrow {
+      display: inline-block;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 12px solid #e47922;
+      width: 0;
+      height: 0;
+      margin-right: -12px;
+    }
+    .selection-list {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 38px;
+      width: 100%;
+      border-top: 1px solid #e47922;
+      border-bottom: 1px solid #e47922;
+      z-index: 5;
+      ul{
+        background: #fcf7d6;
+        li {
+          padding: 5px 15px 5px 10px;
+          border-left: 1px solid #e47922;
+          border-right: 1px solid #e47922;
+          cursor: pointer;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          height: 38px;
+          line-height: 38px;
+          font-size:18px;
+        }
+        .active{
+          color: #e47922;
+        }
+      }
+    }
+  }
+  .catch-list-people{
+    position: relative;
+    top:21%;
+  }
+  .catch-list-title{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    line-height: 48px;
+    span{
+      display: inline-block;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      font-size: 26px;
+    }
+  }
+  .catch-list-wrap{
+    position: relative;
+  }
+  .catch-list-ct{
+    position: relative;
+    top:0;
+    li{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      text-align: center;
+      height: 52px;
+      line-height:52px;
+      span{
+        display: inline-block;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        font-size: 26px;
+        color:#ea4e27;
+      }
+    }
+  }
+}
+
+#moonmustkonw{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url($imgurl + "catcnmoonmustkonw1.jpg") no-repeat;
+  background-size: 100% 100%;
+  a{
+    display: block;
+    position: absolute;
+    top: 23.5%;
+    right: 30%;
+    width: 100px;
+    height: 50px;
+  }
+}

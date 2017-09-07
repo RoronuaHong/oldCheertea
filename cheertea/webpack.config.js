@@ -34,6 +34,7 @@ module.exports = {
 		inviter: "./html/js/inviter.js",
         tradingarea: "./html/js/tradingarea.js",
         bindphone: "./html/js/bindphone.js",
+        bindphones: "./html/js/bindphones.js",
 		recharge: "./html/js/recharge",
         chargeresult: "./html/js/chargeresult",
 		newsearch: "./html/js/newsearch",
@@ -53,7 +54,13 @@ module.exports = {
 		zajindan: "./html/js/zajindan",
         newshoplist: "./html/js/newshoplist",
         shopmap: "./html/js/shopmap",
-        findyoursister: "./html/js/findyoursister"
+        findyoursister: "./html/js/findyoursister",
+        findSomethingArea: "./html/js/findSomethingArea",
+        listOfWinners: "./html/js/listOfWinners",
+		feedback: "./html/js/feedback",
+		moongoodlist: "./html/js/moongoodlist",
+        gamedemo: "./html/js/gamedemo",
+        teachersday: "./html/js/teachersday"
 	},
 	output: {
 		filename: "[name]-[chunkhash:10].js"

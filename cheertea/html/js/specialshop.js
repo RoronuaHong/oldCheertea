@@ -41,7 +41,18 @@
                 $(".speimg").attr("src", "http://images.cheertea.com/lovetosalebg.png");
             } else if(this.GetQueryString("tag_id") == 70) {
                 $(".speimg").attr("src", "http://images.cheertea.com/specialbanner2.png");
-                console.log(321)
+            } else if(this.GetQueryString("tag_id") == 85) {
+                $(".speimg").attr("src", "http://images.cheertea.com/specialbanner85.jpg");
+                $("h2").html("中秋博饼套装区");
+                $("title").html("中秋博饼套装区");
+            } else if(this.GetQueryString("tag_id") == 84) {
+                $(".speimg").attr("src", "http://images.cheertea.com/specialbanner84.jpg");
+                $("h2").html("中秋兑礼区");
+                $("title").html("中秋兑礼区");
+            } else if(this.GetQueryString("tag_id") == 89) {
+                $(".speimg").attr("src", "http://images.cheertea.com/specialbanner89.jpg");
+                $("h2").html("安娜妈妈");
+                $("title").html("安娜妈妈");
             }
         }
     }
