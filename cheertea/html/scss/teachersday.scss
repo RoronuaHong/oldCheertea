@@ -3,18 +3,62 @@ $imgurl: "http://images.cheertea.com/";
 .returntopandpagesum {
   display: none;
 }
-
+body{
+  -webkit-overflow-scrolling:touch;
+}
+* {
+  touch-action: manipulation;
+}
 html, body {
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+#audiobox {
+  overflow: hidden;
+  position: fixed;
+  top: 8%;
+  left: 13%;
+  width: 60px;
+  height: 60px;
+  margin: -40px;
+  line-height: 70px;
+  background: url($imgurl + "audiobox.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  z-index: 11;
+  border-radius: 50%;
+  animation: rotates 2s linear infinite;
+}
+@keyframes rotates {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.removeaudio {
+  background: url($imgurl + "audioboxpause.png") 0 0 no-repeat !important;
+  background-size: 100% 100% !important;
+  animation: rotates 0s linear infinite !important;
+}
+#logobox {
+  position: fixed;
+  top: 0.5%;
+  right: 8%;
+  width: 100px;
+  height: 100px;
+  background: url($imgurl + "newnewlogo.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  z-index: 5;
 }
 .teachertitlebgbox {
   position: fixed;
-  top: 0;
+  top: -20px;
   left: 0;
   width: 100%;
   height: 505px;
-  background: url($imgurl + "teachertitle1.png") 0 0 no-repeat;
+  background: url($imgurl + "teachertitle4.png") 0 0 no-repeat;
   background-size: 100% 100%;
   z-index: 10;
 }
@@ -31,7 +75,7 @@ html, body {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: url($imgurl + "teacherssharebg1.png");
+  background: url($imgurl + "teacherssharebg3.png");
   background-size: 100% 100%;
   z-index: 10000;
 }
@@ -39,11 +83,11 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
-  background: url($imgurl + "teachersdaybg2.png");
+  background: url($imgurl + "teachersdaybg3.jpg");
   background-size: 100% 100%;
   .btnbox {
     position: fixed;
-    top: 4rem;
+    top: 2rem;
     left: 0;
     right: 0;
     bottom: 0;
@@ -90,8 +134,8 @@ html, body {
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 100%;
-  height: 100%;
+  width: 524px;
+  height: 867px;
   z-index: 10;
   .innerbox {
     overflow: hidden;
@@ -165,6 +209,11 @@ html, body {
       span {
         color: #c82d51;
       }
+    }
+    .explain {
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
     }
   }
   .closebtn {
@@ -276,6 +325,7 @@ html, body {
     }
   }
   .voucher {
+    position: relative;
     width: 100%;
     height: 167px;
     margin: 15px 0;
@@ -298,10 +348,29 @@ html, body {
     .name {
       float: left;
       width: 100%;
-      height: 60px;
-      line-height: 60px;
+      line-height: 40px;
       font-size: 21.49px;
       color: #231815;
+    }
+    .picprice {
+      position: absolute;
+      top: 32%;
+      left: 1.5%;
+      width: 150px;
+      height: 30px;
+      font-size: 24px;
+      text-align: center;
+      color: #e83928;
+    }
+    .price {
+      position: absolute;
+      top: 55%;
+      left: 1.5%;
+      width: 150px;
+      height: 50px;
+      font-size: 20px;
+      text-align: center;
+      color: #e83928;
     }
     .number {
       display: none;
@@ -364,7 +433,9 @@ html, body {
     height: 8.5rem;
   }
   .firstbox, .secondbox {
+    overflow: auto;
     width: 100%;
+    height: 8rem;
     li {
       width: 94%;
       height: 101px;
@@ -431,11 +502,53 @@ html, body {
     display: none;
   }*/
 }
-.awardlist {
+.awardlistbox {
+  overflow: auto;
   display: none;
+  width: 100%;
+  height: 4.8rem;
+  #awardimg {
+    float: left;
+    width: 65px;
+    height: 65px;
+    margin: .2rem 0 0 0.4rem;
+    border-radius: 50%;
+  }
+  li {
+    width: 100%;
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: keep-all;
+      white-space: nowrap;
+      float: left;
+      width: 25%;
+      height: 75px;
+      line-height: 75px;
+      font-size: 29.17px;
+      text-align: center;
+      color: #f8b62c;
+    }
+  }
+}
+.titleul {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  li {
+    float: left;
+    width: 25%;
+    height: 100%;
+    font-size: 25px;
+    text-align: center;
+    color: #181919;
+  }
+}
+.awardlist {
   width: 100%;
 }
 .noaward {
+  display: none;
   width: 90%;
   margin: 0 auto;
   font-size: 23.41px;
@@ -456,13 +569,13 @@ html, body {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: url($imgurl + "bigbelebratebg3.png") 0 0 no-repeat;
-  background-size: 100% 100%;
+  background: url($imgurl + "bigbelebratebg4.png") center center no-repeat;
+  background-size: 90% 100%;
   z-index: 2;
   .gradebox {
     overflow: hidden;
     position: absolute;
-    top: 2.8rem;
+    top: 3.1rem;
     left: 0;
     right: 0;
     bottom: 0;
@@ -472,15 +585,15 @@ html, body {
     text-align: center;
     .nowgrade, .topscore, .toplead {
       width: 100%;
-      height: 40px;
-      line-height: 40px;
+      height: 35px;
+      line-height: 35px;
       font-size: 24px;
       color: #fff;
     }
     .percent {
       width: 100%;
-      height: 40px;
-      line-height: 40px;
+      height: 35px;
+      line-height: 35px;
       font-size: 24px;
       color: #f39800;
     }
@@ -504,24 +617,24 @@ html, body {
       color: #fff;
     }
     .leftbox {
-      background: url($imgurl + "myprize01.png") 0 0 no-repeat;
-      background-size: contain;
+      background: url($imgurl + "myprize01.png") 0.1rem 0.1rem no-repeat;
+      background-size: 25%;
     }
     .rightbox {
-      background: url($imgurl + "myprize2.png") 0 0 no-repeat;
-      background-size: contain;
+      background: url($imgurl + "myprize2.png") 0.1rem 0.1rem no-repeat;
+      background-size: 25%;
     }
   }
   .againbtn {
     position: fixed;
-    top: 10.4rem;
+    top: 10.2rem;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
     width: 300px;
-    height: 72px;
-    line-height: 72px;
+    height: 60px;
+    line-height: 60px;
     background: #e9c62e;
     border-radius: 15px;
     font-size: 30.88px;
@@ -539,9 +652,9 @@ html, body {
     width: 300px;
     .newleadbtn {
       float: left;
-      width: 140px;
-      height: 70px;
-      line-height: 70px;
+      width: 120px;
+      height: 60px;
+      line-height: 60px;
       background: #fff100;
       font-size: 25.73px;
       text-align: center;
@@ -551,9 +664,9 @@ html, body {
     }
     .findfriends {
       float: right;
-      width: 142px;
-      height: 70px;
-      line-height: 70px;
+      width: 130px;
+      height: 60px;
+      line-height: 60px;
       background: #fff100;
       font-size: 25.73px;
       text-align: center;
@@ -564,8 +677,8 @@ html, body {
   }
 }
 .bigshamebox {
-  background: url($imgurl + "bigshamebg2.png") 0 -.1rem no-repeat;
-  background-size: 100% 100%;
+  background: url($imgurl + "bigshamebg4.png") center center no-repeat;
+  background-size: 90% 100%;
 }
 .newchacha {
   position: absolute;
@@ -708,9 +821,9 @@ html, body {
       position: absolute;
       width: 95px;
       height: 145px;
-      background: url($imgurl + "newstudents.gif") 0 0 no-repeat;
-      background-size: contain;
-      transform: translate(2rem, 0);
+      background: url($imgurl + "students2.gif") center center no-repeat;
+      background-size: 230% 175%;
+      transform: translate3d(2rem, 0, 0);
     }
   }
 }
@@ -720,7 +833,7 @@ html, body {
   top: 0;
   width: 100%;
   height: 100%;
-  background: url($imgurl + "teachersdrawbg.gif") 0 0 no-repeat;
+  background: url($imgurl + "teachersdrawbg2.gif") 0 0 no-repeat;
   background-size: 100% 100%;
   z-index: 101;
   .showPrizebox {
@@ -756,11 +869,17 @@ html, body {
     }
     .prizethings {
       width: 100%;
-      height: 65px;
       line-height: 65px;
       font-size: 36px;
       text-align: center;
-      color: #fff;
+      color: #fb1717;
+    }
+    .prizedetail {
+      width: 100%;
+      line-height: 65px;
+      font-size: 24px;
+      text-align: center;
+      color: #fb1717;
     }
     .attention {
       width: 100%;

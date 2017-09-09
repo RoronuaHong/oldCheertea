@@ -17,21 +17,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="teachersday.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="teachersday.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cn/teachersday.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="312">
+              <caret line="435" column="13" lean-forward="true" selection-start-line="435" selection-start-column="13" selection-end-line="435" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teachersday.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="teachersday.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scss/teachersday.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="533" column="13" lean-forward="false" selection-start-line="533" selection-start-column="13" selection-end-line="533" selection-end-column="13" />
+            <state relative-caret-position="266">
+              <caret line="825" column="41" lean-forward="true" selection-start-line="825" selection-start-column="41" selection-end-line="825" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -40,28 +42,18 @@
       <file leaf-file-name="teachersday.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/teachersday.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="368" column="63" lean-forward="false" selection-start-line="368" selection-start-column="63" selection-end-line="368" selection-end-column="63" />
+            <state relative-caret-position="244">
+              <caret line="986" column="49" lean-forward="true" selection-start-line="986" selection-start-column="49" selection-end-line="986" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cn/login.html">
+      <file leaf-file-name="classify.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/classify.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="111.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../../111/111.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="686">
-              <caret line="73" column="18" lean-forward="false" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
+            <state relative-caret-position="540">
+              <caret line="63" column="64" lean-forward="false" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -70,8 +62,8 @@
       <file leaf-file-name="swiperFun.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/function/swiperFun.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="53" />
+            <state relative-caret-position="496">
+              <caret line="34" column="53" lean-forward="false" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
               <folding>
                 <marker date="1504689059472" expanded="true" signature="2851:2867" ph="..." />
                 <marker date="1504689059472" expanded="true" signature="3093:3249" ph="..." />
@@ -92,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/js/function/ajax.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="411">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+              <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -133,36 +125,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>shop/teacheractivity!showRank.do</find>
-      <find>score</find>
-      <find>游戏结束</find>
-      <find>btnbox</find>
-      <find>shop/teacheractivity!endGame.do</find>
-      <find>console.log</find>
-      <find>?</find>
-      <find>teacheractivity!doLottery.do</find>
-      <find>numbers</find>
-      <find>drawSelection</find>
-      <find>bigbox</find>
-      <find>smallbtn</find>
-      <find>maingame</find>
+      <find>teachersdrawbg2</find>
+      <find>getAwardAjax</find>
+      <find>cpns_names</find>
+      <find>_this.timer</find>
+      <find>addPosx</find>
+      <find>findfriends</find>
+      <find>rightbox</find>
       <find>imgchange</find>
-      <find>teachersdaybg</find>
-      <find>leadbtn</find>
-      <find>startbtn</find>
-      <find>rulebox</find>
-      <find>fadeInRight</find>
-      <find>teachertitlebgbox</find>
-      <find>showPrizebox</find>
-      <find>showBackbox</find>
-      <find>newleadbtn</find>
-      <find>animated</find>
-      <find>_this.bigbox</find>
-      <find>closebtn</find>
-      <find>topnum</find>
+      <find>我的奖品</find>
+      <find>#audiobox</find>
+      <find>prizethings</find>
+      <find>#logobox</find>
+      <find>againbtn</find>
+      <find>setSetting</find>
+      <find>audiobox</find>
+      <find>alert</find>
+      <find>meta</find>
+      <find>smallbtn</find>
       <find>smallcelebratebox</find>
-      <find>smallshamebox</find>
-      <find>$(&quot;.rulebox&quot;)</find>
+      <find>teachersday</find>
+      <find>rewardcon</find>
+      <find>var cpns_names = &quot; &quot;;</find>
+      <find>rightcon</find>
+      <find>imgnames</find>
+      <find>6000</find>
+      <find>$(&quot;#drawwrap&quot;).hide();</find>
+      <find>addPosX</find>
+      <find>transition</find>
+      <find>translate</find>
+      <find>console</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -185,6 +177,7 @@
       <replace>toucend</replace>
       <replace>touchend</replace>
       <replace>2.2</replace>
+      <replace>slideOutRight</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Administrator\Desktop\192.168.2.200\zxxt_cxgo\WebRoot\themes\html\cn</dir>
@@ -195,8 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/scss/goodlist.scss" />
         <option value="$PROJECT_DIR$/cn/goodlist.html" />
         <option value="$PROJECT_DIR$/js/catchmooncake.js" />
         <option value="$PROJECT_DIR$/js/specialshop.js" />
@@ -242,10 +233,12 @@
         <option value="$PROJECT_DIR$/js/gamedemo.js" />
         <option value="$PROJECT_DIR$/js/function/ajax.js" />
         <option value="$PROJECT_DIR$/js/function/swiperFun.js" />
+        <option value="$PROJECT_DIR$/cn/login.html" />
+        <option value="$PROJECT_DIR$/../../../../../catchmooncake-b193cd3a64.js" />
+        <option value="$PROJECT_DIR$/../../../../../catchmooncake.html" />
+        <option value="$PROJECT_DIR$/scss/teachersday.scss" />
         <option value="$PROJECT_DIR$/cn/teachersday.html" />
         <option value="$PROJECT_DIR$/js/teachersday.js" />
-        <option value="$PROJECT_DIR$/cn/login.html" />
-        <option value="$PROJECT_DIR$/scss/teachersday.scss" />
       </list>
     </option>
   </component>
@@ -300,6 +293,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="function" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="cn" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -311,7 +350,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../111/111.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../catchmooncake-b193cd3a64.js" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="recentsLimit" value="5" />
@@ -486,12 +525,12 @@
       <workItem from="1503112912118" duration="29879000" />
       <workItem from="1503280958589" duration="44593000" />
       <workItem from="1503554735145" duration="47454000" />
-      <workItem from="1504171630985" duration="135033000" />
+      <workItem from="1504171630985" duration="201009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1450858000" />
+    <option name="totallyTimeSpent" value="1516834000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -503,12 +542,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14383562" sideWeight="0.4960981" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32664436" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -521,7 +561,6 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32664436" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -565,34 +604,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../../../拼团新/togetherbuyorder_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2136">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../拼团新/buyorder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="118" column="5" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="118" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../拼团新/togetherbuy_pur.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8184">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../拼团新/togetherbuy_list2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="650" column="62" lean-forward="true" selection-start-line="650" selection-start-column="62" selection-end-line="650" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cn/zhizunbao.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -899,15 +910,7 @@
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/function/ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -920,18 +923,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cn/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../../111/111.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="73" column="18" lean-forward="false" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
+        <state relative-caret-position="1046">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/function/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/function/swiperFun.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="53" />
+        <state relative-caret-position="496">
+          <caret line="34" column="53" lean-forward="false" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
           <folding>
             <marker date="1504689059472" expanded="true" signature="2851:2867" ph="..." />
             <marker date="1504689059472" expanded="true" signature="3093:3249" ph="..." />
@@ -947,35 +966,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/teachersday.js">
+    <entry file="file://$PROJECT_DIR$/../../../../../catchmooncake-b193cd3a64.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="368" column="63" lean-forward="false" selection-start-line="368" selection-start-column="63" selection-end-line="368" selection-end-column="63" />
+        <state relative-caret-position="487">
+          <caret line="302" column="71" lean-forward="true" selection-start-line="302" selection-start-column="71" selection-end-line="302" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cn/teachersday.html">
+    <entry file="file://$PROJECT_DIR$/js/function/imgchange.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cn/login.html">
+    <entry file="file://$PROJECT_DIR$/js/classify.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="540">
+          <caret line="63" column="64" lean-forward="false" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../catchmooncake.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17136">
+          <caret line="476" column="60" lean-forward="false" selection-start-line="476" selection-start-column="60" selection-end-line="476" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scss/teachersday.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="533" column="13" lean-forward="false" selection-start-line="533" selection-start-column="13" selection-end-line="533" selection-end-column="13" />
+        <state relative-caret-position="266">
+          <caret line="825" column="41" lean-forward="true" selection-start-line="825" selection-start-column="41" selection-end-line="825" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/teachersday.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="986" column="49" lean-forward="true" selection-start-line="986" selection-start-column="49" selection-end-line="986" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cn/teachersday.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="435" column="13" lean-forward="true" selection-start-line="435" selection-start-column="13" selection-end-line="435" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

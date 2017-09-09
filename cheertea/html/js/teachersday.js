@@ -20,9 +20,9 @@
         shareWx: function(ids) {
             var url = location.href;
             var member_id = ids;
-            var image_url = "http://images.cheertea.com/logonews.png";
+            var image_url = "http://images.cheertea.com/teachersdaylogo.png";
             if(member_id != "" && member_id != undefined && member_id != null){
-                var shareUrl = 'http://wx.cheertea.com/cn/mooncakebetting.html?memberid=' + member_id;
+                var shareUrl = 'http://wx.cheertea.com/cn/teachersday.html?memberid=' + member_id;
                 $.ajax({
                     type:'POST',
                     url:'http://wx.cheertea.com/widget?type=group_activity&action=ajaxsign&ajax=yes',
@@ -43,7 +43,8 @@
                         wx.ready(function(){
                             // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
                             wx.onMenuShareTimeline({
-                                title: " 巨柚博饼，大礼送不停", // 分享标题
+                                title: "【师恩难忘】教师节趣味游戏——巨柚出品", // 分享标题
+                                desc: "我正在玩【师恩难忘】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
                                 link: shareUrl,
                                 imgUrl: image_url , // 分享图标
                                 success: function () {
@@ -57,8 +58,8 @@
                             });
                             // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
                             wx.onMenuShareAppMessage({
-                                title: " 巨柚博饼，大礼送不停   ", // 分享标题
-                                desc: "云海深处，月影难觅。万家灯火，天涯此时。", // 分享描述
+                                title: "【师恩难忘】教师节趣味游戏——巨柚出品", // 分享标题
+                                desc: "我正在玩【师恩难忘】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
                                 link: shareUrl ,
                                 imgUrl: image_url, // 分享图标
                                 type: data.type, // 分享类型,music、video或link，不填默认为link
@@ -74,8 +75,8 @@
 
                             //获取“分享到QQ”按钮点击状态及自定义分享内容接口
                             wx.onMenuShareQQ({
-                                title: " 巨柚博饼，大礼送不停   ", // 分享标题
-                                title: "云海深处，月影难觅。万家灯火，天涯此时。", // 分享描述
+                                title: "【师恩难忘】教师节趣味游戏——巨柚出品", // 分享标题
+                                desc: "我正在玩【师恩难忘】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
                                 link: shareUrl, // 分享链接
                                 imgUrl: image_url, // 分享图标
                                 success: function () {
@@ -90,8 +91,9 @@
 
                             //获取“分享到QQ空间”按钮点击状态及自定义分享内容接口
                             wx.onMenuShareQZone({
-                                title: " 巨柚博饼，大礼送不停   ", // 分享标题
+                                title: "【师恩难忘】教师节趣味游戏——巨柚出品", // 分享标题
                                 title: "云海深处，月影难觅。万家灯火，天涯此时。", // 分享描述
+                                desc: "我正在玩【师恩难忘】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
                                 link: shareUrl, // 分享链接
                                 imgUrl: image_url, // 分享图标
                                 success: function () {
@@ -132,14 +134,14 @@
                     if(datas.res_code == 0) {
                         var parentId = getquerystring.init("memberid");
                         if(!!parentId) {
-                            var url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb4868f50223328db&redirect_uri=http%3A%2F%2Fwx.cheertea.com%2Fmember_index.html"
+                            var url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb4868f50223328db&redirect_uri=http%3A%2F%2Fwx.cheertea.com%2Fcn%2Fteachersday.html"
                                 +"&response_type=code"
                                 +"&scope=snsapi_userinfo"
                                 +"&state="+parentId+"#wechat_redirect";
 
                             window.location.href = url;
                         } else {
-                            window.location.href = "/cn/login.html?forward=" + window.location.pathname;
+                            window.location.href = "/cn/login.html?forward=" + window.location.pathname + window.location.search;
                         }
                     }
                     if(datas.res_code == 1) {
@@ -157,18 +159,40 @@
 
                 //获取邀请数据
                 if($(this).index() == 2) {
-                    console.log(1);
-                    // Ajax({
-                    //     urls: "member/login!isLogin.do",
-                    //     types: "get",
-                    //     asyncs: false,
-                    //     // timeouts: 1000 * 10,
-                    //     dataTypes: "json",
-                    //     successes: function (data) {
-                    //         var adatas = JSON.parse(data);
-                    //         console.log(adatas);
-                    //     }
-                    // });
+                    Ajax({
+                        urls: "shop/teacheractivity!inviterDetail.do",
+                        types: "get",
+                        asyncs: false,
+                        // timeouts: 1000 * 10,
+                        dataTypes: "json",
+                        successes: function (data) {
+                            var adatas = JSON.parse(data);
+                            // console.log(adatas);
+
+                            if(adatas.res_code == 1) {
+                                if(adatas.res_data.inviter_list.length > 0) {
+                                    $(".awardlistbox").show();
+                                    $(".noaward").hide();
+                                    $(".awardlist").empty();
+                                    $.each(adatas.res_data.inviter_list, function(i) {
+                                        $(".awardlist").append(
+                                            "<li class='clearfix'>" +
+                                                "<span class='awardname'>" + adatas.res_data.inviter_list[i].uname + "</span>" +
+                                                "<span>" +
+                                                    "<img src='" + adatas.res_data.inviter_list[i].weixin_face + "' alt='' id='awardimg'>" +
+                                                "</span>" +
+                                                "<span class='invokenum'>" + adatas.res_data.inviter_list[i].inviter_count + "</span>" +
+                                                "<span class='drawnum'>" + adatas.res_data.inviter_list[i].draw_count + "</span>" +
+                                            "</li>"
+                                        );
+                                    });
+                                } else {
+                                    $(".awardlistbox").hide();
+                                    $(".noaward").show();
+                                }
+                            }
+                        }
+                    });
                 }
             });
         },
@@ -182,35 +206,36 @@
                 $(".rulebox").show();
                 $(".leaderbox").hide();
 
-                $(".rulebox").removeClass("fadeOutRight");
+                $(".rulebox").removeClass("slideOutRight");
 
-                $(".rulebox").addClass("animated fadeInRight");
+                $(".rulebox").addClass("animated slideInRight");
             });
 
             $(".closebtn").on("touchend", function(event) {
                 event.preventDefault();
 
                 if(!_this.bigbox) {
-                    $(".rulebox").removeClass("fadeInRight");
-                    $(".leaderbox").removeClass("fadeInRight");
+                    $(".rulebox").removeClass("slideInRight");
+                    $(".leaderbox").removeClass("slideInRight");
 
-                    $(".rulebox").addClass("animated fadeOutRight");
-                    $(".leaderbox").addClass("animated fadeOutRight");
+                    $(".rulebox").addClass("animated slideOutRight");
+                    $(".leaderbox").addClass("animated slideOutRight");
 
                     $(".showBackbox").hide();
                     // $(".rulebox").hide();
                     // $(".leaderbox").hide();
-                    console.log(123);
+                    // console.log(123);
                 } else {
+                    // console.log(321);
                     _this.bigbox.show();
-                    $(".rulebox").removeClass("fadeInRight");
-                    $(".leaderbox").removeClass("fadeInRight");
-                    _this.bigbox.removeClass("fadeOutRight");
+                    $(".rulebox").removeClass("slideInRight");
+                    $(".leaderbox").removeClass("slideInRight");
+                    _this.bigbox.removeClass("slideOutRight");
 
-                    $(".rulebox").addClass("animated fadeOutRight");
-                    $(".leaderbox").addClass("animated fadeOutRight");
+                    $(".rulebox").addClass("animated slideOutRight");
+                    $(".leaderbox").addClass("animated slideOutRight");
 
-                    _this.bigbox.addClass("animated fadeInRight");
+                    _this.bigbox.addClass("animated slideInRight");
                     // $(".showBackbox").hide();
 
                     // $(".rulebox").hide();
@@ -233,11 +258,20 @@
         },
         /*切换奖品区*/
         changeAward: function() {
+            var _this = this;
+
             $(".actprize").on("touchend", function() {
                 $(this).addClass("add1");
                 $(".myprize").removeClass("add2");
                 $(".rewardbox").show();
                 $(".randombox").hide();
+
+                /*获取排名中奖列表*/
+                _this.getAwardAjax(1);
+
+                /*获取随机中奖列表*/
+                _this.getAwardAjax(2);
+
             });
 
             $(".myprize").on("touchend", function() {
@@ -252,18 +286,45 @@
                     types: "get",
                     dataTypes: "json",
                     successes: function (data) {
+                        var imgs = null;
+                        var cpns_names = " ";
+                        var imgnames = "";
+                        var smallname = "";
+                        var delname = "";
                         var datas = JSON.parse(data);
-                        console.log(datas);
+                        // console.log(datas);
                         $(".randombox").empty();
                         $.each(datas.res_data.list, function(i) {
+
+                            //添加图片
+                            if(datas.res_data.list[i].goods_id == 1) {
+                                imgs = "http://images.cheertea.com/huodong1.png";
+                                cpns_names = datas.res_data.list[i].cpns_name;
+                                imgnames = (datas.res_data.reward_list[i].cpns_name).split("（")[0];
+                                smallname = imgnames.split("元")[0] + "元";
+                                delname = imgnames.split("元")[1];
+                            } else if(datas.res_data.list[i].goods_id == 2) {
+                                imgs = "http://images.cheertea.com/huodong2.png";
+                                cpns_names = datas.res_data.list[i].cpns_name;
+                                imgnames = (datas.res_data.reward_list[i].cpns_name).split("（")[0];
+                                smallname = imgnames.split("元")[0] + "元";
+                                delname = imgnames.split("元")[1];
+                            } else {
+                                imgs = datas.res_data.list[i].img_url;
+                                cpns_names = " ";
+                            }
+
                             $(".randombox").append(
                                 "<dl class='voucher clearfix' ids='" + datas.res_data.list[i].cpns_id + "'>" +
                                     "<a href='http://wx.cheertea.com'>" +
                                         "<dt class='imgbox'>" +
-                                            "<img src='" + imgchange.show(datas.res_data.list[i].cpns_img) + "' alt=''>" +
+                                            "<img src='" + imgchange.show(imgs) + "' alt=''>" +
                                         "</dt>" +
                                         "<dd class='rightcon'>" +
                                             "<p class='name'>" + datas.res_data.list[i].reward_name + "</p>" +
+                                            "<p class='name'>" + cpns_names + "</p>" +
+                                            "<p class='picprice'>" + smallname + "</p>" +
+                                            "<p class='price'>" + delname + "</p>" +
                                         "</dd>" +
                                     "</a>" +
                                 "</dl>"
@@ -276,13 +337,13 @@
         /*显示排行榜*/
         showLeadbox: function() {
             $(".leadbtn").on("touchend", function() {
-                // fadeInRight
+                // slideInRight
                 $(".showBackbox").show();
                 $(".leaderbox").show();
                 $(".rulebox").hide();
-                $(".leaderbox").removeClass("fadeOutRight");
+                $(".leaderbox").removeClass("slideOutRight");
 
-                $(".leaderbox").addClass("animated fadeInRight");
+                $(".leaderbox").addClass("animated slideInRight");
 
                 //获取排行榜数据
                 Ajax({
@@ -291,7 +352,7 @@
                     dataTypes: "json",
                     successes: function (data) {
                         var datas = JSON.parse(data);
-                        console.log(datas);
+                        // console.log(datas);
 
                         if(datas.res_code == 1) {
                             $(".topofscore .scorenum").html(datas.res_data.big_number);
@@ -301,7 +362,7 @@
                             $.each(datas.res_data.list, function(i) {
                                 $(".firstbox").append(
                                     "<li class='clearfix'>" +
-                                        "<span class='num'>No." + i + "</span>" +
+                                        "<span class='num'>No." + (i + 1) + "</span>" +
                                         "<img src='" + datas.res_data.list[i].weixin_face + "' alt='' class='imgboxs'>" +
                                         "<div class='rightcons'>" +
                                             "<p class='names'>" + datas.res_data.list[i].uname + "</p>" +
@@ -342,9 +403,13 @@
                 $(".rulebox").show();
                 $(".tabul li").eq(1).addClass("lisel").siblings(".tabul li").removeClass("lisel");
                 $(".conul .cons").eq(1).addClass("showcons").siblings(".cons").removeClass("showcons");
+                $(".myprize").removeClass("add2");
+                $(".actprize").addClass("add1");
+                $(".rewardbox").show();
+                $(".randombox").hide();
 
-                $(".rulebox").removeClass("fadeOutRight");
-                $(".rulebox").addClass("animated fadeInRight");
+                $(".rulebox").removeClass("slideOutRight");
+                $(".rulebox").addClass("animated slideInRight");
 
                 /*获取排名中奖列表*/
                 _this.getAwardAjax(1);
@@ -365,14 +430,67 @@
                 $(".rewardbox").hide();
                 $(".randombox").show();
 
-                $(".rulebox").removeClass("fadeOutRight");
-                $(".rulebox").addClass("animated fadeInRight");
+                $(".rulebox").removeClass("slideOutRight");
+                $(".rulebox").addClass("animated slideInRight");
 
                 /*获取排名中奖列表*/
                 _this.getAwardAjax(1);
 
                 /*获取随机中奖列表*/
                 _this.getAwardAjax(2);
+
+                //获取我的奖品列表
+                Ajax({
+                    urls: "shop/teacheractivity!showOwnReward.do",
+                    types: "get",
+                    dataTypes: "json",
+                    successes: function (data) {
+                        var imgs = null;
+                        var cpns_names = " ";
+                        var imgnames = "";
+                        var smallname = "";
+                        var delname = "";
+                        var datas = JSON.parse(data);
+                        // console.log(datas);
+                        $(".randombox").empty();
+                        $.each(datas.res_data.list, function(i) {
+
+                            //添加图片
+                            if(datas.res_data.list[i].goods_id == 1) {
+                                imgs = "http://images.cheertea.com/huodong1.png";
+                                cpns_names = datas.res_data.list[i].cpns_name;
+                                imgnames = (datas.res_data.reward_list[i].cpns_name).split("（")[0];
+                                smallname = imgnames.split("元")[0] + "元";
+                                delname = imgnames.split("元")[1];
+                            } else if(datas.res_data.list[i].goods_id == 2) {
+                                imgs = "http://images.cheertea.com/huodong2.png";
+                                cpns_names = datas.res_data.list[i].cpns_name;
+                                imgnames = (datas.res_data.reward_list[i].cpns_name).split("（")[0];
+                                smallname = imgnames.split("元")[0] + "元";
+                                delname = imgnames.split("元")[1];
+                            } else {
+                                imgs = datas.res_data.list[i].img_url;
+                                cpns_names = " ";
+                            }
+
+                            $(".randombox").append(
+                                "<dl class='voucher clearfix' ids='" + datas.res_data.list[i].cpns_id + "'>" +
+                                    "<a href='http://wx.cheertea.com'>" +
+                                    "<dt class='imgbox'>" +
+                                        "<img src='" + imgchange.show(imgs) + "' alt=''>" +
+                                    "</dt>" +
+                                    "<dd class='rightcon'>" +
+                                        "<p class='name'>" + datas.res_data.list[i].reward_name + "</p>" +
+                                        "<p class='name'>" + cpns_names + "</p>" +
+                                        "<p class='picprice'>" + smallname + "</p>" +
+                                        "<p class='price'>" + delname + "</p>" +
+                                    "</dd>" +
+                                    "</a>" +
+                                "</dl>"
+                            );
+                        });
+                    }
+                });
             });
 
             /*点击出现排行榜*/
@@ -381,8 +499,8 @@
                 $(".bigshamebox").hide();
                 $(".leaderbox").show();
 
-                $(".leaderbox").removeClass("fadeOutRight");
-                $(".leaderbox").addClass("animated fadeInRight");
+                $(".leaderbox").removeClass("slideOutRight");
+                $(".leaderbox").addClass("animated slideInRight");
 
                 //获取排行榜数据
                 Ajax({
@@ -391,7 +509,7 @@
                     dataTypes: "json",
                     successes: function (data) {
                         var datas = JSON.parse(data);
-                        console.log(datas);
+                        // console.log(datas);
 
                         if(datas.res_code == 1) {
                             $(".topofscore .scorenum").html(datas.res_data.big_number);
@@ -401,7 +519,7 @@
                             $.each(datas.res_data.list, function(i) {
                                 $(".firstbox").append(
                                     "<li class='clearfix'>" +
-                                    "<span class='num'>No." + i + "</span>" +
+                                    "<span class='num'>No." + (i + 1) + "</span>" +
                                     "<img src='" + datas.res_data.list[i].weixin_face + "' alt='' class='imgboxs'>" +
                                     "<div class='rightcons'>" +
                                     "<p class='names'>" + datas.res_data.list[i].uname + "</p>" +
@@ -435,22 +553,20 @@
                     $(".maintitle .countdown").html((number / 100).toFixed(2));
 
                     clearInterval(_this.timers);
-                    for(var i = 0; i < 3; i++) {
-                        clearInterval(_this.timer[i]);
-                    }
+                    // clearInterval(_this.timer);
 
                     //根据不同的分数，弹出不同的弹窗
                     $(".showBackbox").show();
                     if(_this.score >= 10) {
                         $(".smallcelebratebox").show();
 
-                        $(".smallcelebratebox").removeClass("fadeOutRight");
-                        $(".smallcelebratebox").addClass("animated fadeInRight");
+                        $(".smallcelebratebox").removeClass("slideOutRight");
+                        $(".smallcelebratebox").addClass("animated slideInRight");
                     } else {
                         $(".smallshamebox").show();
 
-                        $(".smallshamebox").removeClass("fadeOutRight");
-                        $(".smallshamebox").addClass("animated fadeInRight");
+                        $(".smallshamebox").removeClass("slideOutRight");
+                        $(".smallshamebox").addClass("animated slideInRight");
                     }
 
                     //将数据传递给后台
@@ -463,13 +579,14 @@
                         },
                         successes: function (data) {
                             var datas = JSON.parse(data);
-                            console.log(datas);
+                            // console.log(datas);
                             $(".lastnumber .have").html(datas.res_data.day_remain_draw_count);
                             $(".gradebox .grade").html(datas.res_data.play_num);
                             $(".gradebox .newnum").html(datas.res_data.percent);
                             $(".gradebox .top").html(datas.res_data.big_number);
                             $(".gradebox .actlead").html(datas.res_data.own_rank);
                             $(".smallcelebratebox").on("touchend", ".smallbtn", function() {
+                                _this.bigbox = $(".bigcelebratebox");
                                 if(datas.res_data.day_remain_draw_count > 0) {
                                     $("#drawwrap").show();
 
@@ -480,7 +597,7 @@
                                         dataTypes: "json",
                                         successes: function (data) {
                                             var datass = JSON.parse(data);
-                                            console.log(datass);
+                                            // console.log(datass);
 
                                             /*实现转盘内容*/
                                             _this.drawSelection(datass.res_data.is_win, datass.res_data.reward_result);
@@ -489,6 +606,7 @@
                                 } else {
                                     alert("没有抽奖次数");
                                 }
+                                $(".smallcelebratebox").off("touchend", ".smallbtn");
                             });
                         }
                     });
@@ -499,89 +617,96 @@
         setSetting: function(indexs) {
             var _this = this;
 
-            /*持续往后运动*/
-            this.timer[indexs] = setInterval(function() {
-                _this.posY[indexs] += _this.posYSpeed;
-                if(_this.posY[indexs] >= 2.2) {
-                    _this.posY[indexs] = 2.2;
-                    _this.posX[indexs] = _this.posX[indexs] - _this.speeds;
+            // /*持续往后运动(更新成一个计时器)*/
+            // this.timer = setInterval(function() {
+            for(var i = 0; i < indexs; i++) {
+                if(!!$(".mainbox").eq(i).children().hasClass("role")) {
+                    _this.posY[i] += _this.posYSpeed;
+                    if(_this.posY[i] >= _this.endY) {
+                        _this.posY[i] = _this.endY;
+                        _this.posX[i] = _this.posX[i] - _this.speeds;
 
-                    /*游戏结束*/
-                    if(_this.posX[indexs] < 0) {
-                        clearInterval(_this.timers);
-                        for(var i = 0; i < 3; i++) {
-                            clearInterval(_this.timer[i]);
+                        /*游戏结束*/
+                        if(_this.posX[i] < 0) {
+                            // console.log(i)
+                            clearInterval(_this.timers);
+                            clearInterval(_this.timer);
+                            for(var j = 0; j < indexs; j++) {
 
-                            //清空所有快
-                            $(".mainbox").eq(i).empty();
-                        }
-
-                        //根据不同的分数，弹出不同的弹窗
-                        $(".showBackbox").show();
-                        if(_this.score >= 10) {
-                            $(".smallcelebratebox").show();
-
-                            $(".smallcelebratebox").removeClass("fadeOutRight");
-                            $(".smallcelebratebox").addClass("animated fadeInRight");
-                        } else {
-                            $(".smallshamebox").show();
-
-                            $(".smallshamebox").removeClass("fadeOutRight");
-                            $(".smallshamebox").addClass("animated fadeInRight");
-                        }
-
-                        //将数据传递给后台
-                        Ajax({
-                            urls: "shop/teacheractivity!endGame.do",
-                            types: "get",
-                            dataTypes: "json",
-                            datas: {
-                                play_num: $(".totalscore span").html()
-                            },
-                            successes: function (data) {
-                                var datas = JSON.parse(data);
-                                console.log(datas);
-                                $(".lastnumber .have").html(datas.res_data.day_remain_draw_count);
-                                $(".gradebox .grade").html(datas.res_data.play_num);
-                                $(".gradebox .newnum").html(datas.res_data.percent);
-                                $(".gradebox .top").html(datas.res_data.big_number);
-                                $(".gradebox .actlead").html(datas.res_data.own_rank);
-                                $(".smallcelebratebox").on("touchend", ".smallbtn", function() {
-                                    if(datas.res_data.day_remain_draw_count > 0) {
-                                        $("#drawwrap").show();
-
-                                        //传递抽奖数据
-                                        Ajax({
-                                            urls: "shop/teacheractivity!doLottery.do",
-                                            types: "get",
-                                            dataTypes: "json",
-                                            successes: function (data) {
-                                                var datass = JSON.parse(data);
-                                                console.log(datass);
-                                                console.log(datass.res_data.reward_result)
-                                                /*实现转盘内容*/
-                                                _this.drawSelection(datass.res_data.is_win, datass.res_data.reward_result);
-                                            }
-                                        });
-                                    } else {
-                                        alert("没有抽奖次数");
-                                    }
-                                });
+                                //清空所有快
+                                $(".mainbox").eq(j).empty();
                             }
-                        });
+
+                            //根据不同的分数，弹出不同的弹窗
+                            $(".showBackbox").show();
+                            if(_this.score >= 10) {
+                                $(".smallcelebratebox").show();
+
+                                $(".smallcelebratebox").removeClass("slideOutRight");
+                                $(".smallcelebratebox").addClass("animated slideInRight");
+                            } else {
+                                $(".smallshamebox").show();
+
+                                $(".smallshamebox").removeClass("slideOutRight");
+                                $(".smallshamebox").addClass("animated slideInRight");
+                            }
+
+                            //将数据传递给后台
+                            Ajax({
+                                urls: "shop/teacheractivity!endGame.do",
+                                types: "get",
+                                dataTypes: "json",
+                                datas: {
+                                    play_num: $(".totalscore span").html()
+                                },
+                                successes: function (data) {
+                                    var datas = JSON.parse(data);
+                                    // console.log(datas);
+                                    $(".lastnumber .have").html(datas.res_data.day_remain_draw_count);
+                                    $(".gradebox .grade").html(datas.res_data.play_num);
+                                    $(".gradebox .newnum").html(datas.res_data.percent);
+                                    $(".gradebox .top").html(datas.res_data.big_number);
+                                    $(".gradebox .actlead").html(datas.res_data.own_rank);
+                                    $(".smallcelebratebox").on("touchend", ".smallbtn", function() {
+                                        _this.bigbox = $(".bigcelebratebox");
+                                        if(datas.res_data.day_remain_draw_count > 0) {
+                                            $("#drawwrap").show();
+
+                                            //传递抽奖数据
+                                            Ajax({
+                                                urls: "shop/teacheractivity!doLottery.do",
+                                                types: "get",
+                                                dataTypes: "json",
+                                                successes: function (data) {
+                                                    var datass = JSON.parse(data);
+                                                    // console.log(datass);
+                                                    // console.log(datass.res_data.reward_result)
+                                                    /*实现转盘内容*/
+                                                    _this.drawSelection(datass.res_data.is_win, datass.res_data.reward_result);
+                                                }
+                                            });
+                                        } else {
+                                            alert("没有抽奖次数");
+                                        }
+                                        $(".smallcelebratebox").off("touchend", ".smallbtn");
+                                    });
+                                }
+                            });
+                        }
                     }
+                    $(".mainbox").eq(i).find(".role").css({
+                        transform: "translate3d(" + _this.posX[i] + "rem, " + _this.posY[i] + "%, 0)"
+                    });
                 }
-                $(".mainbox").eq(indexs).find(".role").css({
-                    transform: "translate(" + _this.posX[indexs] + "rem, " + _this.posY[indexs] + "rem)"
-                });
-            }, 16);
+            }
+            // }, 16);
         },
         /*点击的时候当前添加距离*/
         addPosX: function(secondScore, thirdScore) {
             var _this = this;
 
             $(".mainbox").on("touchend", function() {
-                if(_this.posY[$(this).index()] >= 2.2) {
+                if(_this.posY[$(this).index()] >= _this.endY) {
                     _this.posX[$(this).index()] += (_this.speeds * 50);
 
                     //当学生到达posX为6的时候, 取消该块, 分数增加1
@@ -592,33 +717,27 @@
                         if(_this.score > secondScore) {
                             if(!($(".mainbox").eq(1).find(".role")).length) {
                                 $(".mainbox").eq(1).append("<div class='role'></div>");
-                                clearInterval(_this.timer[1]);
-                                _this.setSetting(1);
                             }
                         }
 
                         if(_this.score > thirdScore) {
                             if(!($(".mainbox").eq(2).find(".role")).length) {
                                 $(".mainbox").eq(2).append("<div class='role'></div>");
-                                clearInterval(_this.timer[2]);
-                                _this.setSetting(2);
                             }
                         }
 
                         $(".totalscore span").html(_this.score);
                         $(this).find(".role").remove();
-                        clearInterval(_this.timer[$(this).index()]);
+                        // clearInterval(_this.timer);
 
                         //初始化数据
                         _this.posX[$(this).index()] = 2;
                         _this.posY[$(this).index()] = 0;
 
                         $(this).find(".role").css({
-                            transform: "translate(" + _this.posX[$(this).index()] + "rem, " + _this.posY[$(this).index()] + "rem)"
+                            transform: "translate3d(" + _this.posX[$(this).index()] + "rem, " + _this.posY[$(this).index()] + "%, 0)"
                         });
                         $(this).append("<div class='role'></div>");
-
-                        _this.setSetting($(this).index());
                     }
                 }
             });
@@ -631,11 +750,11 @@
                 _this.bigbox = $(".bigshamebox");
                 event.preventDefault();
                 $(".smallshamebox").hide();
-                $(".smallshamebox").removeClass("animated fadeInRight");
+                $(".smallshamebox").removeClass("animated slideInRight");
                 $(".bigshamebox").show();
 
-                $(".smallshamebox").removeClass("animated fadeOutRight");
-                $(".bigshamebox").addClass("animated fadeInRight");
+                $(".smallshamebox").removeClass("animated slideOutRight");
+                $(".bigshamebox").addClass("animated slideInRight");
             });
 
             $(".smallcelebratebox").on("touchend", ".newchacha", function(event) {
@@ -671,18 +790,21 @@
                 /**
                  * speed 速度
                  */
-                _this.setSetting(0);
+                clearInterval(_this.timer);
+                _this.timer = setInterval(function() {
+                    _this.setSetting(3);
+                }, 16);
 
                 //增加第一个块的学生
                 $(".mainbox").eq(0).append("<div class='role'></div>");
 
                 /*设计倒计时*/
-                _this.countDown(1000);
+                _this.countDown(6000);
             });
         },
         /*实现转盘内容*/
         drawSelection: function(numbers, newdata) {
-            console.log(newdata)
+
             //随机放置奖品
             var randomSum = Math.floor(Math.random() * 9);
             (randomSum == 4) && (randomSum = randomSum - 1);
@@ -721,22 +843,22 @@
                 if(drawtimes >= 300) {
                     if(numbers == 1) {
                         if(indexs == randomSum) {
-                            console.log("你中奖了!");
                             setTimeout(function() {
                                 $(".showPrizebox").show();
-                                $(".prizethings").html(newdata);
+                                $(".prizethings").html(newdata.split("(")[0]);
+                                $(".prizedetail").html("(" + newdata.split("(")[1]);
                             }, 1000);
                             clearTimeout(drawTimer1);
 
                             setTimeout(function() {
                                 $("#drawwrap").hide();
+                                $(".showPrizebox").hide();
                                 $(".smallcelebratebox").hide();
                                 $(".bigcelebratebox").show();
-                            }, 3000);
+                            }, 6000);
                         }
                     } else {
                         if(indexs != randomSum) {
-                            console.log("你没有中奖!");
                             clearTimeout(drawTimer1);
 
                             setTimeout(function() {
@@ -764,18 +886,46 @@
                     reward_type: nums
                 },
                 successes: function (data) {
+                    var imgs = null;
+                    var cpns_names = " ";
+                    var imgnames = "";
+                    var smallname = "";
+                    var delname = "";
                     var datas = JSON.parse(data);
-                    console.log(datas);
+                    // console.log(datas);
+
                     $(".rewardcon .con").eq(nums - 1).empty();
                     $.each(datas.res_data.reward_list, function(i) {
+
+                        //添加图片
+                        if(datas.res_data.reward_list[i].goods_id == 1) {
+                            imgs = "http://images.cheertea.com/daijinquan1.png";
+                            cpns_names = datas.res_data.reward_list[i].cpns_name;
+                            imgnames = (datas.res_data.reward_list[i].cpns_name).split("（")[0];
+                            smallname = imgnames.split("元")[0] + "元";
+                            delname = imgnames.split("元")[1];
+                        } else if(datas.res_data.reward_list[i].goods_id == 2) {
+                            imgs = "http://images.cheertea.com/daijinquan2.png";
+                            cpns_names = datas.res_data.reward_list[i].cpns_name;
+                            imgnames = (datas.res_data.reward_list[i].cpns_name).split("（")[0];
+                            smallname = imgnames.split("元")[0] + "元";
+                            delname = imgnames.split("元")[1];
+                        } else {
+                            imgs = datas.res_data.reward_list[i].img_url;
+                            cpns_names = " ";
+                        }
+
                         $(".rewardcon .con").eq(nums - 1).append(
                             "<dl class='voucher clearfix' ids='" + datas.res_data.reward_list[i].cpns_id + "'>" +
                                 "<a href='http://wx.cheertea.com'>" +
                                     "<dt class='imgbox'>" +
-                                        "<img src='" + imgchange.show(datas.res_data.reward_list[i].cpns_img) + "' alt=''>" +
+                                        "<img src='" + imgchange.show(imgs) + "' alt=''>" +
                                     "</dt>" +
                                     "<dd class='rightcon'>" +
                                         "<p class='name'>" + datas.res_data.reward_list[i].reward_name + "</p>" +
+                                        "<p class='name'>" + cpns_names + "</p>" +
+                                        "<p class='picprice'>" + smallname + "</p>" +
+                                        "<p class='price'>" + delname + "</p>" +
                                     "</dd>" +
                                 "</a>" +
                             "</dl>"
@@ -798,25 +948,28 @@
             }
 
             this.speeds = 0.02;
-            this.posYSpeed = 0.04;
+            this.posYSpeed = 2.2;
 
             var _this = this;
 
-            $(".startbtn").on("touchend", function() {
+            $(".startbtn").on("tap", function() {
                 $(".teachertitlebgbox").hide();
                 $("#teachersdaywrap").hide();
                 $("#teachersdaystart").show();
+                $("#logobox").hide();
 
                 /**
                  * speed 速度
                  */
-                _this.setSetting(0);
+                _this.timer = setInterval(function() {
+                    _this.setSetting(3);
+                }, 16);
 
                 //增加第一个块的学生
                 $(".mainbox").eq(0).append("<div class='role'></div>");
 
                 /*设计倒计时*/
-                _this.countDown(1000);
+                _this.countDown(6000);
             });
 
             /*增加移动距离*/
@@ -832,14 +985,111 @@
                 dataTypes: "json",
                 successes: function (data) {
                     var datas = JSON.parse(data);
-                    console.log(datas);
+                    // console.log(datas);
 
                     //添加头部
                     $('.teachertitlebgbox').addClass('animated zoomInDown');
                 }
             });
         },
+        /*添加音乐*/
+        addAudio: function() {
+            wx.config({
+                // 配置信息, 即使不正确也能使用 wx.ready
+                debug: false,
+                appId: '',
+                timestamp: 1,
+                nonceStr: '',
+                signature: '',
+                jsApiList: []
+            });
+            wx.ready(function() {
+                $("#audiobox audio")[0].play();
+            });
+
+            $("#audiobox").on("click", function(event) {
+                // console.log(1);
+                event.preventDefault();
+                if($("#audiobox").hasClass("removeaudio")) {
+                    $(this).removeClass("removeaudio");
+                    $("#audiobox audio")[0].play();
+                } else {
+                    $(this).addClass("removeaudio");
+                    $("#audiobox audio")[0].pause();
+                }
+            });
+        },
         init: function() {
+            //判断是否为苹果还是安卓机
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+            if(isAndroid) {
+                this.endY = 80;
+                $(".otherbtn").css({
+                    top: "89% !important"
+                });
+
+                $(".againbtn").css({
+                    top: "10.2rem !important"
+                });
+
+                $(".prizebox").css({
+                    top: "8.3rem !important"
+                });
+            } else if(isiOS) {
+                this.endY = 100;
+            }
+
+            //阻止默认事件
+            $("#teachersdaywrap").on("touchmove", function(event) {
+                event.preventDefault();
+            });
+
+            $("#teachersdaystart").on("touchmove", function(event) {
+                event.preventDefault();
+            });
+
+            $(".showBackbox").on("touchmove", function(event) {
+                event.preventDefault();
+            });
+
+            $(".teachertitlebgbox").on("touchmove", function(event) {
+                event.preventDefault();
+            });
+
+            $(".leaderbox").on("touchmove", function(event) {
+                if(!$(event.target).parents().hasClass("leadconbox")) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+            });
+
+            $(".smallshamebox").on("touchmove", function(event) {
+                event.preventDefault();
+            });
+
+            $(".smallcelebratebox").on("touchmove", function(event) {
+                event.preventDefault();
+            });
+
+            $(".bigcelebratebox").on("touchmove", function(event) {
+                event.preventDefault();
+            });
+
+            $(".bigshamebox").on("touchmove", function(event) {
+                event.preventDefault();
+            });
+
+            $(".conul").on("touchmove", function(event) {
+                if($(event.target).parents().hasClass("rewardbox") || $(event.target).parents().hasClass("randombox") || $(event.target).parents().hasClass("awardlistbox")) {
+
+                } else {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+            });
 
             //获取当前大弹窗
             this.bigbox = null;
@@ -885,6 +1135,9 @@
 
             /*获取随机中奖列表*/
             this.getAwardAjax(2);
+
+            /*添加音乐*/
+            this.addAudio();
         }
     }
     Teachersday.init();
