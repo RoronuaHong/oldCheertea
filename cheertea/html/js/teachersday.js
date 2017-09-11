@@ -366,7 +366,7 @@
                                         "<img src='" + datas.res_data.list[i].weixin_face + "' alt='' class='imgboxs'>" +
                                         "<div class='rightcons'>" +
                                             "<p class='names'>" + datas.res_data.list[i].uname + "</p>" +
-                                            "<p class='details'>玩了<span class='nums'>" + datas.res_data.list[i].play_count + "</span>次，最高纪录<span class='topnum'>" + datas.res_data.list[i].number + "</span>个</p>" +
+                                            "<p class='details'>玩了<span class='nums'>" + datas.res_data.list[i].play_count + "</span>次，最高纪录<span class='topnum'>" + datas.res_data.list[i].number + "</span>分</p>" +
                                         "</div>" +
                                     "</li>"
                                 );
@@ -523,7 +523,7 @@
                                     "<img src='" + datas.res_data.list[i].weixin_face + "' alt='' class='imgboxs'>" +
                                     "<div class='rightcons'>" +
                                     "<p class='names'>" + datas.res_data.list[i].uname + "</p>" +
-                                    "<p class='details'>玩了<span class='nums'>" + datas.res_data.list[i].play_count + "</span>次，最高纪录<span class='topnum'>" + datas.res_data.list[i].number + "</span>个</p>" +
+                                    "<p class='details'>玩了<span class='nums'>" + datas.res_data.list[i].play_count + "</span>次，最高纪录<span class='topnum'>" + datas.res_data.list[i].number + "</span>分</p>" +
                                     "</div>" +
                                     "</li>"
                                 );
@@ -544,18 +544,21 @@
         countDown: function(number) {
             var _this = this;
 
-            $(".maintitle .countdown").html((number / 100).toFixed(2));
-            this.timers = setInterval(function() {
-                number--;
+            // $(".maintitle .countdown").html((number / 100).toFixed(2));
+            // this.timers = setInterval(function() {
+            //     number--;
                 $(".maintitle .countdown").html((number / 100).toFixed(2));
+
                 if(number <= 0) {
                     number = 0;
                     $(".maintitle .countdown").html((number / 100).toFixed(2));
 
-                    clearInterval(_this.timers);
+                    // clearInterval(_this.timers);
                     // clearInterval(_this.timer);
+                    _this.aframeBool = false;
+                    cancelAnimationFrame(_this.aframe);
 
-                    //根据不同的分数，弹出不同的弹窗
+                        //根据不同的分数，弹出不同的弹窗
                     $(".showBackbox").show();
                     if(_this.score >= 10) {
                         $(".smallcelebratebox").show();
@@ -611,7 +614,7 @@
                         }
                     });
                 }
-            }, 10);
+            // }, 10);
         },
         /*设置参数*/
         setSetting: function(indexs) {
@@ -629,8 +632,10 @@
                         /*游戏结束*/
                         if(_this.posX[i] < 0) {
                             // console.log(i)
-                            clearInterval(_this.timers);
-                            clearInterval(_this.timer);
+                            // clearInterval(_this.timers);
+                            // clearInterval(_this.timer);
+                            cancelAnimationFrame(_this.aframe);
+                            _this.aframeBool = false;
                             for(var j = 0; j < indexs; j++) {
 
                                 //清空所有快
@@ -695,7 +700,8 @@
                         }
                     }
                     $(".mainbox").eq(i).find(".role").css({
-                        transform: "translate3d(" + _this.posX[i] + "rem, " + _this.posY[i] + "%, 0)"
+                        "-webkit-transform": "translate3d(" + _this.posX[i] + "rem, " + _this.posY[i] + "%, 0)",
+                        "transform": "translate3d(" + _this.posX[i] + "rem, " + _this.posY[i] + "%, 0)"
                     });
                 }
             }
@@ -705,40 +711,50 @@
         addPosX: function(secondScore, thirdScore) {
             var _this = this;
 
-            $(".mainbox").on("touchend", function() {
-                if(_this.posY[$(this).index()] >= _this.endY) {
-                    _this.posX[$(this).index()] += (_this.speeds * 50);
+            //获取当前时间
+            this.currentTime = +new Date();
+            this.endTime = null;
 
-                    //当学生到达posX为6的时候, 取消该块, 分数增加1
-                    if(_this.posX[$(this).index()] >= 6) {
-                        _this.score += 2;
+            $(".biggamebox").on("touchstart", ".mainbox", function() {
+                _this.endTime = +new Date();
 
-                        //添加其他块的学生
-                        if(_this.score > secondScore) {
-                            if(!($(".mainbox").eq(1).find(".role")).length) {
-                                $(".mainbox").eq(1).append("<div class='role'></div>");
+                if(_this.endTime - _this.currentTime > 50) {
+                    if(_this.posY[$(this).index()] >= _this.endY) {
+                        _this.posX[$(this).index()] += (_this.speeds * 50);
+
+                        //当学生到达posX为6的时候, 取消该块, 分数增加1
+                        if(_this.posX[$(this).index()] >= 6) {
+                            _this.score += 2;
+
+                            //添加其他块的学生
+                            if(_this.score > secondScore) {
+                                if(!($(".mainbox").eq(1).find(".role")).length) {
+                                    $(".mainbox").eq(1).append("<div class='role'></div>");
+                                }
                             }
-                        }
 
-                        if(_this.score > thirdScore) {
-                            if(!($(".mainbox").eq(2).find(".role")).length) {
-                                $(".mainbox").eq(2).append("<div class='role'></div>");
+                            if(_this.score > thirdScore) {
+                                if(!($(".mainbox").eq(2).find(".role")).length) {
+                                    $(".mainbox").eq(2).append("<div class='role'></div>");
+                                }
                             }
+
+                            $(".totalscore span").html(_this.score);
+                            $(this).find(".role").remove();
+                            // clearInterval(_this.timer);
+
+                            //初始化数据
+                            _this.posX[$(this).index()] = 2;
+                            _this.posY[$(this).index()] = 0;
+
+                            $(this).find(".role").css({
+                                "-webkit-transform": "translate3d(" + _this.posX[$(this).index()] + "rem, " + _this.posY[$(this).index()] + "%, 0)",
+                                "transform": "translate3d(" + _this.posX[$(this).index()] + "rem, " + _this.posY[$(this).index()] + "%, 0)"
+                            });
+                            $(this).append("<div class='role'></div>");
                         }
-
-                        $(".totalscore span").html(_this.score);
-                        $(this).find(".role").remove();
-                        // clearInterval(_this.timer);
-
-                        //初始化数据
-                        _this.posX[$(this).index()] = 2;
-                        _this.posY[$(this).index()] = 0;
-
-                        $(this).find(".role").css({
-                            transform: "translate3d(" + _this.posX[$(this).index()] + "rem, " + _this.posY[$(this).index()] + "%, 0)"
-                        });
-                        $(this).append("<div class='role'></div>");
                     }
+                    _this.currentTime = _this.endTime;
                 }
             });
         },
@@ -791,15 +807,34 @@
                  * speed 速度
                  */
                 clearInterval(_this.timer);
-                _this.timer = setInterval(function() {
+                _this.downNumber = 6000;
+                $(".maintitle .countdown").html((_this.downNumber / 100).toFixed(2));
+
+                //使用requestAnimationFrame
+                window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+                _this.aframeBool = true;
+                function step() {
+                    _this.downNumber -= 1.9;
+                    _this.countDown(_this.downNumber);
                     _this.setSetting(3);
-                }, 16);
+
+                    if(_this.aframeBool) {
+                        _this.aframe = requestAnimationFrame(step);
+                    }
+                }
+                _this.aframe = requestAnimationFrame(step);
+
+                // _this.timer = setInterval(function() {
+                //     _this.downNumber--;
+                //     _this.countDown(_this.downNumber);
+                //     _this.setSetting(3);
+                // }, 10);
 
                 //增加第一个块的学生
                 $(".mainbox").eq(0).append("<div class='role'></div>");
 
                 /*设计倒计时*/
-                _this.countDown(6000);
+                // _this.countDown(6000);
             });
         },
         /*实现转盘内容*/
@@ -961,15 +996,34 @@
                 /**
                  * speed 速度
                  */
-                _this.timer = setInterval(function() {
+                _this.downNumber = 6000;
+                $(".maintitle .countdown").html((_this.downNumber / 100).toFixed(2));
+
+                //使用requestAnimationFrame
+                window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+                _this.aframeBool = true;
+
+                function step() {
+                    _this.downNumber -= 1.9;
+                    _this.countDown(_this.downNumber);
                     _this.setSetting(3);
-                }, 16);
+
+                    if(_this.aframeBool) {
+                        _this.aframe = requestAnimationFrame(step);
+                    }
+                }
+                _this.aframe = requestAnimationFrame(step);
+                // _this.timer = setInterval(function() {
+                //     _this.downNumber--;
+                //     _this.countDown(_this.downNumber);
+                //     _this.setSetting(3);
+                // }, 10);
 
                 //增加第一个块的学生
                 $(".mainbox").eq(0).append("<div class='role'></div>");
 
                 /*设计倒计时*/
-                _this.countDown(6000);
+                // _this.countDown(6000);
             });
 
             /*增加移动距离*/
@@ -1020,6 +1074,9 @@
             });
         },
         init: function() {
+            this.aframe = 0;
+            this.aframeBool = true;
+
             //判断是否为苹果还是安卓机
             var u = navigator.userAgent;
             var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
