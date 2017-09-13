@@ -367,14 +367,6 @@ product_infos.init();
                 if(showprize==2){
                   $(".buyingquick").html("立即兑奖");
                 }
-                // 判断博饼中奖奖品
-                if(goodsid==1836||goodsid==1837||goodsid==1838||goodsid==1840||goodsid==1841){
-                  $(".buyingquick").html("立即兑奖");
-                  $(".buyingquick").css("background","#7e7d7a");
-                  $(".addcar").css("background","#949292");
-                  $(".buyingquick").unbind();
-                  $(".addcar").unbind();
-                }
                 // 判断有没有资格参与奖品兑奖
                 if(state==0){
                   $(".buyingquick").html("立即兑奖");
@@ -521,7 +513,43 @@ product_infos.init();
                   },
               });
            }); 
-
+// 博饼兑奖判断
+                  $.ajax({
+                  url:'http://wx.cheertea.com/shop/bettingMoonCake!isCanExchange.do',
+                  type:'post',
+                  xhrField: {
+                    withCredentials: true
+                  },
+                  data:{
+                    exchange_goods_id:goodsid,
+                       },
+                  crossDomain: true,
+                  dataType:'json',
+                  success: function(res){
+                            if(res.res_code==1)                    
+                            {
+                              console.log(res.res_data.belong_reward)
+                              if(res.res_data.belong_reward==1){
+                                $(".buyingquick").html("立即兑奖");
+                                $(".addcar").css("background","#949292");
+                                $(".addcar").unbind();
+                                $(".plus").unbind();
+                                $(".minus").unbind();
+                              }   
+                              if(res.res_data.belong_reward==0){
+                                  $(".buyingquick").html("已兑奖");
+                                  $(".buyingquick").css("background","#7e7d7a");
+                                  $(".addcar").css("background","#949292");
+                                  $(".buyingquick").unbind();      
+                                  $(".addcar").unbind();
+                              }
+                            }
+                            
+                    },         
+                  error: function(res) {
+                    console.log(res);
+                  },
+              });
 
 
 
@@ -1107,7 +1135,7 @@ function show() {
                                           }
                                       }
                                   }
-                              });
+                              });  
                           }
                       }
                   }

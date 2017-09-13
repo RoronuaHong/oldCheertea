@@ -471,6 +471,9 @@
                             } else {
                                 imgs = datas.res_data.list[i].img_url;
                                 cpns_names = " ";
+                                imgnames = " ";
+                                smallname = " ";
+                                delname = " ";
                             }
 
                             $(".randombox").append(
@@ -948,6 +951,9 @@
                         } else {
                             imgs = datas.res_data.reward_list[i].img_url;
                             cpns_names = " ";
+                            imgnames = " ";
+                            smallname = " ";
+                            delname = " ";
                         }
 
                         $(".rewardcon .con").eq(nums - 1).append(
