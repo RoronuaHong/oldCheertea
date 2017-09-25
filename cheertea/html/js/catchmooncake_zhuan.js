@@ -52,6 +52,7 @@
                 }
                 if(lotterOnOff){
                     lotterOnOff=false;
+                    $('#zhuanpan').get(0).play();
                     $.ajax({
                         url: publics + 'shop/bettingMoonCake!doDoubleDayLottery.do',
                         type: 'post',

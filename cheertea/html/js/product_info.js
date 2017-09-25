@@ -106,7 +106,8 @@ product_info.prototype = {
                           var str = data.res_data.goods_list;
                           for(var i=0;i<str.length &&i<4; i++){
                             var html = '<dt> <div class="star"> </div> <div class="name">sada12h孩子</div> </dt> <dd class="t1">很好喝哦，快来一起买吧！发货速度也快！</dd><div class="picture"></div> <dd class="t2"></dd> <dd class="t3">2017-05-05</dd>'
-                            // 时间转换
+
+                              // 时间转换
                             function getLocalTime(nS) {     
                              return new Date(parseInt(nS) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");      
                                                       }     
@@ -181,7 +182,7 @@ $(".assess1").children().remove();
                           },
                   dataType:'json',
                   success: function(data){   
-                      console.log(data); 
+                      console.log(data);
                         if(data.res_code==1){
                           var str = data.res_data.goods_list;
                           $(".appraise-grade span i").eq(0).html(data.res_data.allEvaluate);
@@ -305,8 +306,8 @@ $(".assess1").children().remove();
                     console.log(res);
                   }
               });
-}                  
-            
+}
+
 
         })
 
@@ -329,8 +330,6 @@ product_infos.init();
   crossDomain: true,
   dataType:'json',
   success: function(res){
-      console.log(33333333333333333)    
-      console.log(res)                        
             if(res.res_code==1)                       
             {
         // 判断是否收藏
@@ -358,30 +357,7 @@ product_infos.init();
                 else{
                   $(".fl .now-price i").html(str.price);
                 }
-                // 判断绿积分
-                if(lvjifen==1){
-                  $(".now-price em").html("绿");
-                  $(".pass-price em").html("绿");
-                }
-                // 判断兑奖
-                if(showprize==2){
-                  $(".buyingquick").html("立即兑奖");
-                }
-                // 判断有没有资格参与奖品兑奖
-                if(state==0){
-                  $(".buyingquick").html("立即兑奖");
-                  $(".buyingquick").css("background","#7e7d7a");
-                  $(".addcar").css("background","#949292");
-                  $(".buyingquick").unbind();
-                  $(".addcar").unbind();
-                }
-                if(state==1){
-                  $(".buyingquick").html("已兑奖");
-                  $(".buyingquick").css("background","#7e7d7a");
-                  $(".addcar").css("background","#949292");
-                  $(".buyingquick").unbind();
-                  $(".addcar").unbind();
-                }
+
                 var buypeople = 100 + parseInt(str.buy_count) + parseInt(goodsid2);
                 $(".pass-price strong").html(str.mktprice);
                 $(".people").html(buypeople);
@@ -550,10 +526,6 @@ product_infos.init();
                     console.log(res);
                   },
               });
-
-
-
-
 
 // 加入购物车立即购买产品规格
 function show() {

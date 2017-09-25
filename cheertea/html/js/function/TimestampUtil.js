@@ -25,7 +25,6 @@
 
             //获取时间数组
             var timearr = [];
-
             timearr.push(this.default.times.getFullYear());
             timearr.push(this.default.times.getMonth() + 1);
             timearr.push(this.default.times.getDate());
@@ -69,6 +68,18 @@
             this.obj["hours"] = this.timers.getHours();
             this.obj["minutes"] = this.timers.getMinutes();
             this.obj["second"] = this.timers.getSeconds();
+
+            return this.obj;
+        },
+        restTime: function(timers) {
+            this.obj = {};
+            timers = timers / 1000;
+
+            //转换时间
+            this.obj["day"] = Math.floor(timers / (3600 * 24));
+            this.obj["hours"] = Math.floor(timers % (3600 * 24) / 3600);
+            this.obj["minutes"] = Math.floor(timers % (3600 * 24) % 3600 / 60);
+            this.obj["second"] = Math.floor(timers % (3600 * 24 * 3600) % 60);
 
             return this.obj;
         }

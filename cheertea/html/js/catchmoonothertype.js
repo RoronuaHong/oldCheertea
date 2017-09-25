@@ -31,16 +31,18 @@
                         if(data.res_data.activity_list[i].activity_id==3){
                             goJoin.eq(1).find('a').addClass('active');
                         }
-                        if(data.res_data.activity_list[i].activity_id==4){
-                            goJoin.eq(3).find('a').addClass('active');
-                        }
                         if(data.res_data.activity_list[i].activity_id==7){
                             goJoin.eq(2).find('a').addClass('active');
                         }
                         if(data.res_data.activity_list[i].activity_id==8){
+                            goJoin.eq(3).find('a').addClass('active');
+                        }
+                        if(data.res_data.activity_list[i].activity_id==4){
                             goJoin.eq(4).find('a').addClass('active');
                         }
-
+                        if(data.res_data.activity_list[i].activity_id==9){
+                            goJoin.eq(5).find('a').addClass('active');
+                        }
                     })
                 }
             });

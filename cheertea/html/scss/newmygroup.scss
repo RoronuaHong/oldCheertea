@@ -1,0 +1,196 @@
+@import "./common/swiper-3.3.1.min";
+
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+//$imgurl: "../images/";
+.returntopandpagesum {
+  display: none;
+}
+.newmygroupwrap {
+  width: 100%;
+}
+.tablist {
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  font-size: 28px;
+  text-align: center;
+  color: #333333;
+  border-bottm: 2px solid #f4f4f4;
+  li {
+    float: left;
+    width: 20%;
+    margin: 0 2.5%;
+    height: 90%;
+  }
+  .sels {
+    color: #ff8587;
+    border-bottom: 5px solid #ff8587;
+  }
+}
+.tabbox {
+  width: 100%;
+  .tabchildbox {
+    width: 100%;
+    height: 332px;
+    border-bottom: 20px solid #f4f4f4;
+  }
+  .bigbox {
+    width: 90%;
+    height: 230px;
+    padding: 0 5%;
+    border-bottom: 2px solid #f4f4f4;
+    .bigboximg {
+      overflow: hidden;
+      float: left;
+      display: block;
+      width: 30%;
+      height: 170px;
+      margin-top: 30px;
+      border-radius: 25px;
+    }
+    .rightcontentbox {
+      float: left;
+      margin: 30px 0 0 5%;
+      width: 65%;
+      height: 170px;
+    }
+    .text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: keep-all;
+      white-space: nowrap;
+      width: 100%;
+      height: 50px;
+      padding-bottom: 10px;
+      line-height: 50px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #333333;
+    }
+    .groupmeta {
+      float: left;
+      padding: .15rem 7%;
+      background: #ffe2e3;
+      font-size: 22px;
+      text-align: center;
+      color: #ff8587;
+      clear: both;
+    }
+  }
+  .pricebox {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-top: 15px;
+    font-size: 32px;
+    color: #333333;
+  }
+}
+.theResultbox {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  overflow: hidden;
+  float: left;
+  width: 120px;
+  height: 30px;
+  .success, .continue {
+    display: none;
+    overflow: hidden;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    text-align: center;
+    color: #ff8587;
+    border-radius: 30px;
+    box-shadow: 0 0 1px #ff8587;
+  }
+  .continue {
+    display: block;
+    .suc {
+      line-height: 15px;
+    }
+  }
+  .suc {
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: #ff8587;
+    text-align: center;
+    color: #fff;
+  }
+  .fail {
+    display: none;
+    overflow: hidden;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    text-align: center;
+    color: #b4b4b4;
+    border-radius: 30px;
+    box-shadow: 0 0 1px #ff8587;
+    .fai {
+      float: left;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      background: #b4b4b4;
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
+.detailbox {
+  width: 90%;
+  height: 100px;
+  padding: 0 5%;
+  line-height: 100px;
+  font-size: 26px;
+  color: #333333;
+  .dettime {
+    float: left;
+    width: 50%;
+    .year {
+      float: left;
+    }
+    .date {
+      float: left;
+      margin-left: 5%;
+    }
+  }
+  .othertail {
+    float: right;
+    width: 50%;
+  }
+  .grouptail {
+    float: left;
+    display: block;
+    width: 130px;
+    height: 52px;
+    margin-top: 24px;
+    line-height: 52px;
+    box-shadow: 0 0 0 2px #ff8587;
+    font-size: 24px;
+    text-align: center;
+    color: #ff8587;
+    border-radius: 5px;
+  }
+  .ordertail {
+    float: right;
+    width: 130px;
+    height: 52px;
+    margin-top: 24px;
+    line-height: 52px;
+    background: #ff8587;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+  }
+}

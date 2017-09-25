@@ -1,0 +1,22 @@
+@import "./common/swiper-3.3.1.min";
+
+/*cdn*/
+$imgurl: "http://images.cheertea.com/";
+
+/*本地*/
+//$imgurl: "../images/";
+.grouprulewrap {
+  width: 100%;
+  .details {
+    width: 92%;
+    padding: 0 4%;
+    line-height: 70px;
+    font-size: 24px;
+    color: #888888;
+    .nums {
+      float: left;
+      font-size: 24px;
+      color: #333333;
+    }
+  }
+}

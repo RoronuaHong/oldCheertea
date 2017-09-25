@@ -185,6 +185,11 @@ Common.prototype = {
 						background: "url(" + imgurl + "footerbg44.png) center .1rem no-repeat",
 						backgroundSize: "50%"
 					}).find("a").addClass("selected");
+				} else if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "newgroup.html") {
+					$(".ptbtn").css({
+                        background: "url(http://images.cheertea.com/ptgif2.png) 0 0 no-repeat",
+                        backgroundSize: "contain"
+					});
 				}
 			});
 		}

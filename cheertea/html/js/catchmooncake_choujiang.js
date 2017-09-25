@@ -55,6 +55,7 @@
                     return false;
                 }
                 if(prizeOnOff){
+                    $('#zhuanpan').get(0).play();
                         prizeOnOff=false;
                     $.ajax({
                         url: publics + "shop/bettingMoonCake!doDrawLottery.do",

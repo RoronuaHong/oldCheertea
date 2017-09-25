@@ -4,7 +4,8 @@
 
 
 ;(function() {
-    var $ = require("./common/zepto");
+    // var $ = require("./common/zepto");
+    var $ = require("./common/jquery.min");
     // require("./common/fx");
     // require("./common/fx_methods");
     // require('./common/selector');
@@ -21,38 +22,56 @@
     var catchmoonprize={
         init:function () {
             //判断入口房间
+                var _this=this;
                 var headTitle= $('head').find('title');
+                var  publicSignal=this.isEarn('publicSignal');
                 var moonRoom=$('.moonroom');
                 var roomID=this.isEarn('roomID');
-                 switch(+roomID){
-                case 1:
-                    headTitle.html('巨柚园');
-                    moonRoom.addClass('moonroom-juyou');
-                    break;
-                case 2:
-                         headTitle.html('清雅源');
-                         moonRoom.addClass('moonroom-qingya');
-                         break;
-                case 11:
-                    headTitle.html('银雁');
-                    moonRoom.addClass('moonroom-yinyan');
-                    break;
-                case 12:
-                     headTitle.html('六三饼铺');
-                    moonRoom.addClass('moonroom-bingpu');
-                    break;
-                case 13:
-                     headTitle.html('海马');
-                    moonRoom.addClass('moonroom-haima');
-                    break;
-                case 14:
-                     headTitle.html('i慧生活');
-                    moonRoom.addClass('moonroom-shenghuo');
-                    break;
-            }
+                var bgUrl=this.isEarn('bgUrl');
+                var typeName=this.isEarn('typeName');
+                headTitle.html(typeName);
+            //      switch(+roomID){
+            //     case 1:
+            //         headTitle.html('巨柚园');
+            //         moonRoom.addClass('moonroom-juyou');
+            //         break;
+            //     case 2:
+            //              headTitle.html('清雅源');
+            //              moonRoom.addClass('moonroom-qingya');
+            //              break;
+            //     case 11:
+            //         headTitle.html('银雁');
+            //         moonRoom.addClass('moonroom-yinyan');
+            //         break;
+            //     case 12:
+            //          headTitle.html('六三饼铺');
+            //         moonRoom.addClass('moonroom-bingpu');
+            //         break;
+            //     case 13:
+            //          headTitle.html('海马');
+            //         moonRoom.addClass('moonroom-haima');
+            //         break;
+            //     case 14:
+            //          headTitle.html('i慧生活');
+            //         moonRoom.addClass('moonroom-shenghuo');
+            //         break;
+            // }
             // 初始化数据
-            roomAjax(roomID);
-            function roomAjax(roomID) {
+
+            moonRoom.css({
+                background:"url(" + bgUrl + ") no-repeat",
+                backgroundSize: "100% 100%"
+            });
+            // console.log(decodeURIComponent(publicSignal))
+            $('.public-num').click(function () {
+                if(!!publicSignal){
+                    window.location.href=publicSignal;
+                }else{
+                    return false;
+                }
+            });
+            roomAjax();
+            function roomAjax() {
                 $.ajax({
                     url:publics+'shop/bettingMoonCake!getBettingCount.do',
                     type:'post',
@@ -61,9 +80,6 @@
                         withCredentials: true
                     },
                     crossDomain: true,
-                    data:{
-                        room_id:roomID
-                    },
                     success:function (data) {
                         console.log('获取成功');
                         console.log(data);
@@ -72,6 +88,11 @@
                         // }
                         if(data.res_code==1){
                             $('.gamechanges-num').html(data.res_data.all_count);
+                            if(data.res_data.all_count==0){
+                                $('#showDelete').show();
+                                $('.showMessagebox').show();
+                                $('.noprizenum').show();
+                            }
                         }
                     },
                     error:function () {
@@ -87,25 +108,24 @@
             $(document).on("touchmove", function(event) {
                 event.preventDefault();
             });
+            $('#shares').on('click',function (event) {
+                $(this).hide();
+            });
         },
         catchmoon:function () {
             var dicestimer = null;
             var timerbox=null;
+            var fontTime=null;
             var onOff=true;//博饼按钮开关，防止多次点击
             var roomID=this.isEarn('roomID');
             var result=0;
             var _this=this;
             $('.gamestartbetting').on('click',function () {
+                console.log(!!$('.gamechanges-num').html());
                 if($('.gamechanges-num').html()<=0){
-                    $('.showMessagebox').removeClass('showbg2').addClass('showbg1');
                     $('#showDelete').show();
-                    $('.iswinmessage').html('WOW!');
-                    $('.prizemessage').html('您没有博奖机会啦~');
-                    $('.prompt').show();
-                    $('.changemessage').find('span').html('0');
-                    $('.moonclose').show();
-                    $('.moonprizebtn1').show();
-                    $('.moonprizebtn2').hide();
+                    $('.showMessagebox').show();
+                    $('.noprizenum').show();
                     return false;
                 }
                 // 开始博饼游戏
@@ -177,38 +197,39 @@
                             dicestimer = setTimeout(function() {
                                 $.each(dicesArr, function(i) {
                                     //变换图片
+                                    // console.log('11111')
                                     $(".dicebox li").eq(i).css({
-                                        background: "url(" + 'http://images.cheertea.com/' + dicesArr[i] + ".png) 0 0 no-repeat !important",
-                                        backgroundSize: "100% 100% !important",
+                                        background: "url(" + 'http://images.cheertea.com/' + dicesArr[i] + ".png) 0 0 no-repeat",
+                                        backgroundSize: "100% 100%",
                                         animation: "none"
                                     });
                                 });
                                 clearTimeout(timerbox);
                                 timerbox = setTimeout(function() {
-                                    //判断是否为状元，添加不同背景
-                                    if(data.res_data.gain_score>=30){
-                                        $('.showMessagebox').removeClass('showbg1').addClass('showbg2');
-                                    }else{
-                                        $('.showMessagebox').removeClass('showbg2').addClass('showbg1');
-                                    }
-                                    //显示弹窗
+                                    //判断是否中奖
                                     $('#showDelete').show();
-                                    $('.iswinmessage').html(data.res_data.reward_result);
-                                    $('.prizemessage').html('您获得'+data.res_data.gain_score+'个博饼分');
-                                    $('.changemessage').find('span').html(data.res_data.all_count);
-                                    $('.gamechanges-num').html(data.res_data.all_count);
-                                    if(result==0){
-                                        $('.moonprizebtn2').hide();
-                                        $('.moonprizebtn1').show();
-                                        $('.moonclose').show();
-                                        // if(data.res_data.all_count==0){
-                                        //     $('.moonprizebtn1').show();
-                                        // }
+                                    $('.showMessagebox').show();
+                                    if(data.res_data.gain_score>=1){
+                                        // $('.noprizenum').hide();
+                                        // $('.nogetprize').hide();
+                                        $('.getnewprize').show();
+                                        $('.prizetype').html(data.res_data.reward_result);
+                                        // $('.prizescore').find('span').html(data.res_data.gain_score);
+                                        $('.prizescore').html('+'+data.res_data.gain_score+'分')
+                                        clearTimeout(fontTime)
+                                        fontTime=setTimeout(function () {
+                                            $('.prizescore').css({opacity:1,display:'block'})
+                                            $('.prizescore').animate({fontSize:'28',opacity:0,top:'5%'},3000,function () {
+                                                $('.prizescore').css({fontSize:'42',top:'64%'},0)
+                                            })
+                                        },500)
                                     }else{
-                                        $('.moonprizebtn2').show();
-                                        $('.moonprizebtn1').hide();
-                                        $('.moonclose').hide();
+                                        // $('.getnewprize').hide();
+                                        // $('.noprizenum').hide();
+                                        $('.nogetprize').show();
                                     }
+                                    $('.gamechanges-num').html(data.res_data.all_count);
+                                    //显示弹窗
                                     if(result==1 ||result==2 ||result==3 ){
                                         _this.bindAudio($('#putong').get(0));
                                     }
@@ -236,9 +257,19 @@
             //关闭弹窗
             $('.moonclose').on('click',function () {
                 $('#showDelete').hide();
+                $('.noprizenum').hide();
+                $('.nogetprize').hide();
+                $('.getnewprize').hide();
+            });
+            $('.nogetprize').find('button').click(function () {
+                $('#showDelete').hide();
+                $('.nogetprize').hide();
             });
             //按钮操作
-            $('.getprize').on('click',function () {
+            $('.getnewprizebtn-left').on('click',function () {
+                $('.showMessagebox').hide();
+                $('.getnewprize').hide();
+                $('.showbox').show();
                 $.ajax({
                     url:publics+'shop/bettingMoonCake!exchangeReward.do?',
                     type:'post',
@@ -252,12 +283,14 @@
                     },
                     success:function (data) {
                         // console.log(data);
-                        alert('兑换成功，请前往"个人中心--我的卡券"查看');
-                        $('#showDelete').hide();
+                        $('.showbox').find('p').html(data.res_data.reward);
                     }
                 })
             });
-            $('.getchoujiang').on('click',function () {
+            $('.getnewprizebtn-right').on('click',function () {
+                $('.showMessagebox').hide();
+                $('.getnewprize').hide();
+                $('.showbox').show();
                 $.ajax({
                     url:publics+'shop/bettingMoonCake!exchangeDrawCount.do',
                     type:'post',
@@ -271,35 +304,39 @@
                     },
                     success:function (data) {
                         // console.log(data)
-                        alert('兑换成功,您当前拥有'+data.res_data.after_draw_count+'次抽奖机会');
-                        $('#showDelete').hide();
+                        $('.showbox').find('p').html(data.res_data.add_draw_count + '次抽奖次数')
                     }
                 })
+            });
+            //点击确定关闭弹窗
+            $('.showbox').find('div').click(function () {
+                $('#showDelete').hide();
+                $('.showbox').hide();
             })
         },
         goshare:function () {
             var _this=this;
+            $.ajax({
+                url: publics+"member/login!isLogin.do",
+                type: "get",
+                async: false,
+                timeout: 1000 * 10,
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    // var datas = JSON.parse(data);
+                    if(data.res_code == 1) {
+                        //微信分享
+                        _this.shareWx(data.res_data.member.member_id)
+                    }
+                },
+                error:function () {
+                    console.log('网络出错')
+                }
+            });
             $('.goshare').on('click',function () {
                    $('#showDelete').hide();
                    $('#shares').show();
-                $.ajax({
-                    url: publics+"member/login!isLogin.do",
-                    type: "get",
-                    async: false,
-                    timeout: 1000 * 10,
-                    dataType: "json",
-                    success: function (data) {
-                        console.log(data);
-                        // var datas = JSON.parse(data);
-                        if(data.res_code == 1) {
-                            //微信分享
-                            _this.shareWx(data.res_data.member.member_id)
-                        }
-                    },
-                    error:function () {
-                        console.log('网络出错')
-                    }
-                });
             })
         },
         shareWx: function(ids) {
@@ -307,7 +344,7 @@
                 var member_id = ids;
                 var image_url = "http://images.cheertea.com/logonews.png";
                 if(member_id != "" && member_id != undefined && member_id != null){
-                    var shareUrl =publics+'cn/catchmooncake.html?memberid=' + member_id;
+                    var shareUrl =publics+'cn/catchmoonguide.html?memberid=' + member_id;
                     $.ajax({
                         type:'POST',
                         url:publics+'widget?type=group_activity&action=ajaxsign&ajax=yes',
@@ -330,7 +367,7 @@
                                 wx.onMenuShareTimeline({
                                     title: " 巨柚博状元 全国乐中秋", // 分享标题
                                     link: shareUrl,
-                                    desc:"缤纷豪礼送不停，更有价值数十万豪车等着你！",
+                                    desc:"缤纷豪礼送不停，更有￥4999现金大奖等着你！",
                                     imgUrl: image_url , // 分享图标
                                     success: function () {
                                         // 用户确认分享后执行的回调函数
@@ -344,7 +381,7 @@
                                 wx.onMenuShareAppMessage({
                                     title: " 巨柚博状元 全国乐中秋", // 分享标题
                                     link: shareUrl,
-                                    desc:"缤纷豪礼送不停，更有价值数十万豪车等着你！",
+                                    desc:"缤纷豪礼送不停，更有￥4999现金大奖等着你！",
                                     imgUrl: image_url, // 分享图标
                                     type: data.type, // 分享类型,music、video或link，不填默认为link
                                     success: function () {
@@ -360,7 +397,7 @@
                                 wx.onMenuShareQQ({
                                     title: " 巨柚博状元 全国乐中秋", // 分享标题
                                     link: shareUrl,
-                                    desc:"缤纷豪礼送不停，更有价值数十万豪车等着你！",
+                                    desc:"缤纷豪礼送不停，更有￥4999现金大奖等着你！",
                                     imgUrl: image_url, // 分享图标
                                     success: function () {
                                         // 用户确认分享后执行的回调函数
@@ -375,7 +412,7 @@
                                 wx.onMenuShareQZone({
                                     title: " 巨柚博状元 全国乐中秋", // 分享标题
                                     link: shareUrl,
-                                    desc:"缤纷豪礼送不停，更有价值数十万豪车等着你！",
+                                    desc:"缤纷豪礼送不停，更有￥4999现金大奖等着你！",
                                     imgUrl: image_url, // 分享图标
                                     success: function () {
                                         // 用户确认分享后执行的回调函数
@@ -403,7 +440,7 @@
             var veg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
             var r = window.location.search.substring(1).match(veg);
             if(r != null) {
-                return unescape(r[2]);
+                return decodeURIComponent(r[2]);
             }
             return null;
         },

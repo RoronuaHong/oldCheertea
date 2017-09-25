@@ -192,6 +192,67 @@ swiperFun.prototype = {
             throttle: 0
         });
 	},
+    showMoonBox: function (names,datas,indexs) {
+        $(names).append(
+            "<div class='recommendgoods clearfix'></div>"
+        );
+        $.each(datas, function(i) {
+            var imgs = datas[i].image || datas[i].original;
+            var newPrize=0;
+            var str='';
+            var dot=''
+            if(indexs==99){
+                if( datas[i].price>20){
+                    newPrize=datas[i].price-20;
+                    str='500万分+￥';
+                    dot='.00'
+                }else{
+                    newPrize='';
+                    str='500万分'
+                }
+            }
+            if(indexs==100){
+                if( datas[i].price>20){
+                    newPrize=datas[i].price-20;
+                    str='1000万分+￥';
+                    dot='.00'
+                }else{
+                    newPrize='';
+                    str='1000万分'
+                }
+            }
+            if(indexs==101){
+                if( datas[i].price>20){
+                    newPrize=datas[i].price-20;
+                    str='1亿分+￥';
+                    dot='.00'
+                }else{
+                    newPrize='';
+                    str='1亿分'
+                }
+            }
+            $(names).find(".recommendgoods").append(
+                "<div class='recommendgoodscon' ids=" + datas[i].goods_id + ">" +
+                "<a href='/cn/product_info.html?goods_id=" + datas[i].goods_id + "'>" +
+                "<img src='" + imgurl + "logobgs.png' data-src='" + imgchange.show(imgs) + "' alt=''>" +
+                "</a>" +
+                "<div class='goodsmessage'>" +
+                "<div class='messages'>" +
+                "<p>" + datas[i].name + "</p>" +
+                // "<span>￥<em>" + datas[i].price + "</em>.00</span>" +
+                "<span><em>" + str + newPrize + "</em>"+dot+"</span>" +
+                "</div>" +
+                /*"<div class='goodscar'></div>" +*/
+                "</div>" +
+                "</div>"
+            );
+        });
+
+        Echo.init({
+            offset: 200,
+            throttle: 0
+        });
+    },
     showPrizebox: function(names, datas) {
         $(names).append(
             "<div class='recommendgoods clearfix'></div>"

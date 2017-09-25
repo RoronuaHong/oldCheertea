@@ -79,6 +79,14 @@
             if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "moon-goodlist.html") {
                 tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 85);
             }
+            //中秋提货区
+            if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "moongetgoodlist.html") {
+                moonprize("goods!getGoodsListByTagId.do", ".ljfbox", 99);
+            }
+            //安娜妈妈
+            if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "mother-goodlist.html") {
+                tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 89);
+            }
 
             //爆款推荐
             if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "bktjgoodlist.html") {
@@ -89,6 +97,7 @@
             if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "xpssgoodlist.html") {
                 tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 52);
             }
+
 
             //点击排序
             var defaultFlag=5;
@@ -118,6 +127,14 @@
                     if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "daywash-goodlist.html") {
                         tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 87,order);
                     }
+                    //中秋提货区
+                    if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "moongetgoodlist.html") {
+                        tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 84,order);
+                    }
+                    //安娜妈妈
+                    if((window.location.href).split("/")[(window.location.href).split("/").length - 1] == "mother-goodlist.html") {
+                        tagFun("goods!getGoodsListByTagId.do", ".ljfbox", 89,order);
+                    }
 
                     if(order==1){
                             $('.prize_up').removeClass('triangle_up_light');
@@ -136,6 +153,37 @@
                 })
             }
             sortCount();
+            //中秋博饼区域切换
+            moonTab();
+            function moonTab() {
+                var $score= $('.ljfbox').find('.score')
+                $('.store-list').find('li').each(function (index) {
+                    $(this).click(function () {
+                        $('.store-list').find('li').removeClass('active');
+                        $('.ljfbox').html('');
+                        var  indexs=$(this).attr('data-num')
+                        $(this).addClass('active');
+                        $score.hide().eq(index).show()
+                        moonprize("goods!getGoodsListByTagId.do", ".ljfbox", indexs)
+                    })
+                })
+            }
+            function moonprize(urls,boxs,indexs) {
+                Ajax({
+                    urls: urls,
+                    types: "get",
+                    dataTypes: "json",
+                    datas: {
+                        tag_id: indexs
+                    },
+                    successes: function (data) {
+                        var datas = JSON.parse(data);
+                        console.log(datas);
+                            swiperfun.showMoonBox(boxs, datas.res_data.goodsList,indexs);
+                            swiperfun.appendGoods();
+                    }
+                });
+            }
             //获取的ajax
             Ajax({
                 urls: "index/index!getIndexData.do",

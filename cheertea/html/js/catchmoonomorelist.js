@@ -13,16 +13,16 @@
     var morelist={
         init: function () {
             //初始化
-            var calendar = new lCalendar();
-            calendar.init({
-                'trigger': '#selection-time',
-                'type': 'date'
-            });
+            // var calendar = new lCalendar();
+            // calendar.init({
+            //     'trigger': '#selection-time',
+            //     'type': 'date'
+            // });
             var timeTextbtn=$('#selection-time');
             //初始化榜单
-            setTime();
-            timeList();
-
+            // setTime();
+            // timeList();
+            allList()
             //每日榜单
             function setTime() {
                 var now = new Date();
@@ -72,14 +72,17 @@
                 var  monCont=$('.click-mon').html();
                 var  month=0;
                 $('.catch-list-ct').html('');
-                if(monCont=='第一月度'){
-                    month=9;
+                if(monCont=='二旬（第一）'){
+                    month=1;
                 }
-                if(monCont=='第二月度'){
-                    month=10;
+                if(monCont=='二旬（第二）'){
+                    month=2;
                 }
-                if(monCont=='第三月度'){
-                    month=11;
+                if(monCont=='二旬（第三）'){
+                    month=3;
+                }
+                if(monCont=='二旬（第四）'){
+                    month=4;
                 }
                 // console.log(month);
                $.ajax({
@@ -152,48 +155,57 @@
                  $('.selection-all').html(str)
             }
             //每日时间改变榜单变化
-            timeTextbtn.on('input',function () {
-                timeList();
-            });
+            // timeTextbtn.on('input',function () {
+            //     timeList();
+            // });
             //选择月度时间
-            $('.click-mon').click(function (event) {
-                $('.selection-list').toggle();
-                event.stopPropagation();
-            });
+            // $('.click-mon').click(function (event) {
+            //     $('.selection-list').toggle();
+            //     event.stopPropagation();
+            // });
             //榜单选择切换
-            $('.mon-list').find('li').on('click',function (event) {
-                $('.mon-list').find('li').removeClass('active');
-                $(this).addClass('active');
-                $('.click-mon').html($(this).html());
-                $('.selection-list').hide();
-                monList();
-                event.stopPropagation();
-            });
-            $(document).click(function () {
-                $('.selection-list').hide();
-            });
+            // $('.mon-list').find('li').on('click',function (event) {
+            //     $('.mon-list').find('li').removeClass('active');
+            //     $(this).addClass('active');
+            //     $('.click-mon').html($(this).html());
+            //     $('.selection-list').hide();
+            //     monList();
+            //     event.stopPropagation();
+            // });
+            // $(document).click(function () {
+            //     $('.selection-list').hide();
+            // });
             //排行
-            var selectLi=$('.select-li').find('li');
-            selectLi.each(function (index,item) {
-                        $(item).click(function () {
-                            selectLi.removeClass('active');
-                            $('.catch-list-ct').html('');
-                            $('.selection-component').hide().eq(index).show();
-                            $(this).addClass('active');
-                               if(index==0){
-                                   setTime();
-                                   timeList();
-                                   $('.moonmorelist-title').html('今日排行榜');
-                               }else if(index==1){
-                                   monList();
-                                   $('.moonmorelist-title').html('本月排行榜');
-                               }else if(index==2){
-                                   $('.moonmorelist-title').html('总榜');
-                                   setNowTime();
-                                   allList();
-                               }
-                            event.stopPropagation();
-                           })
+            // var selectLi=$('.select-li').find('li');
+            // selectLi.each(function (index,item) {
+            //             $(item).click(function () {
+            //                 selectLi.removeClass('active');
+            //                 $('.catch-list-ct').html('');
+            //                 $('.selection-component').hide().eq(index).show();
+            //                 $(this).addClass('active');
+            //                    if(index==0){
+            //                        setTime();
+            //                        timeList();
+            //                        $('.moonmorelist-title').html('今日排行榜');
+            //                    }else if(index==1){
+            //                        monList();
+            //                        $('.moonmorelist-title').html('本月排行榜');
+            //                    }else if(index==2){
+            //                        $('.moonmorelist-title').html('总榜');
+            //                        setNowTime();
+            //                        allList();
+            //                    }
+            //                 event.stopPropagation();
+            //                })
+            // })
+            //榜单须知
+            $('.listmustknow').click(function () {
+                $('#showDelete').show();
+                console.log(111)
+            });
+            //确定关闭遮罩
+            $('.listrule').find('div').click(function () {
+                $('#showDelete').hide();
             })
         }
     }

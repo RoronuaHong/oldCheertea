@@ -28,8 +28,8 @@
                                     "<img src='" + imgchange.show(datas.res_data.goodsList[i].image) + "' alt=''>" +
                                     "<h2>" + datas.res_data.goodsList[i].name +"</h2>" +
                                     "<div>" +
+                                       "<p><strong>"+ '￥'+ datas.res_data.goodsList[i].mktprice + "</strong></p>" +
                                         "<p>惊喜价：￥<span>" + datas.res_data.goodsList[i].price +"</span></p>" +
-                                        "<p><strong>原价" + datas.res_data.goodsList[i].mktprice + "</strong></p>" +
                                     "</div>" +
                                 "</a>" +
                             "</li>"

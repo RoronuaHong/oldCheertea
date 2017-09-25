@@ -12,7 +12,7 @@
     } else if(window.location.host == "test.cheertea.com") {
         publics = "http://test.cheertea.com/";
     } else {
-        publics = "http://192.168.2.17:8080/zxxt_qyy/";
+        publics = "http://192.168.2.24:8080/zxxt_qyy/";
     }
 
     var Teachersday = {
@@ -20,15 +20,17 @@
         shareWx: function(ids) {
             var url = location.href;
             var member_id = ids;
-            var image_url = "http://images.cheertea.com/teachersdaylogo.png";
+            var image_url = "http://images.cheertea.com/teachertitle7.png";
             if(member_id != "" && member_id != undefined && member_id != null){
                 var shareUrl = 'http://wx.cheertea.com/cn/teachersday.html?memberid=' + member_id;
-                $.ajax({
-                    type:'POST',
-                    url:'http://wx.cheertea.com/widget?type=group_activity&action=ajaxsign&ajax=yes',
-                    data:{url:url, member_id:member_id},
-                    dataType:"json",
-                    success: function(data) {
+                Ajax({
+                    types:'POST',
+                    urls:'widget?type=group_activity&action=ajaxsign&ajax=yes',
+                    datas:{url:url, member_id:member_id},
+                    dataTypes:"json",
+                    successes: function(data) {
+                        var data = JSON.parse(data);
+
                         wx.config({
                             debug : false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                             appId : data.appid, // 必填，公众号的唯一标识
@@ -43,8 +45,8 @@
                         wx.ready(function(){
                             // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
                             wx.onMenuShareTimeline({
-                                title: "【师恩难忘】教师节趣味游戏——巨柚出品", // 分享标题
-                                desc: "我正在玩【师恩难忘】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
+                                title: "【浓情中秋】中秋团圆趣味小游戏——巨柚出品", // 分享标题
+                                desc: "我正在玩【浓情中秋】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
                                 link: shareUrl,
                                 imgUrl: image_url , // 分享图标
                                 success: function () {
@@ -58,8 +60,8 @@
                             });
                             // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
                             wx.onMenuShareAppMessage({
-                                title: "【师恩难忘】教师节趣味游戏——巨柚出品", // 分享标题
-                                desc: "我正在玩【师恩难忘】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
+                                title: "【浓情中秋】中秋团圆趣味小游戏——巨柚出品", // 分享标题
+                                desc: "我正在玩【浓情中秋】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
                                 link: shareUrl ,
                                 imgUrl: image_url, // 分享图标
                                 type: data.type, // 分享类型,music、video或link，不填默认为link
@@ -75,8 +77,8 @@
 
                             //获取“分享到QQ”按钮点击状态及自定义分享内容接口
                             wx.onMenuShareQQ({
-                                title: "【师恩难忘】教师节趣味游戏——巨柚出品", // 分享标题
-                                desc: "我正在玩【师恩难忘】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
+                                title: "【浓情中秋】中秋团圆趣味小游戏——巨柚出品", // 分享标题
+                                desc: "我正在玩【浓情中秋】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
                                 link: shareUrl, // 分享链接
                                 imgUrl: image_url, // 分享图标
                                 success: function () {
@@ -91,9 +93,8 @@
 
                             //获取“分享到QQ空间”按钮点击状态及自定义分享内容接口
                             wx.onMenuShareQZone({
-                                title: "【师恩难忘】教师节趣味游戏——巨柚出品", // 分享标题
-                                title: "云海深处，月影难觅。万家灯火，天涯此时。", // 分享描述
-                                desc: "我正在玩【师恩难忘】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
+                                title: "【浓情中秋】中秋团圆趣味小游戏——巨柚出品", // 分享标题
+                                desc: "我正在玩【浓情中秋】游戏活动,现向您发起挑战, 您敢来应战, 赢取丰厚的礼品吗?", // 分享描述
                                 link: shareUrl, // 分享链接
                                 imgUrl: image_url, // 分享图标
                                 success: function () {
@@ -111,7 +112,7 @@
                             alert("error");
                         });
                     },
-                    error: function(){
+                    errors: function(){
                         alert("出现错误，连接未成功");
                     }
                 })
@@ -125,7 +126,7 @@
             Ajax({
                 urls: "member/login!isLogin.do",
                 types: "get",
-                asyncs: false,
+                asyncs: true,
                 // timeouts: 1000 * 10,
                 dataTypes: "json",
                 successes: function (data) {
@@ -372,6 +373,9 @@
                                 );
                             });
                         }
+                    },
+                    errors: function(data) {
+                        alert(data);
                     }
                 });
             });
@@ -721,7 +725,7 @@
             $(".biggamebox").on("touchstart", ".mainbox", function() {
                 _this.endTime = +new Date();
 
-                if(_this.endTime - _this.currentTime > 50) {
+                // if(_this.endTime - _this.currentTime > 100) {
                     if(_this.posY[$(this).index()] >= _this.endY) {
                         _this.posX[$(this).index()] += (_this.speeds * 50);
 
@@ -758,7 +762,7 @@
                         }
                     }
                     _this.currentTime = _this.endTime;
-                }
+                // }
             });
         },
         /*小弹窗功能*/

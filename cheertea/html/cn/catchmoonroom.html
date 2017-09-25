@@ -10,40 +10,73 @@
     <link rel="stylesheet" type="text/css" href="http://css.cheertea.com/catchmooncake.css" />
 </head>
 <body>
-<audio src="http://others.cheertea.com/touzi.mp3" controls preload="auto"  hidden="true" id="touzi"></audio>
+<audio src="http://others.cheertea.com/touzi1.mp3" controls preload="auto"  hidden="true" id="touzi"></audio>
 <audio src="http://others.cheertea.com/puto.mp3" controls preload="auto"  hidden="true" id="putong"></audio>
 <audio src="http://others.cheertea.com/duitang.mp3" controls preload="auto"  hidden="true" id="duitang"></audio>
 <audio src="http://others.cheertea.com/sanhong.mp3" controls preload="auto"  hidden="true" id="sanhong"></audio>
 <audio src="http://others.cheertea.com/zhuangyuan.mp3" controls preload="auto"  hidden="true" id="zhuangyuan"></audio>
 <div  id="showDelete" >
-    <div class="showMessagebox">
-        <!--博奖奖励情况-->
-        <p class="iswinmessage"></p>
-        <!--获取积分数-->
-        <p class="prizemessage"></p>
-        <!--博饼机会-->
-        <p class="changemessage">您还有 <span></span> 次博饼机会</p>
+    <div class="showMessagebox" style="display: none">
+        <!--&lt;!&ndash;博奖奖励情况&ndash;&gt;-->
+        <!--<p class="iswinmessage"></p>-->
+        <!--&lt;!&ndash;获取积分数&ndash;&gt;-->
+        <!--<p class="prizemessage"></p>-->
+        <!--&lt;!&ndash;博饼机会&ndash;&gt;-->
+        <!--<p class="changemessage">您还有 <span></span> 次博饼机会</p>-->
+   <!---->
+        <!--&lt;!&ndash;温馨提示&ndash;&gt;-->
+        <!--<div class="prompt" style="display: none">温馨提示：<br>购物和推荐能增加博饼机会！</div>-->
+         <!--<div class="moonprizebtn1 allbtn">-->
+                <!--<div class="moonprizebtn">-->
+                <!--<div class="goshop"><a href="http://wx.cheertea.com"></a></div>-->
+                <!--<div class="goshare"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+         <!--<div class="moonprizebtn2 allbtn">-->
+                <!--<div class="moonprizebtn">-->
+                    <!--&lt;!&ndash;<div class="getprize"></div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="getchoujiang"></div>&ndash;&gt;-->
+                    <!--<div class="gomyprize"><a href="../cn/catchmoonmyprize.html"></a></div>-->
+                <!--</div>-->
+         <!--</div>-->
         <!--关闭窗口按钮-->
-        <div class="moonclose"></div>
-        <!--温馨提示-->
-        <div class="prompt" style="display: none">温馨提示：<br>购物和推荐能增加博饼机会！</div>
-         <div class="moonprizebtn1 allbtn">
-                <div class="moonprizebtn">
-                <div class="goshop"><a href="http://wx.cheertea.com"></a></div>
-                <div class="goshare"></div>
-                </div>
+        <div class="noprizenum" style="display: none">
+            <div class="noprizenum-ct">
+                <p>哎呀，博饼机会用光了</p>
+                <p>快去赢取博饼机会！</p>
             </div>
-         <div class="moonprizebtn2 allbtn">
-                <div class="moonprizebtn">
-                    <div class="getprize"></div>
-                    <div class="getchoujiang"></div>
+            <div class="noprizebtn">
+                <button class="noprizebtn-top"><a href="../cn/moon-goodlist.html?tag_id=85">消费满额，增加博饼机会</a></button>
+                <button class="noprizebtn-bottom goshare">邀请好友，增加博饼机会</button>
+            </div>
+        </div>
+        <div class="nogetprize" style="display:none">
+            <h2>别气馁!</h2>
+            <p>继续加油</p>
+            <button>再来一次</button>
+        </div>
+        <div class="getnewprize" style="display:none">
+            <h2>恭喜您</h2>
+            <p class="prizetype"></p>
+            <!--<p class="prizescore">获得<span></span>个博饼分</p>-->
+            <p class="prizescore"></p>
+             <h3>请选择您想要的福利：</h3>
+                <div class="getnewprizebtn">
+                    <!--<button class="getnewprizebtn-left" style="background:#2cbcff;">我要提货券</button>-->
+                    <button class="getnewprizebtn-right" style="background:#ff4040;">我要抽奖机会</button>
                 </div>
-         </div>
+        </div>
+        <div class="moonclose"></div>
+    </div>
+    <div class="showbox" style="display: none">
+        <h2>恭喜您获得</h2>
+        <p></p>
+        <div>确定</div>
     </div>
 </div>
 <div class="isDelete" id="shares">
     <div class="sharebox"></div>
-    </div>
+</div>
 <div class="moonroom">
     <ul class="dicebox">
         <li></li>
@@ -57,7 +90,7 @@
         <p>您目前拥有<span class="gamechanges-num"></span>次博饼机会</p>
     </div>
     <div class="gamestartbetting"></div>
-    <div class="public-num"><a href="##">点击关注公众号</a></div>
+    <div class="public-num"><a href="javascript:;">点击关注公众号</a></div>
     <div class="mustknow"><a href="../cn/catchmoonmustkonw.html"></a></div>
     <!--<div class="catchmoon-warm">-->
         <!--<a href="##">博饼须知</a>-->

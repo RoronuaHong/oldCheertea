@@ -18,7 +18,7 @@ html, body {
   overflow: hidden;
   position: fixed;
   top: 8%;
-  left: 13%;
+  right: 13%;
   width: 60px;
   height: 60px;
   margin: -40px;
@@ -45,9 +45,9 @@ html, body {
 #logobox {
   position: fixed;
   top: 0.5%;
-  right: 8%;
-  width: 100px;
-  height: 100px;
+  left: 2%;
+  width: 150px;
+  height: 150px;
   background: url($imgurl + "newnewlogo.png") 0 0 no-repeat;
   background-size: 100% 100%;
   z-index: 5;
@@ -58,7 +58,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 505px;
-  background: url($imgurl + "teachertitle4.png") 0 0 no-repeat;
+  background: url($imgurl + "teachertitle10.png") 0 0 no-repeat;
   background-size: 100% 100%;
   z-index: 10;
 }
@@ -83,7 +83,7 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
-  background: url($imgurl + "teachersdaybg3.jpg");
+  background: url($imgurl + "teachersdaybg9.png");
   background-size: 100% 100%;
   .btnbox {
     position: fixed;
@@ -326,7 +326,7 @@ html, body {
   .rewardcon {
     overflow-y: auto;
     width: 100%;
-    height: 360px;
+    height: 296px;
     padding-top: 20px;
     .con {
       display: none;

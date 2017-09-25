@@ -11,6 +11,17 @@ body{
 #shares{
   display: none;
 }
+
+.guide{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("http://images.cheertea.com/yindaobg3.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  top:0;
+  z-index:9999;
+}
 .sharebox {
   width: 100%;
   height: 100%;
@@ -20,7 +31,7 @@ body{
 }
 #showDelete {
   display: none;
-  position: absolute;
+  position: fixed;
   background: rgba(0,0,0,0.5);
   z-index: 99;
   width: 100%;
@@ -34,10 +45,115 @@ body{
     right: 0;
     bottom: 0;
     width: 486px;
-    height: 648px;
+    height: 470px;
+    background: #fff;
     margin: auto;
     border-radius: 10px;
     z-index: 110;
+    .noprizenum-ct{
+      padding: 84px 0 54px;
+      p{
+        font-size:26px;
+        line-height:54px;
+        color:#010101;
+      }
+    }
+    .noprizebtn{
+      button{
+        border:none;
+        width:348px;
+        height:60px;
+        line-height:60px;
+        color: #fff;
+        font-size:26px;
+        margin-bottom:35px;
+        border-radius:8px;
+      }
+      .noprizebtn-top{
+
+        background: #2cbcff;
+        a{
+          color: #fff;
+        }
+      }
+      .noprizebtn-bottom{
+        background: #ff4040;
+      }
+    }
+    .nogetprize{
+      h2{
+        font-size:36px;
+        text-align: center;
+        padding:102px 0  62px 0;
+      }
+      p{
+        font-size:26px;
+        text-align:center;
+        margin-bottom:80px;
+        span{
+          color:#ff0202;
+        }
+      }
+      button{
+        margin:  0 auto;
+        width: 188px;
+        height:60px;
+        line-height: 60px;
+        border: none;
+        background:#ff4040;
+        text-align: center;
+        color:#fff;
+        border-radius: 10px;
+      }
+    }
+    .getnewprize{
+      position: relative;
+      text-align: center;
+      h2{
+        text-align: center;
+        font-size: 36px;
+        color:#1a1a1a;
+        padding: 70px 0 54px 0;
+      }
+      .prizetype{
+        font-size: 34px;
+        color: #ff5353;
+        padding-bottom: 68px;
+        font-weight: bold;
+      }
+      .prizescore{
+        position: absolute;
+        top: 64%;
+        right: 2%;
+        font-size: 42px;
+        color: #ff4040;
+        display: none;
+        span{
+          color: #ff0202;
+        }
+      }
+      h3{
+        padding: 0 0 16px 18px;
+        font-size: 21px;
+        border-bottom: 1px solid #eeeeee;
+        text-align: left;
+      }
+      div{
+        margin-top:40px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        button{
+          width: 188px;
+          height: 60px;
+          line-height: 60px;
+          border: none;
+          color: #fff;
+          border-radius:10px;
+        }
+      }
+    }
   }
   .showbg1{
     background: url($imgurl +"catchmoonprizebg-2.jpg") 0 0 no-repeat;
@@ -48,7 +164,6 @@ body{
     background-size: 100% 100%;
   }
   .moonclose{
-    display: none;
     position: absolute;
     width: 43px;
     height: 43px;
@@ -133,6 +248,10 @@ body{
       background: url($imgurl +'moongogetchou.png') no-repeat;
       background-size: 100% 100%;
     }
+    .gomyprize{
+      background: url($imgurl +'myprizebtn.png') no-repeat;
+      background-size: 100% 100%;
+    }
   }
   .prompt{
     //display: none;
@@ -144,7 +263,36 @@ body{
     line-height: 45px;
     text-align: center;
   }
-
+  .showbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 412px;
+    height: 288px;
+    background: #fff;
+    margin: auto;
+    border-radius: 10px;
+    z-index: 110;
+    text-align: center;
+    h2{
+      padding: 76px 0 24px 0;
+      font-size: 26px;
+      color:#0e050b;
+    }
+    p{
+      padding-bottom: 30px;
+      font-size: 30px;
+      color: #ff0000;
+    }
+    div{
+      border-top: 1px solid #f3f3f3;
+      padding-top: 26px;
+      font-size: 26px;
+      color: #ff0000;
+    }
+  }
 }
 .moonwrap{
   overflow:hidden;
@@ -176,7 +324,7 @@ body{
     position: relative;
     width:564px;
     height:606px;
-    margin:40px auto 0;
+    margin:0 auto ;
     background: url($imgurl +"mooncakelist.png") no-repeat;
     background-size: 100% 100%;
     .catch-list-time{
@@ -306,50 +454,73 @@ body{
 
   }
   .moonking{
-    img{
-      display:block;
-    }
-    p{
-      text-align: center;
-      margin-top: 28px;
-      font-size: 21px;
-      color:#fcf7d6;
-    }
-    a{
-      display:block;
-      text-align: center;
-      width: 210px;
-      height: 58px;
-      font-size: 30px;
-      color:#323333;
-      margin:30px auto 0;
+      width:600px;
+      background: #fbf1c4;
+      border: 6px solid #d64530;
+      border-radius:12px;
+      margin: 40px auto 46px;
+      font-size: 0;
+      overflow: hidden;
+      text-align:center;
+    .title{
       position: relative;
-      img{
-        width: 100%;
+      height: 76px;
+      border: 1px solid #f5d568;
+      p{
+        height: 76px;
+        line-height: 77px;
+        font-size: 26px;
+        color:#292c2e;
+        text-align: center;
       }
+      a{
+        position: absolute;
+        bottom:14px;
+        right:36px;
+        color: #d64530;
+        font-size: 18px;}
     }
+      img{
+        width:100%;
+      }
+    .showgood{
+      width: 80%;
+      margin: 30px auto;
 
-    .moonking-title{
-      width: 97.5%;
-      margin: 36px auto 4px;
     }
-    .moonking-car{
-      width:93.75%;
-      margin: 0 auto;
-    }
-    .moonking-other{
-      width: 96.875%;
-      margin: 16px auto 0;
-    }
+    .scroll-wrap{
+      font-size: 0;
+      height: 250px;
+      overflow: hidden;
+      .inner-wrap{
+        width: 4000px;
+        div{
+          float: left;
+          position: relative;
+          width: 2000px;
+          height: 240px;
+          font-size: 20px;
+          img{
+            width: 100%;
+            height: 240px;
+          }
+        }
+      }
 
+    }
+  }
+  .warm-pic{
+    text-align: center;
+    font-size:20px;
+    color:#fbf1c4;
   }
   .catchcakeapart{
     overflow:hidden;
     position: relative;
     width:624px;
-    height:688px;
+    height:821px;
     margin:432px auto 0;
-    background: url($imgurl +"catchcakeapart1.png") no-repeat;
+    background: url($imgurl +"catchcakeapart2.png") no-repeat;
     background-size: 100% 100%;
     text-align: center;
     ul{
@@ -362,7 +533,6 @@ body{
       text-align: center;
       margin:166px 0 0 0;
       flex-wrap:wrap;
-      justify-content:space-around;
       li{
         width:33.3%;
         margin-bottom: 34px;
@@ -386,7 +556,7 @@ body{
     }
   }
   .login{
-    margin:62px 0 0 0;
+    margin:52px 0 0 0;
      .pre-login{
     img{
       display: block;
@@ -445,22 +615,54 @@ body{
          }
         }
       .other_prize{
-        width: 496px;
+        width: 500px;
         height: 64px;
-        margin: 60px auto;
+        margin: 30px auto 30px;
         border-radius: 8px;
-        background: url($imgurl +"otherprizebtn.png") no-repeat;
+        background: #fff;
+        //background: url($imgurl +"otherprizebtn.png") no-repeat;
         background-size:100% 100%;
         a{
           display: block;
           width: 100%;
-          height: 100%;
+          height: 64px;
+          line-height: 64px;
+          font-size: 26px;
+          text-align: center;
+          color: #242322;
         }
       }
+
+    }
+  }
+  .catch-invite{
+    text-align: center;
+    font-size:0;
+    p{
+      font-size:30px;
+      color: #fff;
+      line-height:46px;
+      span{
+        font-size:30px;
+        color: #f2dc7b;
+      }
+    }
+    .invite-btn{
+      width: 453px;
+      height: 60px;
+      border-radius: 12px;
+      background: url($imgurl +"invite-btn1.png") no-repeat;
+      background-size:100% 100%;
+      margin: 26px auto 18px;
+    }
+    a{
+      display:block;
+      font-size:20px;
+      color:#fff;
     }
   }
   .rule{
-    margin-top: 66px;
+    margin-top: 32px;
     .rule-time{
       font-weight: 600;
       padding-left: 5.9%;
@@ -494,6 +696,9 @@ body{
           line-height: 32px;
           color: #fff;
           margin-bottom:14px;
+          a{
+            color:#fbf1c3;
+          }
         }
       }
       .rule-btm{
@@ -1060,61 +1265,102 @@ body{
   background: url($imgurl + "room-shenghuo.jpg") no-repeat;
   background-size: 100% 100%;
 }
-.nonePrize{
-  display: none;
-  font-size: 20px;
-}
-.myprize-list{
-  .active{}
-  li{
-    display: -webkit-flex; /* Safari */
-    display: flex;
-    justify-content:space-between;
-    padding: 0 24px;
-    height: 138px;
-    align-items:center;
-    border-bottom: 10px solid #ebebeb;
-    span{
-      display: block;
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
-    p{
-      font-size: 20px;
-      color: #ffad74;
-    }
-    .prize-normal{
-      width: 108px;
-      height: 68px;
-    }
-    .prize-state{
-      width: 108px;
-      height: 68px;
-      background: url($imgurl +"prizewasget.png") no-repeat;
-      background-size: 100% 100%;
-    }
-    .prize-arrow{
-      img{
-        width: 15px;
-        height: 27px;
-      }
-    }
-    .go-join{
-      a{
+.catchmoonmyprize{
+  .nonePrize{
+    display: none;
+    font-size: 20px;
+  }
+  .myprize-list{
+    .active{}
+    li{
+      display: -webkit-flex;
+      display: flex;
+      justify-content:space-between;
+      padding: 0 24px;
+      height: 138px;
+      align-items:center;
+      border-bottom: 10px solid #ebebeb;
+      span{
         display: block;
-        width: 102px;
-        height:46px;
-        line-height: 46px;
-        color: #fff;
-        background: #cacaca;
-        font-size:21px;
-        border-radius: 5px;
-        text-align: center;
+        font-size: 26px;
+        margin-bottom: 10px;
       }
-      .active{background: #ff0000;}
+      p{
+        font-size: 20px;
+        color: #ffad74;
+      }
+      .prize-normal{
+        width: 108px;
+        height: 68px;
+      }
+      .prize-state{
+        width: 108px;
+        height: 68px;
+        background: url($imgurl +"prizewasget.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .prize-arrow{
+        img{
+          width: 15px;
+          height: 27px;
+        }
+      }
+      .go-join{
+        a{
+          display: block;
+          width: 102px;
+          height:46px;
+          line-height: 46px;
+          color: #fff;
+          background: #cacaca;
+          font-size:21px;
+          border-radius: 5px;
+          text-align: center;
+        }
+        .active{background: #ff0000;}
+      }
+      .get-btn{
+        font-size: 0;
+        .btn{
+          width: 116px;
+          height: 48px;
+          line-height: 48px;
+          border-radius: 6px;
+          background: #ff6c00;
+          font-size: 20px;
+          color:#fff;
+          text-align: center;
+          display: inline-block;
+        }
+        .active{
+          background: #cacaca;
+        }
+        .getprize-btn{
+          margin-right: 34px;
+        }
+      }
+    }
+  }
+  .select-prize{
+    display: -webkit-flex;
+    display: flex;
+    text-align:center;
+    font-size: 0;
+    height:74px;
+    line-height: 74px;
+    span{
+      font-size:26px;
+      width:33.3%;
+      color:#4d4d4d;
+      background: #eeeeee;
+    }
+    .active{
+      color:#fff;
+      background: #ff6c00;
     }
   }
 }
+
 .catch-how-wrap{
   position: absolute;
   width: 100%;
@@ -1166,46 +1412,113 @@ body{
   }
 }
 .roomlist{
-  margin:36px;
-  border: 3px solid #f5d468;
-  background: #d64430;
-  border-radius: 6px;
-  div{
-      .new_title{
-        font-size: 30px;
-        text-align: center;  display: -webkit-box;  align-items: center;  -webkit-box-align: center;
-        padding:20px 10px 40px;  border-radius: 9px 4px 3px 0;font-weight: normal;
-        color:#f5d468;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url($imgurl + "roomlistbg.png") no-repeat;
+  background-size: 100% 100%;
+  ul {
+    width: 100%;
+    padding: 170px 38px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    box-sizing: border-box;
+    text-align: center;
+    flex-wrap: wrap;
+    //justify-content: space-between;
+    li {
+      width: 33.3%;
+      margin-bottom: 34px;
+      img {
+        width: 80.4%;
+        margin-bottom: 16px;
       }
-      .new_title:before{
-        -webkit-flex: 1;  -webkit-box-flex: 1;  -moz-box-flex: 1;  -ms-flex: 1;
-        flex: 1;  content: " ";  display: block;  height: 1px;  background-color: #f5d468;margin-right:2%;
-      }
-      .new_title:after{
-        -webkit-flex: 1;  -webkit-box-flex: 1;  -moz-box-flex: 1;  -ms-flex: 1;
-        flex: 1;  content: " ";  display: block;  height: 1px;  background-color: #f5d468;margin-left: 2%;
-      }
-
-    ul{
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      box-sizing: border-box;
-      text-align: center;
-      flex-wrap:wrap;
-      justify-content:space-between;
-      li{
-        width:33.3%;
-        margin-bottom: 34px;
-        img{
-          width:80.4%;margin-bottom: 16px;
-        }
-        p{
-          font-size: 26px;
-          color: #fff;
-        }
+      p {
+        font-size: 26px;
+        color: #fff;
       }
     }
   }
-
+}
+.recommend{
+  .banner-img{
+    width: 100%;
+  }
+  .add-num{
+    display: -webkit-flex;
+    display: flex;
+    height:88px;
+    line-height: 88px;
+    padding: 0 24px;
+    justify-content: space-between;
+    p{
+      font-size: 28px;
+      color: #383838;
+    }
+    .add-num-list{
+      color: #ff1b1b;
+    }
+  }
+  .re-people{
+    text-align: center;
+    h2{
+      height: 86px;
+      border-bottom: 1px solid #e0e0e0;
+      border-top: 1px solid #e0e0e0;
+      font-size: 28px;
+      line-height: 86px;
+    }
+    .re-people-title{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      text-align: center;
+      line-height: 88px;
+      height: 88px;
+      border-bottom: 1px solid #e0e0e0;
+      span{
+        display: inline-block;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        font-size: 24px;
+        color:#1a1a1a;
+      }
+    }
+    .re-people-list{
+      li{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        text-align: center;
+        height: 88px;
+        line-height:88px;
+        border-bottom: 1px solid #e0e0e0;
+        span{
+          display: inline-block;
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          font-size: 24px;
+          color:#1a1a1a;
+          vertical-align: middle;
+          img{
+            display:inline-block;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+        }
+        .re-people-name{
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+    }
+  }
+  }
 }

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拼团详情</title>
+    <link rel="stylesheet" href="http://css.cheertea.com/commons.css">
+    <link rel="stylesheet" href="http://css.cheertea.com/groupdetail.css">
+    <!--<link rel="stylesheet" href="../css/groupdetail.css">-->
+</head>
+<body>
+    <div class="header">
+        <a class="backss backs" href="javascript: history.go(-1)"></a>
+        <h2>拼团详情</h2>
+    </div>
+    <div class="groupdetailwrap">
+        <div class="theResultbox">
+            <div class="success clearfix">
+                <span class="suc">√</span>
+                <span class="suctext">拼团成功</span>
+            </div>
+            <div class="continue clearfix">
+                <span class="tinue">...</span>
+                <span class="context">等待拼团</span>
+            </div>
+            <div class="fail clearfix">
+                <span class="fai">×</span>
+                <span class="faitext">拼团失败</span>
+            </div>
+        </div>
+        <div class="bigbanner">
+
+        </div>
+        <div class="reststimebox">
+            还剩
+            <span class="hours">23</span>
+             :
+            <span class="mins">23</span>
+             :
+            <span class="secs">23</span>
+            结束
+        </div>
+        <div class="overtimebox">
+            <span class="over">已</span>
+            <span class="over">结</span>
+            <span class="over">束</span>
+        </div>
+        <div class="pricecontent clearfix">
+            <div class="groupcontent">
+                <div class="groupcon clearfix">
+                    <p>啊实打实大大神的啊实打实大大神的啊实打实大大神的啊实打实大大神的啊实打实大大神的</p>
+                </div>
+                <div class="pricecon clearfix">
+                    <i>￥</i>
+                    <span class="pri">29300.00</span>
+                    <div class="otherpri clearfix">
+                        <span class="surpri">￥30.00</span>
+                        <span class="savepri">立省: ￥50.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="restmemberbox">还差<span class="other"></span>人可成团，有<span class="total"></span>人也在团它哦~</p>
+        <ul class="groupmemberbox">
+            <li>
+                <img src="http://images.cheertea.com/logobgs.png" alt="" class="liimg">
+                <span class="colonelname">团长</span>
+            </li>
+            <!--<li>-->
+                <!--<img src="http://images.cheertea.com/logobgs.png" alt="" class="liimg">-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<img src="http://images.cheertea.com/logobgs.png" alt="" class="liimg">-->
+            <!--</li>-->
+        </ul>
+        <a href="/cn/grouprule.html" class="buzhou">
+            拼团步骤:
+            <span class="ruless">详细规则 ></span>
+            <ul class="othernum clearfix">
+                <li>
+                    <span class="num">1</span>
+                    选择商品
+                </li>
+                <li>
+                    <span class="num">2</span>
+                    支付开团
+                    或者参团
+                </li>
+                <li>
+                    <span class="num">3</span>
+                    等待新人
+                    参团支付
+                </li>
+                <li class="gray">
+                    <span class="num grays">4</span>
+                    达到人数
+                    拼团成功
+                </li>
+            </ul>
+        </a>
+        <a href="/cn/newgroup.html" class="moregroup">更多拼团</a>
+        <ul class="moregroupbox clearfix">
+            <li>
+                <a href="/cn/newgroup.html">更多拼团</a>
+            </li>
+            <li class="gocantuan">
+                <form id="togetherBuyForm">
+                    <input type="hidden" name="togetherBuyGroupId" class="togetherBuyGroupIds" value="">
+                    <input type="hidden" name="goods_id" class="goods_id" value="">
+                    <input type="hidden" name="activity_status" class="activity_status" value="">
+                    <input type="button" class="buyquickly" class="buyquickly" value="参团">
+                </form>
+                去参团
+            </li>
+        </ul>
+        <div class="detailDel">
+            <div class="showbox">
+                <p class="showlast">还差<span></span>成团,赶快喊人参加</p>
+            </div>
+        </div>
+        <div class="specbox" id="specboxs" style="position: fixed; bottom: 0; left: 0; width: 100%; height: 11rem; background: white; z-index: 2000; display: none;">
+            <div class="specmessage" style="position: relative; top: 0; left: 0; width: 100%; padding: .45rem 0;">
+                <img src="" alt="" id="specimg" style="display: block; position: absolute; top: -.55rem; left: .31rem; width: 3.1rem; height: 3.1rem; border: 1px solid #fff; border-radius: .1rem; -webkit-border-radius: .1rem; -moz-border-radius: .1rem;-ms-border-radius: .1rem;">
+                <div class="specmes" style="width: 55%; height: 2.1rem; padding: 0 5% 0 40%;">
+                    <div class="price clearfix" style="width: 100%; height: .78rem; line-height: .78rem; font-size: .375rem; color: #e94a62;">
+                        ￥<span id="pri" style="font-size: .53rem;">199.00</span>
+                        <stonrg class="chacha" style="float: right; margin-top: .1rem; width: .58rem; height: .58rem; background: url('http://images.cheertea.com/detailchacha.png') 0 0 no-repeat; background-size: contain;"></stonrg>
+                        <div class="selected">
+                            <!-- 	  已选择
+                                 <span>"红色"</span>
+                                 <span>"50x110cm"</span>
+                                 <span>"50x110cm"</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mesbox">
+                <!-- <div class="specpath">
+                    <h3>颜色</h3>
+                    <ul class="specul clearfix">
+                        <li class="lisel">红色</li>
+                        <li class="unli">蓝色</li>
+                        <li>白色</li>
+                        <li>红色</li>
+                        <li>蓝色</li>
+                        <li>白色</li>
+                    </ul>
+                </div> -->
+                <!-- <div class="specpath">
+                    <h3>尺寸</h3>
+                    <ul class="speculs clearfix">
+                        <li class="lisel">红色</li>
+                        <li class="unli">蓝色</li>
+                        <li>白色</li>
+                        <li>红色</li>
+                        <li>蓝色</li>
+                        <li>白色</li>
+                    </ul>
+                </div> -->
+            </div>
+            <ul class="buynumerbox clearfix" style="display: none;">
+                <li>购买数量(库存剩余:<span id="stores">0</span>) : </li>
+                <li>
+                    <div class="numbox clearfix">
+                        <span class="minus">-</span>
+                        <input type="number" id="numinput" value="1">
+                        <span class="plus">+</span>
+                    </div>
+                </li>
+            </ul>
+            <a class="containbtn" style="display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 1.25rem; line-height: 1.25rem; background: #ff0000; font-size: .58rem; text-align: center; color: #fff;">确定</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" charset="UTF-8"></script>
+    <!--<script type="text/javascript" src="http://js.cheertea.com/newcommon.js" charset="UTF-8"></script>-->
+    <!--<script type="text/javascript" src="http://js.cheertea.com/groupdetail.js"></script>-->
+    <script type="text/javascript" src="../js/newcommon.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../js/groupdetail.js" charset="UTF-8"></script>
+</body>
+</html>

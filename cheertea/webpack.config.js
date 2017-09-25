@@ -60,7 +60,11 @@ module.exports = {
 		feedback: "./html/js/feedback",
 		moongoodlist: "./html/js/moongoodlist",
         gamedemo: "./html/js/gamedemo",
-        teachersday: "./html/js/teachersday"
+        teachersday: "./html/js/teachersday",
+        newgroup: "./html/js/newgroup",
+        togetherbuydetail: "./html/js/togetherbuydetail",
+        groupdetail: "./html/js/groupdetail",
+        newmygroup: "./html/js/newmygroup"
 	},
 	output: {
 		filename: "[name]-[chunkhash:10].js"

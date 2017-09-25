@@ -11,7 +11,7 @@ body{
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url($imgurl + "catchmoonmorelist.jpg") no-repeat;
+  background: url($imgurl + "catchmoonmorelist1.jpg") no-repeat;
   background-size: 100% 100%;
   .moonmorelist-title{
     font-size: 28px;
@@ -77,7 +77,7 @@ body{
       }
       span{
         display:inline-block;
-        width:130px;
+        width:180px;
         font-size: 22px;
         color:#e47922;
       }
@@ -123,7 +123,7 @@ body{
   }
   .catch-list-people{
     position: relative;
-    top:21%;
+    top:11%;
   }
   .catch-list-title{
     display: -webkit-box;
@@ -131,7 +131,7 @@ body{
     display: flex;
     width: 100%;
     text-align: center;
-    line-height: 48px;
+    line-height: 68px;
     span{
       display: inline-block;
       -webkit-box-flex: 1;
@@ -164,13 +164,68 @@ body{
       }
     }
   }
+  .listmustknow{
+    position: absolute;
+    bottom: 6%;
+    right: 10%;
+    font-size: 24px;
+    color: #ea4e27;
+  }
+  #showDelete {
+    display: none;
+    position: fixed;
+    top:0;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    .listrule{
+      width:480px;
+      height:580px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background:#fff;
+      border-radius:10px;
+      h2{
+        font-size: 30px;
+        font-weight: 500;
+        text-align: center;
+        padding:50px 0;
+        color:#0e050a;
+      }
+      p{
+        padding:0 20px 30px;
+        line-height:30px;
+        font-size:20px;
+        span{
+          color:#ff0000;
+        }
+      }
+      div{
+        position:absolute;
+        bottom: 0;
+        height: 88px;
+        width: 100%;
+        line-height: 88px;
+        color: #ff0000;
+        font-size: 36px;
+        text-align:center;
+        border-top:1px solid #e0e0e0;
+
+      }
+    }
+  }
 }
 
 #moonmustkonw{
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url($imgurl + "catcnmoonmustkonw1.jpg") no-repeat;
+  background: url($imgurl + "catcnmoonmustkonw3.jpg") no-repeat;
   background-size: 100% 100%;
   a{
     display: block;

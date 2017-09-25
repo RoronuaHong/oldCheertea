@@ -6,15 +6,27 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'/>
     <!--<link rel="stylesheet" href="../css/commons.css">-->
     <!--<link rel="stylesheet" type="text/css" href="../css/catchmooncake.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="../css/mycardroll.css" />-->
     <link rel="stylesheet" href="http://css.cheertea.com/commons.css">
     <link rel="stylesheet" type="text/css" href="http://css.cheertea.com/catchmooncake.css" />
+    <link rel="stylesheet" href="http://css.cheertea.com/mycardroll.css"/>
 </head>
 <body>
-<div class="catchmoonmyprize">
-    <div class="nonePrize">
-        您暂时没有中奖纪录！
+<div  id="showDelete" >
+    <div class="showbox">
+        <h2>恭喜您获得</h2>
+        <p></p>
+        <div>确定</div>
     </div>
-    <ul class="myprize-list">
+</div>
+<div class="catchmoonmyprize">
+
+    <div class="select-prize">
+        <span class="active">我的奖品</span>
+        <span style="border-left:1px solid #e5e5e5;border-right:1px solid #e5e5e5;">我的卡券</span>
+        <span >博饼记录</span>
+    </div>
+    <ul class="myprize-list alllist myprize"  >
         <!--<li>-->
             <!--<div class="myprize-ct">-->
                 <!--<span>比亚迪汽车</span>-->
@@ -27,6 +39,54 @@
             <!--</div>-->
         <!--</li>-->
     </ul>
+    <div class="card alllist" style="display: none;padding:0;background:#fff;" >
+        <!--                 <div class="cards">
+                            <img class="pic" src="../mother_03.jpg" alt="" />
+                            <span class="incloud">使用范围:</span>
+                            <em class="only">仅限安娜妈妈品牌专区</em>
+                            <span class="money">¥</span>
+                            <em class="money1">10</em>
+                            <span class="full">满<em class="moremoney">2000</em>元使用</span>
+                            <span class="time">截止日期:<em class="time1">2018-05-05</em></span>
+                        </div> -->
+        <!--                 <div class="cards">
+                            <img class="pic" src="../self_03.jpg" alt="" />
+                            <span class="incloud">使用范围:</span>
+                            <em class="only">全场通用</em>
+                            <span class="money">¥</span>
+                            <em class="money1">10</em>
+                            <span class="full">满<em class="moremoney">2000</em>元使用</span>
+                            <span class="time">截止日期:<em class="time1">2018-05-05</em></span>
+                        </div>
+         -->
+        <!--                 <div class="cards">
+                            <img class="picture" src="../autumn_03.jpg" alt="" />
+                            <span class="autumn">使用范围:仅限中秋兑礼区使用</span>
+                            <span class="amoney">¥</span>
+                            <em class="amoney1">100</em>
+                            <span class="times">截止日期:<em class="times1">2018-05-05</em></span>
+                        </div> -->
+    </div>
+    <ul class="myprize-list alllist catchct" style="display: none;" >
+        <!--<li>-->
+            <!--<div class="myprize-ct">-->
+                <!--<span>比亚迪汽车</span>-->
+                <!--<p>王中王</p>-->
+            <!--</div>-->
+            <!--<div class="get-btn">-->
+                <!--<div class="getprize-btn btn active">-->
+                    <!--兑换礼品-->
+                <!--</div>-->
+                <!--<div class="getchange-btn btn" >-->
+                    <!--兑换机会-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</li>-->
+    </ul>
+    <div class="nonePrize">
+        您暂时没有中奖纪录！
+    </div>
+
 </div>
 
 <!--<script src="../js/newcommon.js"></script>-->

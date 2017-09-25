@@ -1,0 +1,96 @@
+
+//$imgurl: "../images/";
+$imgurl:"http://images.cheertea.com/";
+
+body{
+
+}
+#guide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url($imgurl +"catchmoon_guide1.jpg") no-repeat;
+    background-size: 100% 100%;
+    a{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    div{
+        position: absolute;
+    }
+}
+.moon-btn{
+    width: 334px;
+    height: 70px;
+    position: absolute;
+    top: 33.8%;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+.moon-rule{
+    width: 74px;
+    height: 176px;
+    position: absolute;
+    top: 39.8%;
+    left: 0;
+}
+.circle{
+        width:138px;
+        height: 79px;
+        bottom: 24px;
+}
+.moon-choujiang{
+
+    left: 328px;
+}
+.moon-recom{
+    width: 59px;
+    height: 59px;
+    top: 48.7%;
+    right: 24px;
+}
+.moon-list{
+    width: 59px;
+    height: 59px;
+    top: 41.4%;
+    right: 24px;
+}
+.moon-sale{
+    left: 16px;
+}
+.moon-getprize{
+
+    left: 484px;
+}
+.moon-part{
+
+    left: 172px;
+}
+.catch-btn{
+    top:45.3%;
+    left:190px;
+    width:282px;
+    height:245px;
+    ul{
+        display: flex;
+        justify-content: space-around;
+        li{
+            width: 68px;
+            height: 72px;
+            background: url('http://images.cheertea.com/movegood3.gif') 0 0 no-repeat;
+            background-size:100% 100%;
+            margin-bottom:26px;
+        }
+    }
+}
+.arrow{
+    width:64px;
+    height: 52px;
+    background: url('http://images.cheertea.com/moonarrow.png') 0 0 no-repeat;
+    background-size:100% 100%;
+    bottom:130px;
+    left:50px;
+}

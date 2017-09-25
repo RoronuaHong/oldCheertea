@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="http://css.cheertea.com/commons.css">
+    <link rel="stylesheet" href="http://css.cheertea.com/togetherbuydetail.css">
+    <!--<link rel="stylesheet" href="../css/togetherbuydetail.css">-->
+</head>
+<body>
+<div class="header">
+    <a class="backss backs" href="javascript: history.go(-1)"></a>
+    <h2>商品详情</h2>
+</div>
+<div class="togetherbuydetailwrap">
+    <div class="bigbanner">
+
+    </div>
+    <div class="pricecontent clearfix">
+        <div class="groupcontent">
+            <div class="groupcon clearfix">
+                <p></p>
+            </div>
+            <div class="pricecon clearfix">
+                <i>￥</i>
+                <span class="pri">29300.00</span>
+                <div class="otherpri clearfix">
+                    <span class="surpri">￥30.00</span>
+                    <span class="savepri">立省: ￥50.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tiaokuan clearfix" style="margin-bottom: 0;border-bottom: 0 solid transparent;">
+        <span class="baozhang" style="padding-left: .6rem; font-size: 0.375rem; background: url(http://images.cheertea.com/baozhangicon1.png) 0rem center no-repeat; background-size: 18%;">7天无理由退换</span>
+        <span class="baozhang" style="padding-left: .6rem; font-size: 0.375rem; margin-left: 0.4rem; background: url(http://images.cheertea.com/baozhangicon2.png) 0rem center no-repeat; background-size: 18%;">紫金保险承保</span>
+        <span class="baozhang" style="padding-left: .6rem; font-size: 0.375rem; float: left; margin-left: 0.4rem; background: url(http://images.cheertea.com/baozhangicon3.png) 0rem center no-repeat; background-size: 18%;">100%正品</span>
+    </div>
+    <div class="newpuzzlestep clearfix">
+        <a href="/cn/grouprule.html">
+            <h2>拼团步骤: </h2>
+            <ul class="list clearfix">
+                <li>
+                    <span class="num">1</span>
+                    选择商品
+                </li>
+                <li>
+                    <span class="num">2</span>
+                    支付开团
+                </li>
+                <li>
+                    <span class="num">3</span>
+                    邀请好友
+                </li>
+            </ul>
+            <div class="puzzlerule clearfix">详细规则 &gt;</div>
+        </a>
+    </div>
+    <div class="somegroupbox">
+        <h3><span></span>人在拼</h3>
+        <div class="somegrouplist">
+            <!--<div class="sgchild clearfix">
+                <div class="sgimgbox">
+                    <img src="http://images.cheertea.com/logobg.png" alt="" class="sgimg">
+                </div>
+                <div class="sgtail clearfix">
+                    <span class="need">还差1人</span>
+                    <span class="surtime">
+							剩余:
+							<span class="hours">22</span>
+							:
+							<span class="mins">22</span>
+							:
+							<span class="secs">22</span>
+						</span>
+                </div>
+                <div class="gogroupbtn">去拼团</div>
+            </div>-->
+        </div>
+    </div>
+    <div class="detailproblem">
+        <div id="goods-intro" class="body indent"></div>
+    </div>
+    <form id="togetherBuyForm">
+        <div class="fooerbugbox clearfix">
+            <input type="hidden" class="goods_id" value="">
+            <input type="hidden" class="productid" value="">
+            <input type="hidden" class="togetherbuyid" value="">
+            <input type="hidden" class="activity_status" value="">
+            <a href="/cn/index.html" class="shouye">首页</a>
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2355650456&amp;site=qq&amp;menu=yes" class="kefu">客服</a>
+            <a href="" class="productaddcar clearfix">
+                <span class="singlermb">￥<span></span></span>
+                <span class="single">单独购买</span>
+            </a>
+            <div class="buyquicklysz">
+                <span class="singlermbs">￥<span></span></span>
+                <span class="singles">去开团</span>
+                <input type="button" class="buyquicklys" value="去开团"/>
+            </div>
+        </div>
+    </form>
+    <div class="specbox" id="specboxs" style="position: fixed; bottom: 0; left: 0; width: 100%; height: 11rem; background: white; z-index: 2000; display: none;">
+        <div class="specmessage" style="position: relative; top: 0; left: 0; width: 100%; padding: .45rem 0;">
+            <img src="" alt="" id="specimg" style="display: block; position: absolute; top: -.55rem; left: .31rem; width: 3.1rem; height: 3.1rem; border: 1px solid #fff; border-radius: .1rem; -webkit-border-radius: .1rem; -moz-border-radius: .1rem;-ms-border-radius: .1rem;">
+            <div class="specmes" style="width: 100%; height: 2.1rem; padding: 0 5% 0 40%;">
+                <div class="price clearfix" style="width: 55%; height: .78rem; line-height: .78rem; font-size: .375rem; color: #e94a62;">
+                    ￥<span id="pri" style="font-size: .53rem;">199.00</span>
+                    <stonrg class="chacha" style="float: right; margin-top: .1rem; width: .58rem; height: .58rem; background: url('http://images.cheertea.com/detailchacha.png') 0 0 no-repeat; background-size: contain;"></stonrg>
+                    <div class="selected">
+                        <!--    已选择
+                           <span>"红色"</span>
+                           <span>"50x110cm"</span>
+                           <span>"50x110cm"</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mesbox">
+            <!-- <div class="specpath">
+              <h3>颜色</h3>
+              <ul class="specul clearfix">
+                <li class="lisel">红色</li>
+                <li class="unli">蓝色</li>
+                <li>白色</li>
+                <li>红色</li>
+                <li>蓝色</li>
+                <li>白色</li>
+              </ul>
+            </div> -->
+            <!-- <div class="specpath">
+              <h3>尺寸</h3>
+              <ul class="speculs clearfix">
+                <li class="lisel">红色</li>
+                <li class="unli">蓝色</li>
+                <li>白色</li>
+                <li>红色</li>
+                <li>蓝色</li>
+                <li>白色</li>
+              </ul>
+            </div> -->
+        </div>
+        <ul class="buynumerbox clearfix" style="display: none;">
+            <li>购买数量(库存剩余:<span id="stores">0</span>) : </li>
+            <li>
+                <div class="numbox clearfix">
+                    <span class="minus">-</span>
+                    <input type="number" id="numinput" value="1">
+                    <span class="plus">+</span>
+                </div>
+            </li>
+        </ul>
+        <a class="containbtn" style="display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 1.25rem; line-height: 1.25rem; background: #ff0000; font-size: .58rem; text-align: center; color: #fff;">确定</a>
+    </div>
+</div>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" charset="UTF-8"></script>
+<script type="text/javascript" src="http://js.cheertea.com/newcommon.js" charset="UTF-8"></script>
+<script type="text/javascript" src="http://js.cheertea.com/togetherbuydetail.js"></script>
+<!--<script type="text/javascript" src="../js/newcommon.js" charset="UTF-8"></script>-->
+<!--<script type="text/javascript" src="../js/togetherbuydetail.js" charset="UTF-8"></script>-->
+</body>
+</html>

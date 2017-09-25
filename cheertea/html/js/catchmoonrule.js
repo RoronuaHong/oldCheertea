@@ -25,7 +25,9 @@
                     $('.catch-how-ct-score').show();
                     title.html('马上提高博饼分');
                 }
-
+            $('#shares').on('click',function (event) {
+                $(this).hide();
+            });
         },
         isEarn: function(name) {
 
@@ -69,7 +71,7 @@
             var member_id = ids;
             var image_url = "http://images.cheertea.com/logonews.png";
             if(member_id != "" && member_id != undefined && member_id != null){
-                var shareUrl =publics+'cn/catchmooncake.html?memberid=' + member_id;
+                var shareUrl =publics+'cn/catchmoonguide.html?memberid=' + member_id;
                 $.ajax({
                     type:'POST',
                     url:publics+'widget?type=group_activity&action=ajaxsign&ajax=yes',
@@ -92,7 +94,7 @@
                             wx.onMenuShareTimeline({
                                 title: " 巨柚博状元 全国乐中秋", // 分享标题
                                 link: shareUrl,
-                                desc:"缤纷豪礼送不停，更有价值数十万豪车等着你！",
+                                desc:"缤纷豪礼送不停，更有￥4999现金大奖等着你！",
                                 imgUrl: image_url , // 分享图标
                                 success: function () {
                                     // 用户确认分享后执行的回调函数
@@ -106,7 +108,7 @@
                             wx.onMenuShareAppMessage({
                                 title: " 巨柚博状元 全国乐中秋", // 分享标题
                                 link: shareUrl,
-                                desc:"缤纷豪礼送不停，更有价值数十万豪车等着你！",
+                                desc:"缤纷豪礼送不停，更有￥4999现金大奖等着你！",
                                 imgUrl: image_url, // 分享图标
                                 type: data.type, // 分享类型,music、video或link，不填默认为link
                                 success: function () {
@@ -122,7 +124,7 @@
                             wx.onMenuShareQQ({
                                 title: " 巨柚博状元 全国乐中秋", // 分享标题
                                 link: shareUrl,
-                                desc:"缤纷豪礼送不停，更有价值数十万豪车等着你！",
+                                desc:"缤纷豪礼送不停，更有￥4999现金大奖等着你！",
                                 imgUrl: image_url, // 分享图标
                                 success: function () {
                                     // 用户确认分享后执行的回调函数
@@ -137,7 +139,7 @@
                             wx.onMenuShareQZone({
                                 title: " 巨柚博状元 全国乐中秋", // 分享标题
                                 link: shareUrl,
-                                desc:"缤纷豪礼送不停，更有价值数十万豪车等着你！",
+                                desc:"缤纷豪礼送不停，更有￥4999现金大奖等着你！",
                                 imgUrl: image_url, // 分享图标
                                 success: function () {
                                     // 用户确认分享后执行的回调函数
